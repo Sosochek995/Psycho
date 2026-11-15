@@ -56,7 +56,10 @@ public enum ScoringType
     /// <summary>Блок 10: подсчёт количества ответов «левая».</summary>
     CountLeft,
 
-    /// <summary>Блок 11: взвешенная формула Т = 2 × (1·б + 3·в + 4·г + 2·д).</summary>
+    /// <summary>Блок 11: сумма взвешенных баллов, умноженная на коэффициент из Formula.</summary>
+    FormulaMultiplier,
+
+    /// <summary>Блок 11 (альтернативное имя): взвешенная формула Т = 2 × (1·б + 3·в + 4·г + 2·д).</summary>
     WeightedFormula,
 }
 

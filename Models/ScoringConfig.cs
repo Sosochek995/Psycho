@@ -25,6 +25,13 @@ public class ScoringConfig
     [JsonPropertyName("keys")]
     public Dictionary<string, object>? Keys { get; set; }
 
+    /// <summary>
+    /// Именованные группы вопросов (блок 3: "left" = [q01,q02,q05,q08,q09],
+    /// "right" = [q03,q04,q06,q07,q10]). Используется HemisphereSum.
+    /// </summary>
+    [JsonPropertyName("questionGroups")]
+    public Dictionary<string, List<string>>? QuestionGroups { get; set; }
+
     /// <summary>Балл за один верный ответ (SumKeyWeighted, блок 2 = 5).</summary>
     [JsonPropertyName("pointsPerCorrectAnswer")]
     public int? PointsPerCorrectAnswer { get; set; }
