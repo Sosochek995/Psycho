@@ -6,24 +6,183 @@
   "answerType": "Scale",
   "questionCountExpected": 9,
   "questions": [
-    { "id": "q01", "text": "Я легко сближаюсь с людьми.", "type": "Scale", "required": true, "options": [], "scale": { "min": 0, "max": 4, "step": 1 }, "tags": ["sum"] },
-    { "id": "q02", "text": "У меня много знакомых, с которыми я охотно встречаюсь.", "type": "Scale", "required": true, "options": [], "scale": { "min": 0, "max": 4, "step": 1 }, "tags": ["sum"] },
-    { "id": "q03", "text": "Я разговорчивый человек.", "type": "Scale", "required": true, "options": [], "scale": { "min": 0, "max": 4, "step": 1 }, "tags": ["sum"] },
-    { "id": "q04", "text": "Я непринужденно чувствую себя с незнакомыми людьми.", "type": "Scale", "required": true, "options": [], "scale": { "min": 0, "max": 4, "step": 1 }, "tags": ["sum"] },
-    { "id": "q05", "text": "Мне стало бы неприятно, если бы надолго исчезла возможность общения.", "type": "Scale", "required": true, "options": [], "scale": { "min": 0, "max": 4, "step": 1 }, "tags": ["sum"] },
-    { "id": "q06", "text": "Когда мне надо что-то узнать, я предпочитаю спросить, а не копаться в книгах.", "type": "Scale", "required": true, "options": [], "scale": { "min": 0, "max": 4, "step": 1 }, "tags": ["sum"] },
-    { "id": "q07", "text": "Мне удается оживить скучную компанию.", "type": "Scale", "required": true, "options": [], "scale": { "min": 0, "max": 4, "step": 1 }, "tags": ["sum"] },
-    { "id": "q08", "text": "Я говорю быстро.", "type": "Scale", "required": true, "options": [], "scale": { "min": 0, "max": 4, "step": 1 }, "tags": ["sum"] },
-    { "id": "q09", "text": "Когда я надолго оторван от людей, мне очень хочется поговорить с кем-нибудь.", "type": "Scale", "required": true, "options": [], "scale": { "min": 0, "max": 4, "step": 1 }, "tags": ["sum"] }
+    {
+      "id": "q01",
+      "text": "Я легко сближаюсь с людьми.",
+      "type": "Scale",
+      "required": true,
+      "options": [],
+      "scale": {
+        "min": 0,
+        "max": 4,
+        "step": 1,
+        "minLabel": "0 — совсем не про меня",
+        "maxLabel": "4 — полностью про меня"
+      },
+      "tags": [
+        "sum"
+      ]
+    },
+    {
+      "id": "q02",
+      "text": "У меня много знакомых, с которыми я охотно встречаюсь.",
+      "type": "Scale",
+      "required": true,
+      "options": [],
+      "scale": {
+        "min": 0,
+        "max": 4,
+        "step": 1,
+        "minLabel": "0 — совсем не про меня",
+        "maxLabel": "4 — полностью про меня"
+      },
+      "tags": [
+        "sum"
+      ]
+    },
+    {
+      "id": "q03",
+      "text": "Я разговорчивый человек.",
+      "type": "Scale",
+      "required": true,
+      "options": [],
+      "scale": {
+        "min": 0,
+        "max": 4,
+        "step": 1,
+        "minLabel": "0 — совсем не про меня",
+        "maxLabel": "4 — полностью про меня"
+      },
+      "tags": [
+        "sum"
+      ]
+    },
+    {
+      "id": "q04",
+      "text": "Я непринужденно чувствую себя с незнакомыми людьми.",
+      "type": "Scale",
+      "required": true,
+      "options": [],
+      "scale": {
+        "min": 0,
+        "max": 4,
+        "step": 1,
+        "minLabel": "0 — совсем не про меня",
+        "maxLabel": "4 — полностью про меня"
+      },
+      "tags": [
+        "sum"
+      ]
+    },
+    {
+      "id": "q05",
+      "text": "Мне стало бы неприятно, если бы надолго исчезла возможность общения.",
+      "type": "Scale",
+      "required": true,
+      "options": [],
+      "scale": {
+        "min": 0,
+        "max": 4,
+        "step": 1,
+        "minLabel": "0 — совсем не про меня",
+        "maxLabel": "4 — полностью про меня"
+      },
+      "tags": [
+        "sum"
+      ]
+    },
+    {
+      "id": "q06",
+      "text": "Когда мне надо что-то узнать, я предпочитаю спросить, а не копаться в книгах.",
+      "type": "Scale",
+      "required": true,
+      "options": [],
+      "scale": {
+        "min": 0,
+        "max": 4,
+        "step": 1,
+        "minLabel": "0 — совсем не про меня",
+        "maxLabel": "4 — полностью про меня"
+      },
+      "tags": [
+        "sum"
+      ]
+    },
+    {
+      "id": "q07",
+      "text": "Мне удается оживить скучную компанию.",
+      "type": "Scale",
+      "required": true,
+      "options": [],
+      "scale": {
+        "min": 0,
+        "max": 4,
+        "step": 1,
+        "minLabel": "0 — совсем не про меня",
+        "maxLabel": "4 — полностью про меня"
+      },
+      "tags": [
+        "sum"
+      ]
+    },
+    {
+      "id": "q08",
+      "text": "Я говорю быстро.",
+      "type": "Scale",
+      "required": true,
+      "options": [],
+      "scale": {
+        "min": 0,
+        "max": 4,
+        "step": 1,
+        "minLabel": "0 — совсем не про меня",
+        "maxLabel": "4 — полностью про меня"
+      },
+      "tags": [
+        "sum"
+      ]
+    },
+    {
+      "id": "q09",
+      "text": "Когда я надолго оторван от людей, мне очень хочется поговорить с кем-нибудь.",
+      "type": "Scale",
+      "required": true,
+      "options": [],
+      "scale": {
+        "min": 0,
+        "max": 4,
+        "step": 1,
+        "minLabel": "0 — совсем не про меня",
+        "maxLabel": "4 — полностью про меня"
+      },
+      "tags": [
+        "sum"
+      ]
+    }
   ],
   "scoring": {
     "type": "SumScale",
     "maxScore": 36,
     "resultFormat": "Score",
     "interpretations": [
-      { "min": 1, "max": 12, "level": "Интроверт", "text": "С трудом вступает в контакт, сдержан, застенчив, ориентирован на собственные чувства." },
-      { "min": 13, "max": 24, "level": "Амбаверт", "text": "Спокойные, ровные отношения с людьми, ответственность." },
-      { "min": 25, "max": 36, "level": "Экстраверт", "text": "Словоохотливый, общительный оптимист, прекрасный импровизатор." }
+      {
+        "min": 0,
+        "max": 12,
+        "level": "Интроверт",
+        "text": "С трудом вступает в контакт, сдержан, застенчив, ориентирован на собственные чувства."
+      },
+      {
+        "min": 13,
+        "max": 24,
+        "level": "Амбаверт",
+        "text": "Спокойные, ровные отношения с людьми, ответственность."
+      },
+      {
+        "min": 25,
+        "max": 36,
+        "level": "Экстраверт",
+        "text": "Словоохотливый, общительный оптимист, прекрасный импровизатор."
+      }
     ]
   }
 }

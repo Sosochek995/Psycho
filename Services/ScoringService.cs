@@ -532,8 +532,20 @@ public class ScoringService : IScoringService
     {
         "yes" or "y" or "да" or "д" => "a",
         "no" or "n" or "нет" or "н" => "b",
-        var other => other,
+        // кириллические литеры вариантов (а, б, в, …) приводим к латинским (a, b, c, …),
+        // чтобы ключи/матрицы источника («1а», «а = 7») совпадали с ключами опций JSON.
+        var other when RuLetterIndex(other) >= 0 => LatinForRuIndex(RuLetterIndex(other)),
+        _ => key.Trim().ToLowerInvariant(),
     };
+
+    /// <summary>Индекс русской литеры варианта (а→0, б→1, в→2, г→3, д→4, е→5), иначе -1.</summary>
+    private static int RuLetterIndex(string s) => s switch
+    {
+        "а" => 0, "б" => 1, "в" => 2, "г" => 3, "д" => 4, "е" => 5,
+        _ => -1,
+    };
+
+    private static string LatinForRuIndex(int i) => "abcdef"[i].ToString();
 
     private static bool KeyEquals(string? a, string? b)
     {

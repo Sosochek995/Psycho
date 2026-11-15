@@ -72,6 +72,13 @@ public class Question
                     list.Add($"Question '{Id}' (ImageSingleChoice): отсутствует ImageKey.");
                 goto default;
 
+            case QuestionType.ParameterChoice:
+                // Группы параметров блоков 8–9: по источнику у некоторых параметров
+                // ровно один вариант; минимум один вариант обязателен.
+                if (Options.Count < 1)
+                    list.Add($"Question '{Id}' (ParameterChoice): требуется хотя бы один вариант ответа.");
+                break;
+
             default:
                 if (Options.Count < 2)
                     list.Add($"Question '{Id}': требуется не менее двух вариантов ответа.");

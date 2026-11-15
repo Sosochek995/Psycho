@@ -1,0 +1,231 @@
+{
+  "id": "block_10_left_hand",
+  "order": 10,
+  "title": "Экспресс-тест на леворукость",
+  "instruction": "Выполните 10 простых действий (или вспомните, как вы их обычно делаете) и зафиксируйте, какой рукой вам естественнее их выполнять.",
+  "answerType": "LeftRightChoice",
+  "questionCountExpected": 10,
+  "questions": [
+    {
+      "id": "q01",
+      "text": "Какой рукой вы держите ложку?",
+      "type": "LeftRightChoice",
+      "required": true,
+      "options": [
+        {
+          "key": "r",
+          "text": "правая"
+        },
+        {
+          "key": "l",
+          "text": "левая"
+        }
+      ],
+      "tags": [
+        "count_left"
+      ]
+    },
+    {
+      "id": "q02",
+      "text": "Какой рукой вы держите зубную щётку?",
+      "type": "LeftRightChoice",
+      "required": true,
+      "options": [
+        {
+          "key": "r",
+          "text": "правая"
+        },
+        {
+          "key": "l",
+          "text": "левая"
+        }
+      ],
+      "tags": [
+        "count_left"
+      ]
+    },
+    {
+      "id": "q03",
+      "text": "Какой рукой вы бросаете мяч/камень?",
+      "type": "LeftRightChoice",
+      "required": true,
+      "options": [
+        {
+          "key": "r",
+          "text": "правая"
+        },
+        {
+          "key": "l",
+          "text": "левая"
+        }
+      ],
+      "tags": [
+        "count_left"
+      ]
+    },
+    {
+      "id": "q04",
+      "text": "Какой рукой вы пишете?",
+      "type": "LeftRightChoice",
+      "required": true,
+      "options": [
+        {
+          "key": "r",
+          "text": "правая"
+        },
+        {
+          "key": "l",
+          "text": "левая"
+        }
+      ],
+      "tags": [
+        "count_left"
+      ]
+    },
+    {
+      "id": "q05",
+      "text": "Какой рукой вы держите нож при резке хлеба?",
+      "type": "LeftRightChoice",
+      "required": true,
+      "options": [
+        {
+          "key": "r",
+          "text": "правая"
+        },
+        {
+          "key": "l",
+          "text": "левая"
+        }
+      ],
+      "tags": [
+        "count_left"
+      ]
+    },
+    {
+      "id": "q06",
+      "text": "Какой рукой вы чешете нос/голову (привычно)?",
+      "type": "LeftRightChoice",
+      "required": true,
+      "options": [
+        {
+          "key": "r",
+          "text": "правая"
+        },
+        {
+          "key": "l",
+          "text": "левая"
+        }
+      ],
+      "tags": [
+        "count_left"
+      ]
+    },
+    {
+      "id": "q07",
+      "text": "Какой рукой вы держите телефон у уха?",
+      "type": "LeftRightChoice",
+      "required": true,
+      "options": [
+        {
+          "key": "r",
+          "text": "правая"
+        },
+        {
+          "key": "l",
+          "text": "левая"
+        }
+      ],
+      "tags": [
+        "count_left"
+      ]
+    },
+    {
+      "id": "q08",
+      "text": "Переплетите пальцы рук. Какой большой палец сверху?",
+      "type": "LeftRightChoice",
+      "required": true,
+      "options": [
+        {
+          "key": "r",
+          "text": "правая"
+        },
+        {
+          "key": "l",
+          "text": "левая"
+        }
+      ],
+      "tags": [
+        "count_left"
+      ]
+    },
+    {
+      "id": "q09",
+      "text": "Сложите руки на груди (поза Наполеона). Какая рука сверху?",
+      "type": "LeftRightChoice",
+      "required": true,
+      "options": [
+        {
+          "key": "r",
+          "text": "правая"
+        },
+        {
+          "key": "l",
+          "text": "левая"
+        }
+      ],
+      "tags": [
+        "count_left"
+      ]
+    },
+    {
+      "id": "q10",
+      "text": "Аплодисменты. Какая ладонь сверху/активнее?",
+      "type": "LeftRightChoice",
+      "required": true,
+      "options": [
+        {
+          "key": "r",
+          "text": "правая"
+        },
+        {
+          "key": "l",
+          "text": "левая"
+        }
+      ],
+      "tags": [
+        "count_left"
+      ]
+    }
+  ],
+  "scoring": {
+    "type": "CountLeft",
+    "maxScore": 10,
+    "resultFormat": "Score",
+    "interpretations": [
+      {
+        "min": 0,
+        "max": 2,
+        "level": "Выраженный правша",
+        "text": "Выраженный правша."
+      },
+      {
+        "min": 3,
+        "max": 5,
+        "level": "Амбидекстр или скрытый левша",
+        "text": "Амбидекстр или скрытый левша."
+      },
+      {
+        "min": 6,
+        "max": 8,
+        "level": "Выраженный левша",
+        "text": "Выраженный левша."
+      },
+      {
+        "min": 9,
+        "max": 10,
+        "level": "Чистый левша",
+        "text": "Чистый левша."
+      }
+    ]
+  }
+}
