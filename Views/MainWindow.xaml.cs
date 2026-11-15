@@ -7,6 +7,12 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         InitializeComponent();
-        DataContext = new ViewModels.MainViewModel();
+        Loaded += OnLoaded;
+    }
+
+    private async void OnLoaded(object sender, RoutedEventArgs e)
+    {
+        if (DataContext is ViewModels.MainViewModel vm)
+            await vm.LoadedCommand.ExecuteAsync(null);
     }
 }

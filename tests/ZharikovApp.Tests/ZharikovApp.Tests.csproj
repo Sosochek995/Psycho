@@ -23,7 +23,9 @@
   <!-- Подключаем исходники приложения (Models/Services) без зависимости от WPF-слоя -->
   <ItemGroup>
     <Compile Include="..\..\Models\**\*.cs" LinkBase="Linked\Models" />
-    <Compile Include="..\..\Services\**\*.cs" LinkBase="Linked\Services" />
+    <Compile Include="..\..\Helpers\PathHelper.cs" Link="Linked\Helpers\PathHelper.cs" />
+    <Compile Include="..\..\Services\ScoringService.cs" Link="Linked\Services\ScoringService.cs" />
+    <Compile Include="..\..\Services\Interfaces\*.cs" LinkBase="Linked\Services\Interfaces" />
   </ItemGroup>
 
 </Project>

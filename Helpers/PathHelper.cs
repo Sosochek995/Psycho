@@ -15,4 +15,19 @@ public static class PathHelper
 
     /// <summary>Путь к файлу источника методик.</summary>
     public static string MethodicsSourcePath => Path.Combine(AppRoot, "docs", "methodics_source.md");
+
+    /// <summary>Папка пользовательских данных (%APPDATA%/ZharikovApp).</summary>
+    public static string UserDataDirectory
+    {
+        get
+        {
+            var dir = Path.Combine(
+                Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "ZharikovApp");
+            Directory.CreateDirectory(dir);
+            return dir;
+        }
+    }
+
+    /// <summary>Файл автосохранения сессии пользователя.</summary>
+    public static string SessionFilePath => Path.Combine(UserDataDirectory, "session.json");
 }
