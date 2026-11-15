@@ -1,0 +1,16 @@
+/workspace/bin/Release/net8.0-windows/win-x64/publish/ZharikovApp.pdb
+/workspace/bin/Release/net8.0-windows/win-x64/publish/docs/methodics_source.md
+/workspace/bin/Release/net8.0-windows/win-x64/publish/Data/Blocks/.gitkeep
+/workspace/bin/Release/net8.0-windows/win-x64/publish/Data/Blocks/block_01_leadership.json
+/workspace/bin/Release/net8.0-windows/win-x64/publish/Data/Blocks/block_02_love.json
+/workspace/bin/Release/net8.0-windows/win-x64/publish/Data/Blocks/block_03_artist_thinker.json
+/workspace/bin/Release/net8.0-windows/win-x64/publish/Data/Blocks/block_04_extraversion.json
+/workspace/bin/Release/net8.0-windows/win-x64/publish/Data/Blocks/block_05_biomarkers.json
+/workspace/bin/Release/net8.0-windows/win-x64/publish/Data/Blocks/block_06_palmer.json
+/workspace/bin/Release/net8.0-windows/win-x64/publish/Data/Blocks/block_07_leader_admin.json
+/workspace/bin/Release/net8.0-windows/win-x64/publish/Data/Blocks/block_08_graphology.json
+/workspace/bin/Release/net8.0-windows/win-x64/publish/Data/Blocks/block_09_signature.json
+/workspace/bin/Release/net8.0-windows/win-x64/publish/Data/Blocks/block_10_left_hand.json
+/workspace/bin/Release/net8.0-windows/win-x64/publish/Data/Blocks/block_11_creative_age.json
+/workspace/bin/Release/net8.0-windows/win-x64/publish/Data/Blocks/block_12_creative_potential.json
+/workspace/bin/Release/net8.0-windows/win-x64/publish/ZharikovApp.exe

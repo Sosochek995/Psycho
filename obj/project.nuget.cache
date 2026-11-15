@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "gxBNc1tVEvM=",
+  "success": true,
+  "projectFilePath": "/workspace/ZharikovApp.csproj",
+  "expectedPackageFiles": [
+    "/root/.nuget/packages/communitytoolkit.mvvm/8.3.2/communitytoolkit.mvvm.8.3.2.nupkg.sha512",
+    "/root/.nuget/packages/microsoft.net.illink.tasks/8.0.34/microsoft.net.illink.tasks.8.0.34.nupkg.sha512",
+    "/root/.nuget/packages/microsoft.netcore.app.runtime.win-x64/8.0.34/microsoft.netcore.app.runtime.win-x64.8.0.34.nupkg.sha512",
+    "/root/.nuget/packages/microsoft.windowsdesktop.app.ref/8.0.34/microsoft.windowsdesktop.app.ref.8.0.34.nupkg.sha512",
+    "/root/.nuget/packages/microsoft.windowsdesktop.app.runtime.win-x64/8.0.34/microsoft.windowsdesktop.app.runtime.win-x64.8.0.34.nupkg.sha512",
+    "/root/.nuget/packages/microsoft.aspnetcore.app.runtime.win-x64/8.0.34/microsoft.aspnetcore.app.runtime.win-x64.8.0.34.nupkg.sha512",
+    "/root/.nuget/packages/microsoft.netcore.app.host.win-x64/8.0.34/microsoft.netcore.app.host.win-x64.8.0.34.nupkg.sha512"
+  ],
+  "logs": []
+}
