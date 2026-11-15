@@ -94,3 +94,45 @@ WPF `Resource` и доступны из XAML, например:
 Реализовано: структура проекта, конфигурация сборки, главное окно, MainViewModel,
 базовая модель блока, интерфейс загрузчика блоков, вспомогательные пути.
 Пока **не** реализовано: загрузка JSON-блоков, прохождение тестов, подсчёт и интерпретация.
+
+## Публикация: автономный Windows exe (self-contained, single file)
+
+Приложение запускается на Windows **без установленного .NET** — рантайм включён в exe.
+
+### Команды публикации (PowerShell, из корня проекта)
+
+```powershell
+dotnet clean
+dotnet build -c Release
+dotnet publish -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true -p:EnableCompressionInSingleFile=true
+```
+
+### Путь к итоговому файлу
+
+```
+bin/Release/net8.0-windows/win-x64/publish/ZharikovApp.exe
+```
+
+Один файл (~70 МБ, сжатие включено). Для распространения достаточно скопировать его на целевую машину и запустить двойным щелчком.
+
+### Настройки в csproj
+
+`RuntimeIdentifier=win-x64`, `SelfContained=true`, `PublishSingleFile=true`,
+`IncludeNativeLibrariesForSelfExtract=true`, `EnableCompressionInSingleFile=true`.
+
+### Запуск без консоли
+
+`OutputType=WinExe` — приложение оконное, консольное окно при запуске не появляется
+(проверено свойством OutputType; у `ZharikovApp.exe` подсистема Windows = GUI, не CUI).
+
+### Внешние данные в single-file режиме
+
+Файлы `Data/Blocks/*.json` и `docs/methodics_source.md` не извлекаются из exe рядом с ним.
+При первом запуске они копируются в `%APPDATA%\ZharikovApp\Data\` (см. `PathHelper.EnsureExternalData()`),
+там же хранятся сессия и результаты (`%APPDATA%\ZharikovApp\session.json` и др.).
+
+### Иконка приложения
+
+Иконка-заглушка: `Assets/app_icon.ico` (подключена через `<ApplicationIcon>`).
+Чтобы заменить её позже, просто перезапишите этот файл и выполните публикацию заново —
+код менять не нужно. Исходник заглушки в PNG: `Assets/app_icon.png`.

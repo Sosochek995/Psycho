@@ -9,9 +9,19 @@
     <RootNamespace>ZharikovApp</RootNamespace>
     <AssemblyName>ZharikovApp</AssemblyName>
     <ApplicationManifest>app.manifest</ApplicationManifest>
+    <!-- Иконка-заглушка; замените Assets/app_icon.ico на финальную — код менять не нужно -->
+    <ApplicationIcon>Assets\app_icon.ico</ApplicationIcon>
     <!-- Позволяет выполнять restore/build кросс-платформенно (например, на CI под Linux).
          Запуск приложения по-прежнему возможен только на Windows. -->
     <EnableWindowsTargeting>true</EnableWindowsTargeting>
+
+    <!-- Публикация: автономный single-file exe (win-x64), .NET на машине не требуется -->
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <SelfContained>true</SelfContained>
+    <PublishSingleFile>true</PublishSingleFile>
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+    <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
+    <!-- WinExe: приложение оконное, консольное окно при запуске не показывается -->
   </PropertyGroup>
 
   <ItemGroup>
