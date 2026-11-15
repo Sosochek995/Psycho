@@ -1,0 +1,9 @@
+<Project>
+  <!-- Общие свойства. Пути к артефактам задаются явно, чтобы obj/bin
+       вложенных проектов (tests/) не попадали в глобальные шаблоны компиляции. -->
+  <PropertyGroup>
+    <BaseIntermediateOutputPath>$(MSBuildProjectDirectory)/obj/</BaseIntermediateOutputPath>
+    <BaseOutputPath>$(MSBuildProjectDirectory)/bin/</BaseOutputPath>
+    <DefaultItemExcludes>$(DefaultItemExcludes);tests/**;bin/**;obj/**</DefaultItemExcludes>
+  </PropertyGroup>
+</Project>
