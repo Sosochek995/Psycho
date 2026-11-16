@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    Консольный runner контрольных векторов для системы защиты методик.
+    НЕ является частью приложения ZharikovApp; используется tools/guard_check.ps1.
+    Считает результаты КОДОМ ПРИЛОЖЕНИЯ (Services/ScoringService.cs, компилируется
+    в этот проект по исходникам без изменения приложения) и выводит фактические
+    значения JSON для сравнения с tools/baseline/control_vectors.json.
+  -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>GuardVectorRunner</AssemblyName>
+    <RootNamespace>ZharikovApp.GuardRunner</RootNamespace>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="../Models/*.cs" />
+    <Compile Include="../Services/ScoringService.cs" />
+    <Compile Include="../Services/Interfaces/IScoringService.cs" />
+    <Compile Include="Program.cs" />
+  </ItemGroup>
+
+</Project>

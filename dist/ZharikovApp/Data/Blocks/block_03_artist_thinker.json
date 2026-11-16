@@ -1,0 +1,221 @@
+{
+  "id": "block_03_artist_thinker",
+  "order": 3,
+  "title": "Художник или мыслитель?",
+  "instruction": "Чтобы узнать, кто Вы – художник или мыслитель, ответьте на следующие вопросы, пользуясь одиннадцатибалльной системой (от 0 до 10). Категорическому согласию – 10. Если вопрос ставит в тупик, используйте промежуточные баллы (от 1 до 9). Полное несогласие - 0.",
+  "answerType": "Scale",
+  "questionCountExpected": 10,
+  "questions": [
+    {
+      "id": "q01",
+      "text": "У меня преобладает хорошее настроение.",
+      "type": "Scale",
+      "required": true,
+      "options": [],
+      "scale": {
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "minLabel": "0 — полное несогласие",
+        "maxLabel": "10 — категорическое согласие"
+      },
+      "tags": [
+        "left_hemisphere"
+      ]
+    },
+    {
+      "id": "q02",
+      "text": "Я помню то, чему учился несколько лет назад.",
+      "type": "Scale",
+      "required": true,
+      "options": [],
+      "scale": {
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "minLabel": "0 — полное несогласие",
+        "maxLabel": "10 — категорическое согласие"
+      },
+      "tags": [
+        "left_hemisphere"
+      ]
+    },
+    {
+      "id": "q03",
+      "text": "Послушав раз-другой мелодию, я могу правильно воспроизвести ее.",
+      "type": "Scale",
+      "required": true,
+      "options": [],
+      "scale": {
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "minLabel": "0 — полное несогласие",
+        "maxLabel": "10 — категорическое согласие"
+      },
+      "tags": [
+        "right_hemisphere"
+      ]
+    },
+    {
+      "id": "q04",
+      "text": "Когда я слушаю рассказ, то представляю его в образах.",
+      "type": "Scale",
+      "required": true,
+      "options": [],
+      "scale": {
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "minLabel": "0 — полное несогласие",
+        "maxLabel": "10 — категорическое согласие"
+      },
+      "tags": [
+        "right_hemisphere"
+      ]
+    },
+    {
+      "id": "q05",
+      "text": "Я считаю, что эмоции в разговоре только мешают.",
+      "type": "Scale",
+      "required": true,
+      "options": [],
+      "scale": {
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "minLabel": "0 — полное несогласие",
+        "maxLabel": "10 — категорическое согласие"
+      },
+      "tags": [
+        "left_hemisphere"
+      ]
+    },
+    {
+      "id": "q06",
+      "text": "Мне трудно дается алгебра.",
+      "type": "Scale",
+      "required": true,
+      "options": [],
+      "scale": {
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "minLabel": "0 — полное несогласие",
+        "maxLabel": "10 — категорическое согласие"
+      },
+      "tags": [
+        "right_hemisphere"
+      ]
+    },
+    {
+      "id": "q07",
+      "text": "Я легко запоминаю незнакомые лица.",
+      "type": "Scale",
+      "required": true,
+      "options": [],
+      "scale": {
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "minLabel": "0 — полное несогласие",
+        "maxLabel": "10 — категорическое согласие"
+      },
+      "tags": [
+        "right_hemisphere"
+      ]
+    },
+    {
+      "id": "q08",
+      "text": "В группе приятелей я первым начинаю разговор.",
+      "type": "Scale",
+      "required": true,
+      "options": [],
+      "scale": {
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "minLabel": "0 — полное несогласие",
+        "maxLabel": "10 — категорическое согласие"
+      },
+      "tags": [
+        "left_hemisphere"
+      ]
+    },
+    {
+      "id": "q09",
+      "text": "Если обсуждают чьи-то идеи, то я требую аргументов.",
+      "type": "Scale",
+      "required": true,
+      "options": [],
+      "scale": {
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "minLabel": "0 — полное несогласие",
+        "maxLabel": "10 — категорическое согласие"
+      },
+      "tags": [
+        "left_hemisphere"
+      ]
+    },
+    {
+      "id": "q10",
+      "text": "У меня преобладает плохое настроение.",
+      "type": "Scale",
+      "required": true,
+      "options": [],
+      "scale": {
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "minLabel": "0 — полное несогласие",
+        "maxLabel": "10 — категорическое согласие"
+      },
+      "tags": [
+        "right_hemisphere"
+      ]
+    }
+  ],
+  "scoring": {
+    "type": "HemisphereSum",
+    "resultFormat": "TwoScales",
+    "metadata": {
+      "leftScale": "Л",
+      "rightScale": "П"
+    },
+    "questionGroups": {
+      "left": [
+        "q01",
+        "q02",
+        "q05",
+        "q08",
+        "q09"
+      ],
+      "right": [
+        "q03",
+        "q04",
+        "q06",
+        "q07",
+        "q10"
+      ]
+    },
+    "interpretations": [
+      {
+        "condition": "oddGtBy:5",
+        "level": "Мыслитель (логический тип)",
+        "text": "Логический тип (Мыслитель). Оптимист, опирается на расчет."
+      },
+      {
+        "condition": "evenGtOdd",
+        "level": "Художник (художественный тип)",
+        "text": "Художественный тип (Художник). Склонен к пессимизму, опирается на чувства и интуицию."
+      },
+      {
+        "condition": "absDiffLt:5",
+        "level": "Гармоничный (средний тип)",
+        "text": "Средний тип (Гармоничный). Сочетает логику и образность."
+      }
+    ]
+  }
+}

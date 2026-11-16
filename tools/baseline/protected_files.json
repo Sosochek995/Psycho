@@ -1,0 +1,85 @@
+{
+  "generatedBy": "tools/generate_baseline.py",
+  "files": [
+    {
+      "path": "docs/methodics_source.md",
+      "sha256": "c9ee64159d8871f9d66f78e1aac945c0d5861f7331b31b037ac95bb7bbe0b89b"
+    },
+    {
+      "path": "Services/ScoringService.cs",
+      "sha256": "7dca23df315c17b1d830fa7b07d3f3f86ba81247a6d30bf4333ce789cde0244d"
+    },
+    {
+      "path": "Models/ScoringConfig.cs",
+      "sha256": "6737fa6a74f7f8e0df8968613349c6064c7b80164aa71ef8d700ab79661b605f"
+    },
+    {
+      "path": "Models/Enums.cs",
+      "sha256": "53028858afb0875db2c026a7502a712afc5df621f9ca19922963d3b106931790"
+    },
+    {
+      "path": "Models/Question.cs",
+      "sha256": "e8bc520a4e7d3ab5e69d11716622f8c8f0ad012a0f2003b51f44454fd94938e6"
+    },
+    {
+      "path": "Models/AnswerOption.cs",
+      "sha256": "87789020724420ea87c8c0a2dd028c2a0d7f6c66b0e458026de0db4ac07865f4"
+    },
+    {
+      "path": "Models/ScaleConfig.cs",
+      "sha256": "9ea316b783d0cef64a5d2ab6930c8011c16e678f880438cf14d7941a389412b3"
+    },
+    {
+      "path": "Models/InterpretationRule.cs",
+      "sha256": "8c6e8aad53857e924ac9f8b2f21d8e491e8e2697ed6daa6b7bb4887a8b731c12"
+    },
+    {
+      "path": "Data/Blocks/block_01_leadership.json",
+      "sha256": "4743646e1c7125712196d9b9a660c9b19358e452314bf706fe9c092ffddec927"
+    },
+    {
+      "path": "Data/Blocks/block_02_love.json",
+      "sha256": "52735ee0fbdcb142167aaeb4f5ca6940bcf498fe00c78cd36b29b3c48ecd2d7a"
+    },
+    {
+      "path": "Data/Blocks/block_03_artist_thinker.json",
+      "sha256": "98e60f8b6d21c4e8a0a28a499b2d147045457394aaac9b862b2386bee1d1f1e7"
+    },
+    {
+      "path": "Data/Blocks/block_04_extraversion.json",
+      "sha256": "6b4a912ed8e68ba2ee73a2697f9ce96d0b6ce0ba4427b5cd0df5b46bb30edcde"
+    },
+    {
+      "path": "Data/Blocks/block_05_biomarkers.json",
+      "sha256": "2b35452dcd925b92aa69738d5e632f4966c03d0170f1dab80d51358ddfba7fb8"
+    },
+    {
+      "path": "Data/Blocks/block_06_palmer.json",
+      "sha256": "fe6e336cf89b469e68386b7932e5e0b6c131134a9427296d4368543694cb5d0d"
+    },
+    {
+      "path": "Data/Blocks/block_07_leader_admin.json",
+      "sha256": "0a530d92bc268b0769968453b2c308ca1fa20ad20d06efa59d59656d6b9f07ec"
+    },
+    {
+      "path": "Data/Blocks/block_08_graphology.json",
+      "sha256": "403d0c95f17cf4e4e6c1b4754b93936ad3797ff2fe8e6bd48ee7570d1ed01fe9"
+    },
+    {
+      "path": "Data/Blocks/block_09_signature.json",
+      "sha256": "485b5e97146b69a5b4eb597dac459e49c3794190157bdebc79962f38f1f7d3df"
+    },
+    {
+      "path": "Data/Blocks/block_10_left_hand.json",
+      "sha256": "5365e04e869d93897927d8adaf7b77cf7c32e830af8e3ffd5b3be9f623068ffc"
+    },
+    {
+      "path": "Data/Blocks/block_11_creative_age.json",
+      "sha256": "a3f8ab55e80b2bcc40789ec467701b2e3c45590f949b5e34ac0c73d9a9234b4f"
+    },
+    {
+      "path": "Data/Blocks/block_12_creative_potential.json",
+      "sha256": "81851d195caad714b2c324e88ec63a1fdc6310be9926c68a8312cc41684ad765"
+    }
+  ]
+}
