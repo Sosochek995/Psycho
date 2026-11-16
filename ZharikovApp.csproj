@@ -24,6 +24,11 @@
     <!-- WinExe: приложение оконное, консольное окно при запуске не показывается -->
   </PropertyGroup>
 
+  <PropertyGroup>
+    <!-- Не собирать резервные копии инструментов защиты (tools/baseline/backup, emergency_backup_*) -->
+    <DefaultItemExcludes>$(DefaultItemExcludes);tools\**;tests\**</DefaultItemExcludes>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.3.2" />
   </ItemGroup>

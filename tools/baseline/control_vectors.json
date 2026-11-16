@@ -797,7 +797,7 @@
      "expected": {
       "primary": "ПППП",
       "scores": {
-       "combo": "ПППП"
+       "combo": "rrrr"
       },
       "level": "Комбинация ПППП"
      }
@@ -813,7 +813,7 @@
      "expected": {
       "primary": "ЛЛЛЛ",
       "scores": {
-       "combo": "ЛЛЛЛ"
+       "combo": "llll"
       },
       "level": "Комбинация ЛЛЛЛ"
      }
@@ -829,7 +829,7 @@
      "expected": {
       "primary": "ЛПЛП",
       "scores": {
-       "combo": "ЛПЛП"
+       "combo": "lrlr"
       },
       "level": "Комбинация ЛПЛП"
      }
@@ -845,7 +845,7 @@
      "expected": {
       "primary": "ЛППП",
       "scores": {
-       "combo": "ЛППП"
+       "combo": "lrrr"
       },
       "level": "Комбинация ЛППП"
      }

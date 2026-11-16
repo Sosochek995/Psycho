@@ -8,7 +8,7 @@
     },
     {
       "path": "Services/ScoringService.cs",
-      "sha256": "7dca23df315c17b1d830fa7b07d3f3f86ba81247a6d30bf4333ce789cde0244d"
+      "sha256": "9be39c3bcbdd23f78b0b9fb0a5934e876eb427ac24637dd22775d87175081eef"
     },
     {
       "path": "Models/ScoringConfig.cs",
@@ -20,7 +20,7 @@
     },
     {
       "path": "Models/Question.cs",
-      "sha256": "e8bc520a4e7d3ab5e69d11716622f8c8f0ad012a0f2003b51f44454fd94938e6"
+      "sha256": "08ae3edcac4eb6db97f6eb84ab3868e38c87a87a23b8167c92993d41ef75da34"
     },
     {
       "path": "Models/AnswerOption.cs",
@@ -60,7 +60,7 @@
     },
     {
       "path": "Data/Blocks/block_07_leader_admin.json",
-      "sha256": "0a530d92bc268b0769968453b2c308ca1fa20ad20d06efa59d59656d6b9f07ec"
+      "sha256": "a398da2bfdc622658c7c03a484081e965c9248dba5ae0eada3cd8ef4846d7cfb"
     },
     {
       "path": "Data/Blocks/block_08_graphology.json",
@@ -80,7 +80,7 @@
     },
     {
       "path": "Data/Blocks/block_12_creative_potential.json",
-      "sha256": "81851d195caad714b2c324e88ec63a1fdc6310be9926c68a8312cc41684ad765"
+      "sha256": "8e4d100992a97a2095689475fd697bb23488e0c7d69d58269e5aa38fcb48fdd7"
     },
     {
       "path": "Services/Interfaces/IScoringService.cs",

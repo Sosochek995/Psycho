@@ -522,9 +522,12 @@ public class ScoringService : IScoringService
     /// <summary>Нечётный ли вопрос (по числовому суффиксу id, напр. q07; иначе — по позиции).</summary>
     private static bool IsOddNumbered(TestBlock block, Question q, int indexPosition)
     {
-        var digits = new string(q.Id.Where(char.IsDigit).ToArray());
-        if (digits.Length > 0 && int.TryParse(digits, NumberStyles.Integer, CultureInfo.InvariantCulture, out var n))
-            return n % 2 == 1;
+        // Авторитетный источник нумерации — номер пункта в опроснике (docs/methodics_source.md).
+        // 1) sourceNumber (для блоков 7 и 12 заполнен по источнику);
+        // 2) иначе порядковый номер в массиве (позиция 0 ⇒ вопрос №1 ⇒ нечётный);
+        // 3) сырой индекс массива как номер НИКОГДА не используется.
+        if (q.SourceNumber is int sn && sn > 0)
+            return sn % 2 == 1;
         return indexPosition % 2 == 0; // позиция 0 ⇒ вопрос №1 ⇒ нечётный
     }
 

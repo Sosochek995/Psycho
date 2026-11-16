@@ -44,6 +44,15 @@ public class Question
     [JsonPropertyName("tags")]
     public List<string> Tags { get; set; } = new();
 
+    /// <summary>
+    /// Номер пункта в оригинальном опроснике (docs/methodics_source.md).
+    /// Авторитетный номер для стратегий, завязанных на нумерацию источника
+    /// (OddEvenSum в блоках 7 и 12: нечётные sourceNumber → первая шкала).
+    /// Если поле отсутствует — используется порядковый номер вопроса в массиве.
+    /// </summary>
+    [JsonPropertyName("sourceNumber")]
+    public int? SourceNumber { get; set; }
+
     /// <summary>Произвольные дополнительные данные.</summary>
     [JsonPropertyName("metadata")]
     public Dictionary<string, string>? Metadata { get; set; }

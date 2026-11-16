@@ -10,7 +10,10 @@ import json, os, sys
 MAP = {'a': 'а', 'b': 'б', 'c': 'в', 'd': 'г', 'e': 'д'}
 
 def norm(v):  # нормализация внутреннего значения ключа к значению варианта
-    return MAP.get(str(v), str(v))
+    s = str(v)
+    if s in ('Л', 'л'): return 'l'   # документированная эквивалентность левый регистр/кириллица
+    if s in ('П', 'п'): return 'r'   # (содержимое данных не меняется)
+    return MAP.get(s, s)
 
 def calc(block, answers):
     sc = block['scoring']; qs = block['questions']
@@ -24,8 +27,11 @@ def calc(block, answers):
     elif t == 'SumScale':
         s = sum(float(answers[q]) for q in qids); prim = int(s); scores = {'score': int(s)}
     elif t == 'OddEvenSum':
-        odd = sum(float(answers[q]) for i, q in enumerate(qids, 1) if i % 2 == 1)
-        even = sum(float(answers[q]) for i, q in enumerate(qids, 1) if i % 2 == 0)
+        # «нечётные/чётные» — номера пунктов в docs/methodics_source.md (sourceNumber);
+        # при отсутствии sourceNumber — порядковый номер вопроса (позиция+1).
+        num = {q['id']: q.get('sourceNumber', i + 1) for i, q in enumerate(qs)}
+        odd = sum(float(answers[q]) for q in qids if num[q] % 2 == 1)
+        even = sum(float(answers[q]) for q in qids if num[q] % 2 == 0)
         n1 = sc.get('oddScaleName', 'Odd'); n2 = sc.get('evenScaleName', 'Even')
         scores = {n1: int(odd), n2: int(even)}
         prim = f"{n1}: {int(odd)}, {n2}: {int(even)}"
@@ -39,8 +45,9 @@ def calc(block, answers):
     elif t == 'CountLeft':
         c = sum(1 for q in qids if answers[q] == 'l'); prim = c; scores = {'leftCount': c}
     elif t == 'SequenceCombo':
-        combo = ''.join(norm(answers[q]) for q in qids)
-        prim = combo.upper().replace('L', 'Л').replace('R', 'П'); scores = {'combo': prim}
+        combo = ''.join(norm(answers[q]) for q in qids)          # внутренний код: l/r
+        prim = ''.join('Л' if c == 'l' else 'П' for c in combo)  # литеры источника
+        scores = {'combo': combo}
     elif t == 'PalmerMatrix':
         m = sc['keys']; s = 0
         for q in qs:

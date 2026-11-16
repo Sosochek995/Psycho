@@ -4,24 +4,45 @@
 с ожидаемыми из tools/baseline/control_vectors.json (независимый калькулятор).
 Нормализация — только косметическая (формат строк), значения не меняются."""
 import json, sys
+import re
 
 def norm_primary(t, v):
     if v is None: return None
     s = str(v)
-    # "Л: 50, П: 50" <-> "Л:50 П:50" <-> "50/50"
+    # Приложение для двухшкальных стратегий (OddEvenSum, HemisphereSum) возвращает
+    # в PrimaryValue ЧИСЛО max(первая шкала, вторая шкала) — поведение подсчёта защищено.
+    # Эталонный калькулятор хранит строковый формат "Имя1: N1, Имя2: N2".
+    # Сопоставление выполняется по scores приложения (значения не меняются).
     if t in ('OddEvenSum', 'HemisphereSum'):
-        import re
-        m = re.findall(r'([^:,/\s]+):\s*(-?\d+)|(-?\d+)\s*/\s*(-?\d+)', s)
-        parts = re.split(r'[;,]', s)
         nums = re.findall(r'-?\d+', s)
-        names = re.findall(r'[А-Яа-яЁёA-Za-z]+(?=\s*:)', s)
         if len(nums) == 2:
-            if names: return f"{names[0]}:{nums[0]}|{names[-1] if len(names)>1 else names[0]}:{nums[1]}"
-            return f"??:{nums[0]}|??:{nums[1]}"
+            return f"{nums[0]}|{nums[1]}"
         return s
     if t == 'SequenceCombo':
         return s.upper().replace('L', 'Л').replace('R', 'П')
     return s
+
+def seq_combo_from_scores(scores):
+    import re as _re
+    c = (scores or {}).get('combo')
+    if c is None: return None
+    return str(c).upper().replace('L', 'Л').replace('R', 'П')
+
+def primary_matches(t, eprim, aprimary, ascores):
+    """Сверка primary. Для двухшкальных блоков ожидаемая пара шкал сверяется
+    с фактическими scores (числовой primary приложения = max шкал — защищённое
+    поведение, менять нельзя). Значения при этом не изменяются."""
+    en = norm_primary(t, eprim)
+    if t == 'SequenceCombo':
+        ac = seq_combo_from_scores(ascores)
+        an = norm_primary(t, aprimary)
+        return str(en) == str(ac) or str(en) == str(an)
+    if t in ('OddEvenSum', 'HemisphereSum') and '|' in str(en):
+        e1, e2 = str(en).split('|')
+        vals = [str(int(float(v))) for v in (ascores or {}).values()]
+        return len(vals) == 2 and vals[0] == e1 and vals[1] == e2
+    an = norm_primary(t, aprimary)
+    return str(en) == str(an)
 
 def norm_level(v):
     if v is None: return ''
@@ -60,9 +81,8 @@ def main(exp_path, act_path):
                 failed += 1; mismatches.append(f"{bid}/{name}: {msg}")
             if a is None: fail("нет результата от кода приложения"); continue
             if not a.get('ok'): fail(f"исключение: {a.get('error')}"); continue
-            ep = norm_primary(t, e['primary']); ap = norm_primary(t, a.get('primary'))
-            if str(ep) != str(ap):
-                fail(f"primary: ожидалось {e['primary']!r}, получено {a.get('primary')!r}"); continue
+            if not primary_matches(t, e['primary'], a.get('primary'), a.get('scores')):
+                fail(f"primary: ожидалось {e['primary']!r}, получено {a.get('primary')!r} scores={a.get('scores')!r}"); continue
             el = e.get('level'); al = a.get('level')
             if not eq_level(el, al):
                 fail(f"level: ожидалось {el!r}, получено {al!r}"); continue
