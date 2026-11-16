@@ -1,5 +1,6 @@
 {
-  "generatedBy": "tools/generate_baseline.py",
+  "generatedAt": "2026-11-16",
+  "note": "SHA-256 защищённых файлов. Любое расхождение = нарушение защиты.",
   "files": [
     {
       "path": "docs/methodics_source.md",
@@ -80,6 +81,10 @@
     {
       "path": "Data/Blocks/block_12_creative_potential.json",
       "sha256": "81851d195caad714b2c324e88ec63a1fdc6310be9926c68a8312cc41684ad765"
+    },
+    {
+      "path": "Services/Interfaces/IScoringService.cs",
+      "sha256": "e66c68e78950045630444105f6efdd56df047a9c475d65a9aae3d1d933750051"
     }
   ]
 }
