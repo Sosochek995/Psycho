@@ -23,8 +23,10 @@ var vecBlocks = vecDoc.RootElement.GetProperty("blocks");
 var scoring = new ScoringService();
 var actual = new Dictionary<string, Dictionary<string, object?>>();
 
-foreach (var (blockId, blockEl) in vecBlocks.EnumerateObject())
+foreach (var blockProp in vecBlocks.EnumerateObject())
 {
+    string blockId = blockProp.Name;
+    var blockEl = blockProp.Value;
     string file = Path.Combine(blocksDir, $"{blockId}.json");
     if (!File.Exists(file))
         throw new FileNotFoundException($"Блок не найден: {file}");

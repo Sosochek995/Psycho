@@ -13,14 +13,23 @@
     <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <AssemblyName>GuardVectorRunner</AssemblyName>
+    <!-- Обход бага Microsoft.Build.Tasks.Git (крах GitTasks при сканировании
+         gitignore с не-ASCII путями). На результат проверки не влияет. -->
+    <EnableSourceControlManagerQueries>false</EnableSourceControlManagerQueries>
+    <Deterministic>false</Deterministic>
     <RootNamespace>ZharikovApp.GuardRunner</RootNamespace>
     <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="../Models/*.cs" />
-    <Compile Include="../Services/ScoringService.cs" />
-    <Compile Include="../Services/Interfaces/IScoringService.cs" />
+    <!-- Подключаем ТОЛЬКО защищённые модели и сервис подсчёта как исходники.
+         Файлы не копируются и не изменяются — компилируется тот же код,
+         что использует приложение (включая ScoringService с его поведением). -->
+    <Compile Include="$([System.IO.Directory]::GetFiles('$(MSBuildProjectDirectory)/../../Models', '*.cs'))" />
+    <Compile Include="$([System.IO.Directory]::GetFiles('$(MSBuildProjectDirectory)/../../Services/Interfaces', '*.cs'))" />
+    <Compile Include="$(MSBuildProjectDirectory)/../../Services/ScoringService.cs" />
+    <Compile Include="$(MSBuildProjectDirectory)/../../Services/BlockLoaderService.cs" />
+    <Compile Include="$(MSBuildProjectDirectory)/../../Helpers/PathHelper.cs" />
     <Compile Include="Program.cs" />
   </ItemGroup>
 
