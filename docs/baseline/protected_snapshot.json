@@ -1,0 +1,32 @@
+{
+  "generated": "2026-11-16",
+  "files": {
+    "docs/methodics_source.md": "c9ee64159d8871f9d66f78e1aac945c0d5861f7331b31b037ac95bb7bbe0b89b",
+    "Data/Blocks/block_01_leadership.json": "4743646e1c7125712196d9b9a660c9b19358e452314bf706fe9c092ffddec927",
+    "Data/Blocks/block_02_love.json": "52735ee0fbdcb142167aaeb4f5ca6940bcf498fe00c78cd36b29b3c48ecd2d7a",
+    "Data/Blocks/block_03_artist_thinker.json": "98e60f8b6d21c4e8a0a28a499b2d147045457394aaac9b862b2386bee1d1f1e7",
+    "Data/Blocks/block_04_extraversion.json": "6b4a912ed8e68ba2ee73a2697f9ce96d0b6ce0ba4427b5cd0df5b46bb30edcde",
+    "Data/Blocks/block_05_biomarkers.json": "2b35452dcd925b92aa69738d5e632f4966c03d0170f1dab80d51358ddfba7fb8",
+    "Data/Blocks/block_06_palmer.json": "fe6e336cf89b469e68386b7932e5e0b6c131134a9427296d4368543694cb5d0d",
+    "Data/Blocks/block_07_leader_admin.json": "0a530d92bc268b0769968453b2c308ca1fa20ad20d06efa59d59656d6b9f07ec",
+    "Data/Blocks/block_08_graphology.json": "403d0c95f17cf4e4e6c1b4754b93936ad3797ff2fe8e6bd48ee7570d1ed01fe9",
+    "Data/Blocks/block_09_signature.json": "485b5e97146b69a5b4eb597dac459e49c3794190157bdebc79962f38f1f7d3df",
+    "Data/Blocks/block_10_left_hand.json": "5365e04e869d93897927d8adaf7b77cf7c32e830af8e3ffd5b3be9f623068ffc",
+    "Data/Blocks/block_11_creative_age.json": "a3f8ab55e80b2bcc40789ec467701b2e3c45590f949b5e34ac0c73d9a9234b4f",
+    "Data/Blocks/block_12_creative_potential.json": "81851d195caad714b2c324e88ec63a1fdc6310be9926c68a8312cc41684ad765"
+  },
+  "blocks": {
+    "block_01_leadership": "1f5cfe5b5783983a",
+    "block_02_love": "784a83edf2864945",
+    "block_03_artist_thinker": "c3c7a04effc2e35a",
+    "block_04_extraversion": "889226c11008dd71",
+    "block_05_biomarkers": "81859a1a859d1b96",
+    "block_06_palmer": "5d6eaa28efd4c46d",
+    "block_07_leader_admin": "d03fcc446077b171",
+    "block_08_graphology": "bb692723cb903be1",
+    "block_09_signature": "71514d41aa194a07",
+    "block_10_left_hand": "682af5432dc17f1c",
+    "block_11_creative_age": "debe4852a9f02c07",
+    "block_12_creative_potential": "939e6b274069338e"
+  }
+}
