@@ -15,6 +15,7 @@ namespace ZharikovApp;
 public partial class App : Application
 {
     protected override void OnStartup(StartupEventArgs e)
+            ZharikovApp.Diagnostics.Install();
     {
         base.OnStartup(e);
 
