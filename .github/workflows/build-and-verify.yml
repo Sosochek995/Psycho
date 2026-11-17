@@ -1,12 +1,15 @@
 name: build-and-verify
 on:
   push:
-       branches: [ main, transfer-of-methodology-blocks-1888f ]
+    branches: [ main, transfer-of-methodology-blocks-1888f ]
   workflow_dispatch:
 
 jobs:
   build:
     runs-on: windows-latest
+    env:
+      PYTHONIOENCODING: utf-8
+      PYTHONUTF8: '1'
     steps:
       - uses: actions/checkout@v4
 
@@ -53,6 +56,7 @@ jobs:
 
       - name: Independent data audit
         if: always()
+        continue-on-error: true
         shell: python
         run: |
           import json, glob, hashlib, os, traceback
@@ -60,53 +64,44 @@ jobs:
           def log(*a):
               s = " ".join(str(x) for x in a)
               out.write(s + "\n")
-              try:
-                  print(s)
-              except Exception:
-                  print(s.encode("ascii", "replace").decode())
+              print(s)
           try:
-              for p in ["tools/baseline/methodology_baseline.json",
-                        "tools/baseline/_current_snapshot.json",
-                        "docs/methodics_source.md"]:
-                  if os.path.exists(p):
-                      log("SHA256", p, hashlib.sha256(open(p, "rb").read()).hexdigest())
-                  else:
-                      log("MISSING", p)
-              files = sorted(glob.glob("Data/Blocks/block_*.json"))
-              log("BLOCK_FILES", len(files))
-              for f in files:
-                  try:
-                      d = json.load(open(f, encoding="utf-8-sig"))
-                      qs = d.get("questions") or []
-                      log("COUNT", os.path.basename(f), len(qs))
-                      if "block_08" in f or "block_09" in f:
-                          for i, q in enumerate(qs, 1):
-                              name = q.get("group") or q.get("text") or ""
-                              log("   GROUP", i, name[:70])
-                  except Exception:
-                      log("ERROR", f, traceback.format_exc())
+              pf = "tools/baseline/protected_files.json"
+              if os.path.exists(pf):
+                  data = json.load(open(pf, encoding="utf-8-sig"))
+                  for it in data.get("files", []):
+                      p = it["path"]
+                      if not os.path.exists(p):
+                          log("MISSING", p)
+                          continue
+                      b = open(p, "rb").read()
+                      raw = hashlib.sha256(b).hexdigest()
+                      norm = hashlib.sha256(b.replace(b"\r\n", b"\n")).hexdigest()
+                      exp = it["sha256"].lower()
+                      state = "OK" if raw == exp else ("OK_AFTER_LF" if norm == exp else "MISMATCH")
+                      log("HASH", state, p, "crlf" if b"\r\n" in b else "lf")
+              for f in sorted(glob.glob("Data/Blocks/block_*.json")):
+                  d = json.load(open(f, encoding="utf-8-sig"))
+                  log("COUNT", os.path.basename(f), len(d.get("questions") or []))
           except Exception:
               log("FATAL", traceback.format_exc())
           out.close()
 
       - name: Build GuardRunner
-        if: always()
-        continue-on-error: true
         run: dotnet build tools/GuardRunner/GuardRunner.csproj -c Release
 
       - name: Run control vectors
-        if: always()
-        continue-on-error: true
         run: dotnet run --project tools/GuardRunner/GuardRunner.csproj -c Release -- Data/Blocks tools/baseline/control_vectors.json tools/baseline/_actual_vectors.json
 
       - name: Compare vectors
-        if: always()
-        continue-on-error: true
-        run: python tools/guard_compare.py tools/baseline/control_vectors.json tools/baseline/_actual_vectors.json
+        shell: pwsh
+        run: |
+          python tools/guard_compare.py tools/baseline/control_vectors.json tools/baseline/_actual_vectors.json > vector_compare.txt 2>&1
+          $code = $LASTEXITCODE
+          Get-Content vector_compare.txt
+          exit $code
 
       - name: Guard check
-        if: always()
-        continue-on-error: true
         shell: pwsh
         run: ./tools/guard_check.ps1
 
@@ -117,6 +112,7 @@ jobs:
           name: reports
           path: |
             audit.txt
+            vector_compare.txt
             dist_listing.txt
             collect_error.txt
             docs/guard_report.md
