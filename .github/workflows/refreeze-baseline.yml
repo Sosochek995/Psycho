@@ -1,0 +1,48 @@
+name: refreeze-baseline
+on:
+  workflow_dispatch:
+jobs:
+  refreeze:
+    runs-on: windows-latest
+    env:
+      PYTHONIOENCODING: utf-8
+      PYTHONUTF8: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Cross-check with source
+        run: python tools/independent_calculator.py
+      - name: Generate candidate baseline
+        run: python tools/generate_baseline.py
+      - name: Build GuardRunner
+        run: dotnet build tools/GuardRunner/GuardRunner.csproj -c Release
+      - name: Run vectors
+        run: dotnet run --project tools/GuardRunner/GuardRunner.csproj -c Release -- Data/Blocks tools/baseline/control_vectors.json tools/baseline/_actual_vectors.json
+      - name: Compare vectors
+        continue-on-error: true
+        shell: pwsh
+        run: |
+          $PSNativeCommandUseErrorActionPreference = $false
+          python tools/guard_compare.py tools/baseline/control_vectors.json tools/baseline/_actual_vectors.json 2>&1 | Out-File -Encoding utf8 vector_compare.txt
+          Get-Content vector_compare.txt
+      - name: Guard check
+        continue-on-error: true
+        shell: pwsh
+        run: ./tools/guard_check.ps1
+      - name: Upload candidate
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: baseline-candidate
+          path: |
+            tools/baseline/protected_files.json
+            tools/baseline/methodology_baseline.json
+            tools/baseline/control_vectors.json
+            docs/guard_report.md
+            vector_compare.txt
+          if-no-files-found: warn
