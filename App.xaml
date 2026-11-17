@@ -1,0 +1,7 @@
+<Application x:Class="ZharikovApp.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Application.Resources>
+        <!-- Общие ресурсы приложения (стили, шаблоны) будут добавлены позже -->
+    </Application.Resources>
+</Application>

@@ -1,0 +1,394 @@
+{
+  "id": "block_07_leader_admin",
+  "order": 7,
+  "title": "Лидер или администратор",
+  "instruction": "Прочитайте внимательно приведенные ниже высказывания и максимально откровенно ответьте на каждое из них по 11-балльной шкале (от 0 до 10). 10 баллов означает полное согласие; 5 — согласие наполовину; 0 — полное несогласие.",
+  "answerType": "Scale",
+  "questionCountExpected": 20,
+  "questions": [
+    {
+      "id": "q01",
+      "sourceNumber": 1,
+      "text": "Я за то, чтобы члены трудовых коллективов сами выбирали себе руководителей.",
+      "type": "Scale",
+      "required": true,
+      "options": [],
+      "scale": {
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "minLabel": "0 — полное несогласие",
+        "maxLabel": "10 — полное согласие"
+      },
+      "tags": [
+        "leader"
+      ]
+    },
+    {
+      "id": "q02",
+      "sourceNumber": 2,
+      "text": "Считаю, что о решении своих социально-бытовых проблем люди должны заботиться сами, а не их руководители.",
+      "type": "Scale",
+      "required": true,
+      "options": [],
+      "scale": {
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "minLabel": "0 — полное несогласие",
+        "maxLabel": "10 — полное согласие"
+      },
+      "tags": [
+        "administrator"
+      ]
+    },
+    {
+      "id": "q03",
+      "sourceNumber": 3,
+      "text": "Я доверяю людям.",
+      "type": "Scale",
+      "required": true,
+      "options": [],
+      "scale": {
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "minLabel": "0 — полное несогласие",
+        "maxLabel": "10 — полное согласие"
+      },
+      "tags": [
+        "leader"
+      ]
+    },
+    {
+      "id": "q04",
+      "sourceNumber": 4,
+      "text": "Когда это необходимо, я умею заставить людей «крутиться».",
+      "type": "Scale",
+      "required": true,
+      "options": [],
+      "scale": {
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "minLabel": "0 — полное несогласие",
+        "maxLabel": "10 — полное согласие"
+      },
+      "tags": [
+        "administrator"
+      ]
+    },
+    {
+      "id": "q05",
+      "sourceNumber": 5,
+      "text": "Люди хорошо знают, что я умею хранить доверяемые мне их личные тайны.",
+      "type": "Scale",
+      "required": true,
+      "options": [],
+      "scale": {
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "minLabel": "0 — полное несогласие",
+        "maxLabel": "10 — полное согласие"
+      },
+      "tags": [
+        "leader"
+      ]
+    },
+    {
+      "id": "q06",
+      "sourceNumber": 6,
+      "text": "Все люди хотят одного — власти; я — не исключение.",
+      "type": "Scale",
+      "required": true,
+      "options": [],
+      "scale": {
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "minLabel": "0 — полное несогласие",
+        "maxLabel": "10 — полное согласие"
+      },
+      "tags": [
+        "administrator"
+      ]
+    },
+    {
+      "id": "q07",
+      "sourceNumber": 7,
+      "text": "Я готов вступиться за членов коллектива всякий раз, когда с ними обходятся несправедливо.",
+      "type": "Scale",
+      "required": true,
+      "options": [],
+      "scale": {
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "minLabel": "0 — полное несогласие",
+        "maxLabel": "10 — полное согласие"
+      },
+      "tags": [
+        "leader"
+      ]
+    },
+    {
+      "id": "q08",
+      "sourceNumber": 8,
+      "text": "Думаю, что в интересах дела людям выгоднее иметь руководителем человека непреклонного и жесткого.",
+      "type": "Scale",
+      "required": true,
+      "options": [],
+      "scale": {
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "minLabel": "0 — полное несогласие",
+        "maxLabel": "10 — полное согласие"
+      },
+      "tags": [
+        "administrator"
+      ]
+    },
+    {
+      "id": "q09",
+      "sourceNumber": 9,
+      "text": "Я за полную гласность.",
+      "type": "Scale",
+      "required": true,
+      "options": [],
+      "scale": {
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "minLabel": "0 — полное несогласие",
+        "maxLabel": "10 — полное согласие"
+      },
+      "tags": [
+        "leader"
+      ]
+    },
+    {
+      "id": "q10",
+      "sourceNumber": 10,
+      "text": "Согласен с тем, что основное для достижения успеха в управлении — умение любыми средствами заставить людей выполнять полезную работу.",
+      "type": "Scale",
+      "required": true,
+      "options": [],
+      "scale": {
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "minLabel": "0 — полное несогласие",
+        "maxLabel": "10 — полное согласие"
+      },
+      "tags": [
+        "administrator"
+      ]
+    },
+    {
+      "id": "q11",
+      "sourceNumber": 11,
+      "text": "Я могу ладить (срабатываться) даже с теми людьми, которые мне не по душе.",
+      "type": "Scale",
+      "required": true,
+      "options": [],
+      "scale": {
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "minLabel": "0 — полное несогласие",
+        "maxLabel": "10 — полное согласие"
+      },
+      "tags": [
+        "leader"
+      ]
+    },
+    {
+      "id": "q12",
+      "sourceNumber": 12,
+      "text": "Я отдаю команды, распоряжения, приказы, указания всем подчиненным в одинаковой форме.",
+      "type": "Scale",
+      "required": true,
+      "options": [],
+      "scale": {
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "minLabel": "0 — полное несогласие",
+        "maxLabel": "10 — полное согласие"
+      },
+      "tags": [
+        "administrator"
+      ]
+    },
+    {
+      "id": "q13",
+      "sourceNumber": 13,
+      "text": "Я склонен в интересах дела использовать мнения, противоположные моей собственной точке зрения.",
+      "type": "Scale",
+      "required": true,
+      "options": [],
+      "scale": {
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "minLabel": "0 — полное несогласие",
+        "maxLabel": "10 — полное согласие"
+      },
+      "tags": [
+        "leader"
+      ]
+    },
+    {
+      "id": "q14",
+      "sourceNumber": 14,
+      "text": "Мое глубокое убеждение состоит в том, что преуспевающим может быть лишь тот руководитель, которого подчиненные опасаются.",
+      "type": "Scale",
+      "required": true,
+      "options": [],
+      "scale": {
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "minLabel": "0 — полное несогласие",
+        "maxLabel": "10 — полное согласие"
+      },
+      "tags": [
+        "administrator"
+      ]
+    },
+    {
+      "id": "q15",
+      "sourceNumber": 15,
+      "text": "Мне кажется, что я хорошо знаю общие нужды и потребности своего коллектива.",
+      "type": "Scale",
+      "required": true,
+      "options": [],
+      "scale": {
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "minLabel": "0 — полное несогласие",
+        "maxLabel": "10 — полное согласие"
+      },
+      "tags": [
+        "leader"
+      ]
+    },
+    {
+      "id": "q16",
+      "sourceNumber": 16,
+      "text": "Мне легче руководить людьми, когда я знаю, что они не хотели бы критиковать.",
+      "type": "Scale",
+      "required": true,
+      "options": [],
+      "scale": {
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "minLabel": "0 — полное несогласие",
+        "maxLabel": "10 — полное согласие"
+      },
+      "tags": [
+        "administrator"
+      ]
+    },
+    {
+      "id": "q17",
+      "sourceNumber": 17,
+      "text": "Я лично заинтересован в том, чтобы общие проблемы и трудности членов коллектива, в котором я работаю, разрешались.",
+      "type": "Scale",
+      "required": true,
+      "options": [],
+      "scale": {
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "minLabel": "0 — полное несогласие",
+        "maxLabel": "10 — полное согласие"
+      },
+      "tags": [
+        "leader"
+      ]
+    },
+    {
+      "id": "q18",
+      "sourceNumber": 18,
+      "text": "Я уверен, что боязнь наказания — более сильный стимул для любого работника, чем ожидание поощрения.",
+      "type": "Scale",
+      "required": true,
+      "options": [],
+      "scale": {
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "minLabel": "0 — полное несогласие",
+        "maxLabel": "10 — полное согласие"
+      },
+      "tags": [
+        "administrator"
+      ]
+    },
+    {
+      "id": "q19",
+      "sourceNumber": 19,
+      "text": "Я чувствую в себе способности и готовность практически действовать для решения общих для коллектива проблем.",
+      "type": "Scale",
+      "required": true,
+      "options": [],
+      "scale": {
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "minLabel": "0 — полное несогласие",
+        "maxLabel": "10 — полное согласие"
+      },
+      "tags": [
+        "leader"
+      ]
+    },
+    {
+      "id": "q20",
+      "sourceNumber": 20,
+      "text": "Когда надо, я умею поставить себя так, что люди соглашаются со мной из опасения «нарваться» на неприятность.",
+      "type": "Scale",
+      "required": true,
+      "options": [],
+      "scale": {
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "minLabel": "0 — полное несогласие",
+        "maxLabel": "10 — полное согласие"
+      },
+      "tags": [
+        "administrator"
+      ]
+    }
+  ],
+  "scoring": {
+    "type": "OddEvenSum",
+    "maxScorePerScale": 100,
+    "oddScaleName": "Лидер",
+    "evenScaleName": "Администратор",
+    "resultFormat": "TwoScales",
+    "interpretations": [
+      {
+        "condition": "bothLow",
+        "level": "Низкая управленческая активность",
+        "text": "Низкая активность в управленческой деятельности."
+      },
+      {
+        "condition": "oddGtEven",
+        "level": "Демократ (Лидер > Администратор)",
+        "text": "Опора на коллегиальные формы руководства (демократ)."
+      },
+      {
+        "condition": "evenGtOdd",
+        "level": "Авторитар (Администратор > Лидер)",
+        "text": "Опора на административно-директивные установки (авторитар)."
+      }
+    ]
+  }
+}

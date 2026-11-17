@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    Консольный runner контрольных векторов для системы защиты методик.
+    НЕ является частью приложения ZharikovApp; используется tools/guard_check.ps1.
+    Считает результаты КОДОМ ПРИЛОЖЕНИЯ (Services/ScoringService.cs, компилируется
+    в этот проект по исходникам без изменения приложения) и выводит фактические
+    значения JSON для сравнения с tools/baseline/control_vectors.json.
+  -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>GuardVectorRunner</AssemblyName>
+    <!-- Обход бага Microsoft.Build.Tasks.Git (крах GitTasks при сканировании
+         gitignore с не-ASCII путями). На результат проверки не влияет. -->
+    <EnableSourceControlManagerQueries>false</EnableSourceControlManagerQueries>
+    <Deterministic>false</Deterministic>
+    <RootNamespace>ZharikovApp.GuardRunner</RootNamespace>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Подключаем ТОЛЬКО защищённые модели и сервис подсчёта как исходники.
+         Файлы не копируются и не изменяются — компилируется тот же код,
+         что использует приложение (включая ScoringService с его поведением). -->
+    <Compile Include="$([System.IO.Directory]::GetFiles('$(MSBuildProjectDirectory)/../../Models', '*.cs'))" />
+    <Compile Include="$([System.IO.Directory]::GetFiles('$(MSBuildProjectDirectory)/../../Services/Interfaces', '*.cs'))" />
+    <Compile Include="$(MSBuildProjectDirectory)/../../Services/ScoringService.cs" />
+    <Compile Include="$(MSBuildProjectDirectory)/../../Services/BlockLoaderService.cs" />
+    <Compile Include="$(MSBuildProjectDirectory)/../../Helpers/PathHelper.cs" />
+    <Compile Include="Program.cs" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,256 @@
+<Window x:Class="ZharikovApp.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:ZharikovApp.ViewModels"
+        Title="{Binding Title}"
+        Height="700" Width="1100"
+        MinHeight="520" MinWidth="860"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.DataContext>
+        <vm:MainViewModel/>
+    </Window.DataContext>
+
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVis"/>
+
+        <!-- Стиль строки списка блоков -->
+        <Style x:Key="BlockItemStyle" TargetType="ListBoxItem">
+            <Setter Property="Padding" Value="8,6"/>
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>   <!-- Шапка -->
+            <RowDefinition Height="*"/>      <!-- Навигация + контент -->
+            <RowDefinition Height="Auto"/>   <!-- Панель кнопок -->
+        </Grid.RowDefinitions>
+
+        <!-- ==================== Сверху: заголовок и общий прогресс ==================== -->
+        <Border Grid.Row="0" Background="#1E3A5F" Padding="16,10">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="260"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0" VerticalAlignment="Center">
+                    <TextBlock Text="{Binding Title}"
+                               FontSize="20" FontWeight="Bold" Foreground="White"/>
+                    <TextBlock Text="{Binding CurrentBlockTitle}"
+                               FontSize="13" Foreground="#B8CCE4" Margin="0,2,0,0"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                    <TextBlock Text="{Binding OverallProgressText}"
+                               Foreground="White" FontSize="12" HorizontalAlignment="Right"/>
+                    <ProgressBar Value="{Binding OverallProgressPercent}"
+                                 Minimum="0" Maximum="100"
+                                 Height="8" Margin="0,4,0,0"
+                                 Foreground="#7FB3E8" Background="#16293F"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- ==================== Центр: слева навигация, справа контент ==================== -->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300" MinWidth="240"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Слева: панель навигации со списком 12 блоков -->
+            <Border Grid.Column="0" BorderBrush="#D0D7DE" BorderThickness="0,0,1,0"
+                    Background="#F6F8FA">
+                <DockPanel>
+                    <TextBlock DockPanel.Dock="Top" Text="Методики"
+                               FontSize="14" FontWeight="SemiBold" Margin="12,12,12,6"/>
+                    <ListBox ItemsSource="{Binding Blocks}"
+                             SelectedItem="{Binding SelectedBlock, Mode=TwoWay}"
+                             ItemContainerStyle="{StaticResource BlockItemStyle}"
+                             BorderThickness="0" Background="Transparent"
+                             ScrollViewer.VerticalScrollBarVisibility="Auto">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Column="0" Text="{Binding DisplayTitle}"
+                                               TextWrapping="Wrap" VerticalAlignment="Center"/>
+                                    <StackPanel Grid.Column="1" Orientation="Horizontal"
+                                                VerticalAlignment="Center" Margin="8,0,0,0">
+                                        <TextBlock Text="{Binding StatusGlyph}" Width="16"
+                                                   TextAlignment="Center" Foreground="#5B8DEF"/>
+                                        <TextBlock Text="{Binding StatusText}" FontSize="11"
+                                                   Foreground="Gray" MinWidth="70"/>
+                                    </StackPanel>
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </DockPanel>
+            </Border>
+
+            <!-- Справа: область контента выбранного блока -->
+            <Grid Grid.Column="1" Margin="20">
+
+                <!-- Экран-приветствие -->
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center"
+                            Visibility="{Binding IsWelcomeVisible, Converter={StaticResource BoolToVis}}">
+                    <TextBlock Text="Выберите методику из списка слева"
+                               FontSize="22" FontWeight="SemiBold"
+                               HorizontalAlignment="Center"/>
+                    <TextBlock Text="Прогресс сохраняется автоматически. Завершённый блок можно открыть повторно для просмотра результата."
+                               FontSize="13" Foreground="Gray" Margin="0,10,0,0"
+                               TextWrapping="Wrap" MaxWidth="480" TextAlignment="Center"/>
+                </StackPanel>
+
+                <!-- Инструкция блока -->
+                <StackPanel Visibility="{Binding IsInstructionVisible, Converter={StaticResource BoolToVis}}">
+                    <TextBlock Text="{Binding CurrentBlockTitle}"
+                               FontSize="20" FontWeight="Bold" Margin="0,0,0,12"/>
+                    <Border Background="#EEF3F8" CornerRadius="6" Padding="16">
+                        <StackPanel>
+                            <TextBlock Text="Инструкция" FontWeight="SemiBold" Margin="0,0,0,6"/>
+                            <TextBlock Text="{Binding BlockInstruction}"
+                                       TextWrapping="Wrap" LineHeight="20"/>
+                        </StackPanel>
+                    </Border>
+                    <TextBlock Margin="0,16,0,0" Foreground="Gray"
+                               Text="Нажмите «Далее», чтобы начать отвечать на вопросы."/>
+                </StackPanel>
+
+                <!-- Вопросы блока (по одному) -->
+                <Grid Visibility="{Binding IsQuestionsVisible, Converter={StaticResource BoolToVis}}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row="0" Margin="0,0,0,10" FontSize="13" Foreground="Gray">
+                        <TextBlock.Text>
+                            <MultiBinding StringFormat="Вопрос {0} из {1}">
+                                <Binding Path="CurrentQuestionIndex"/>
+                                <Binding Path="TotalQuestions"/>
+                            </MultiBinding>
+                        </TextBlock.Text>
+                    </TextBlock>
+
+                    <ContentControl Grid.Row="1" Content="{Binding CurrentQuestion}">
+                        <ContentControl.ContentTemplate>
+                            <DataTemplate>
+                                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                                    <StackPanel>
+                                        <TextBlock FontSize="17" TextWrapping="Wrap"
+                                                   LineHeight="24" Margin="0,0,0,14">
+                                            <Run Text="{Binding Number, Mode=OneWay, StringFormat='{}{0}. '}"/><Run Text="{Binding Text, Mode=OneWay}"/>
+                                        </TextBlock>
+
+                                        <!-- Варианты ответа (все типы, кроме шкалы) -->
+                                        <ItemsControl ItemsSource="{Binding Options}"
+                                                      Visibility="{Binding IsChoice, Converter={StaticResource BoolToVis}}">
+                                            <ItemsControl.ItemTemplate>
+                                                <DataTemplate>
+                                                    <RadioButton Margin="0,4"
+                                                                 GroupName="CurrentQuestionOptions"
+                                                                 IsChecked="{Binding IsSelected, Mode=OneWay}"
+                                                                 Command="{Binding SelectCommand}">
+                                                        <TextBlock TextWrapping="Wrap">
+                                                            <Run Text="{Binding Option.Key, Mode=OneWay, StringFormat='{}{0}) '}"/><Run Text="{Binding Option.Text, Mode=OneWay}"/>
+                                                        </TextBlock>
+                                                    </RadioButton>
+                                                </DataTemplate>
+                                            </ItemsControl.ItemTemplate>
+                                        </ItemsControl>
+
+                                        <!-- Шкала (Scale) -->
+                                        <StackPanel Visibility="{Binding IsScale, Converter={StaticResource BoolToVis}}">
+                                            <Grid>
+                                                <TextBlock HorizontalAlignment="Left" Foreground="Gray" FontSize="12"
+                                                           Text="{Binding ScaleMin, StringFormat='мин. {0}'}"/>
+                                                <TextBlock HorizontalAlignment="Right" Foreground="Gray" FontSize="12"
+                                                           Text="{Binding ScaleMax, StringFormat='макс. {0}'}"/>
+                                            </Grid>
+                                            <Slider Minimum="{Binding ScaleMin}" Maximum="{Binding ScaleMax}"
+                                                    TickFrequency="1" IsSnapToTickEnabled="True"
+                                                    Value="{Binding ScaleValue, Mode=TwoWay}"
+                                                    Margin="0,8"/>
+                                            <TextBlock HorizontalAlignment="Center" FontSize="24" FontWeight="Bold"
+                                                       Text="{Binding ScaleValue}"/>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </ScrollViewer>
+                            </DataTemplate>
+                        </ContentControl.ContentTemplate>
+                    </ContentControl>
+                </Grid>
+
+                <!-- Результат блока / итоговый отчёт -->
+                <ScrollViewer VerticalScrollBarVisibility="Auto"
+                              Visibility="{Binding IsResultVisible, Converter={StaticResource BoolToVis}}">
+                    <StackPanel>
+                        <TextBlock Text="{Binding CurrentBlockTitle}"
+                                   FontSize="20" FontWeight="Bold" Margin="0,0,0,12"/>
+
+                        <Border Background="#EAF6EC" CornerRadius="6" Padding="16" Margin="0,0,0,10">
+                            <StackPanel>
+                                <TextBlock Text="{Binding ResultScoresText}"
+                                           FontSize="14" Foreground="#2F6B35" TextWrapping="Wrap"/>
+                                <TextBlock Text="{Binding ResultLevel}"
+                                           FontSize="20" FontWeight="Bold" Foreground="#205024"
+                                           TextWrapping="Wrap"/>
+                            </StackPanel>
+                        </Border>
+
+                        <TextBlock Text="{Binding ResultSummary}"
+                                   TextWrapping="Wrap" LineHeight="20"/>
+
+                        <Button Content="Пройти блок заново"
+                                Command="{Binding RestartBlockCommand}"
+                                HorizontalAlignment="Left" Padding="14,5" Margin="0,16,0,0"/>
+                    </StackPanel>
+                </ScrollViewer>
+            </Grid>
+        </Grid>
+
+        <!-- ==================== Снизу: кнопки управления ==================== -->
+        <Border Grid.Row="2" BorderBrush="#D0D7DE" BorderThickness="0,1,0,0"
+                Background="#FAFBFC" Padding="16,10">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0" Orientation="Horizontal">
+                    <Button Content="← Назад"
+                            Command="{Binding GoBackCommand}"
+                            Padding="16,6" Margin="0,0,8,0" MinWidth="90"/>
+                    <Button Content="Далее →"
+                            Command="{Binding GoNextCommand}"
+                            Padding="16,6" MinWidth="90"/>
+                </StackPanel>
+
+                <TextBlock Grid.Column="1" Text="{Binding StatusMessage}"
+                           VerticalAlignment="Center" Foreground="Gray"
+                           TextTrimming="CharacterEllipsis" Margin="12,0"/>
+
+                <StackPanel Grid.Column="2" Orientation="Horizontal">
+                    <Button Content="Завершить блок"
+                            Command="{Binding CompleteBlockCommand}"
+                            Padding="16,6" Margin="0,0,8,0"
+                            Background="#2E7D32" Foreground="White" FontWeight="SemiBold"
+                            MinWidth="130"/>
+                    <Button Content="Итоговый отчёт"
+                            Command="{Binding ShowFinalReportCommand}"
+                            Padding="16,6" MinWidth="120"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

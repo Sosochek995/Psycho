@@ -1,0 +1,8 @@
+obj/
+bin/
+*.csproj.user
+*.sln.docstates
+__pycache__/
+*.pyc
+.vscode/
+.idea/

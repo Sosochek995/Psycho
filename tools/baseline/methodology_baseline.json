@@ -1,0 +1,4740 @@
+{
+  "blocks": [
+    {
+      "answerType": "YesNo",
+      "id": "block_01_leadership",
+      "instruction": "Вам предлагается 50 высказываний, на которые требуется дать ответ «да» или «нет». Среднего значения в ответах не предусмотрено. Долго не задумывайтесь над высказываниями. Если сомневаетесь, все-таки сделайте отметку на «+» или «-» («а» или «б») в пользу того альтернативного ответа, к которому вы больше всего склоняетесь.",
+      "interpretations": [
+        {
+          "level": "Слабо",
+          "max": 25,
+          "text": "Качества лидера выражены слабо."
+        },
+        {
+          "level": "Средне",
+          "max": 35,
+          "min": 26,
+          "text": "Качества лидера выражены средне."
+        },
+        {
+          "level": "Сильно",
+          "max": 40,
+          "min": 36,
+          "text": "Лидерские качества выражены сильно."
+        },
+        {
+          "level": "Склонность к диктату",
+          "min": 41,
+          "text": "Данный человек как лидер склонен к диктату."
+        }
+      ],
+      "order": 1,
+      "questionCount": 50,
+      "questions": [
+        {
+          "group": null,
+          "id": "q01",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "а",
+              "text": "да"
+            },
+            {
+              "interpretation": null,
+              "key": "б",
+              "text": "нет"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Часто ли вы бываете в центре внимания окружающих?",
+          "type": "YesNo"
+        },
+        {
+          "group": null,
+          "id": "q02",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "а",
+              "text": "да"
+            },
+            {
+              "interpretation": null,
+              "key": "б",
+              "text": "нет"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Считаете ли вы, что многие из окружающих вас людей занимают более высокое положение по службе, чем вы?",
+          "type": "YesNo"
+        },
+        {
+          "group": null,
+          "id": "q03",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "а",
+              "text": "да"
+            },
+            {
+              "interpretation": null,
+              "key": "б",
+              "text": "нет"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Находясь на собрании людей, равных вам по служебному положению, испытываете ли вы желание не высказывать своего мнения, даже когда это необходимо?",
+          "type": "YesNo"
+        },
+        {
+          "group": null,
+          "id": "q04",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "а",
+              "text": "да"
+            },
+            {
+              "interpretation": null,
+              "key": "б",
+              "text": "нет"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Когда вы были ребенком, нравилось ли вам быть лидером среди сверстников?",
+          "type": "YesNo"
+        },
+        {
+          "group": null,
+          "id": "q05",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "а",
+              "text": "да"
+            },
+            {
+              "interpretation": null,
+              "key": "б",
+              "text": "нет"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Испытываете ли вы удовольствие, когда вам удается убедить кого-то в чем-либо?",
+          "type": "YesNo"
+        },
+        {
+          "group": null,
+          "id": "q06",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "а",
+              "text": "да"
+            },
+            {
+              "interpretation": null,
+              "key": "б",
+              "text": "нет"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Случается ли, что вас называют нерешительным человеком?",
+          "type": "YesNo"
+        },
+        {
+          "group": null,
+          "id": "q07",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "а",
+              "text": "да"
+            },
+            {
+              "interpretation": null,
+              "key": "б",
+              "text": "нет"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Согласны ли вы с утверждением: «Все самое полезное в мире есть результат деятельности небольшого числа выдающихся людей»?",
+          "type": "YesNo"
+        },
+        {
+          "group": null,
+          "id": "q08",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "а",
+              "text": "да"
+            },
+            {
+              "interpretation": null,
+              "key": "б",
+              "text": "нет"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Испытываете ли вы настоятельную необходимость в советчике, который мог бы направить вашу профессиональную активность?",
+          "type": "YesNo"
+        },
+        {
+          "group": null,
+          "id": "q09",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "а",
+              "text": "да"
+            },
+            {
+              "interpretation": null,
+              "key": "б",
+              "text": "нет"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Теряли ли вы иногда хладнокровие в разговоре с людьми?",
+          "type": "YesNo"
+        },
+        {
+          "group": null,
+          "id": "q10",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "а",
+              "text": "да"
+            },
+            {
+              "interpretation": null,
+              "key": "б",
+              "text": "нет"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Доставляет ли вам удовольствие видеть, что окружающие побаиваются вас?",
+          "type": "YesNo"
+        },
+        {
+          "group": null,
+          "id": "q11",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "а",
+              "text": "да"
+            },
+            {
+              "interpretation": null,
+              "key": "б",
+              "text": "нет"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Стараетесь ли вы занимать за столом (на собрании, в компании и т. п.) такое место, которое позволяло бы вам быть в центре внимания и контролировать ситуацию?",
+          "type": "YesNo"
+        },
+        {
+          "group": null,
+          "id": "q12",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "а",
+              "text": "да"
+            },
+            {
+              "interpretation": null,
+              "key": "б",
+              "text": "нет"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Считаете ли вы, что производите на людей внушительное (импозантное) впечатление?",
+          "type": "YesNo"
+        },
+        {
+          "group": null,
+          "id": "q13",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "а",
+              "text": "да"
+            },
+            {
+              "interpretation": null,
+              "key": "б",
+              "text": "нет"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Считаете ли вы себя мечтателем?",
+          "type": "YesNo"
+        },
+        {
+          "group": null,
+          "id": "q14",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "а",
+              "text": "да"
+            },
+            {
+              "interpretation": null,
+              "key": "б",
+              "text": "нет"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Теряетесь ли вы, если люди, окружающие вас, выражают несогласие с вами?",
+          "type": "YesNo"
+        },
+        {
+          "group": null,
+          "id": "q15",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "а",
+              "text": "да"
+            },
+            {
+              "interpretation": null,
+              "key": "б",
+              "text": "нет"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Случалось ли вам по личной инициативе заниматься организацией трудовых, спортивных и других команд и коллективов?",
+          "type": "YesNo"
+        },
+        {
+          "group": null,
+          "id": "q16",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "а",
+              "text": "будете рады, если ответственность за это дело возложат на кого-нибудь другого"
+            },
+            {
+              "interpretation": null,
+              "key": "б",
+              "text": "возьмете на себя ответственность и сами доведете дело до конца"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Если то, что вы наметили, не дало ожидаемых результатов, то вы:",
+          "type": "YesNo"
+        },
+        {
+          "group": null,
+          "id": "q17",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "а",
+              "text": "настоящий руководитель должен сам делать то дело, которым он руководит, и лично участвовать в нем"
+            },
+            {
+              "interpretation": null,
+              "key": "б",
+              "text": "настоящий руководитель должен только уметь руководить другими и не обязательно делать дело сам"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Какое из двух мнений вам ближе?",
+          "type": "YesNo"
+        },
+        {
+          "group": null,
+          "id": "q18",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "а",
+              "text": "с покорными людьми"
+            },
+            {
+              "interpretation": null,
+              "key": "б",
+              "text": "с независимыми и самостоятельными людьми"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "С кем вы предпочитаете работать?",
+          "type": "YesNo"
+        },
+        {
+          "group": null,
+          "id": "q19",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "а",
+              "text": "да"
+            },
+            {
+              "interpretation": null,
+              "key": "б",
+              "text": "нет"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Стараетесь ли вы избегать острых дискуссий?",
+          "type": "YesNo"
+        },
+        {
+          "group": null,
+          "id": "q20",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "а",
+              "text": "да"
+            },
+            {
+              "interpretation": null,
+              "key": "б",
+              "text": "нет"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Когда вы были ребенком, часто ли вы сталкивались с властностью вашего отца?",
+          "type": "YesNo"
+        },
+        {
+          "group": null,
+          "id": "q21",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "а",
+              "text": "да"
+            },
+            {
+              "interpretation": null,
+              "key": "б",
+              "text": "нет"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Умеете ли вы в дискуссии на профессиональную тему привлечь на свою сторону тех, кто раньше был с вами не согласен?",
+          "type": "YesNo"
+        },
+        {
+          "group": null,
+          "id": "q22",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "а",
+              "text": "предоставите принятие решения наиболее компетентному из вас"
+            },
+            {
+              "interpretation": null,
+              "key": "б",
+              "text": "просто не будете ничего делать, рассчитывая на других"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Представьте себе такую сцену: во время прогулки с друзьями по лесу вы потеряли дорогу. Приближается вечер и нужно принимать решение. Как вы поступите?",
+          "type": "YesNo"
+        },
+        {
+          "group": null,
+          "id": "q23",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "а",
+              "text": "да"
+            },
+            {
+              "interpretation": null,
+              "key": "б",
+              "text": "нет"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Есть такая пословица: «Лучше быть первым в деревне, чем последним в городе». Справедлива ли она?",
+          "type": "YesNo"
+        },
+        {
+          "group": null,
+          "id": "q24",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "а",
+              "text": "да"
+            },
+            {
+              "interpretation": null,
+              "key": "б",
+              "text": "нет"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Считаете ли вы себя человеком, оказывающим влияние на других?",
+          "type": "YesNo"
+        },
+        {
+          "group": null,
+          "id": "q25",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "а",
+              "text": "да"
+            },
+            {
+              "interpretation": null,
+              "key": "б",
+              "text": "нет"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Может ли неудача в проявлении инициативы заставить вас больше никогда этого не делать?",
+          "type": "YesNo"
+        },
+        {
+          "group": null,
+          "id": "q26",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "а",
+              "text": "самый компетентный человек"
+            },
+            {
+              "interpretation": null,
+              "key": "б",
+              "text": "тот, у кого самый сильный характер"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Кто, с вашей точки зрения, истинный лидер?",
+          "type": "YesNo"
+        },
+        {
+          "group": null,
+          "id": "q27",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "а",
+              "text": "да"
+            },
+            {
+              "interpretation": null,
+              "key": "б",
+              "text": "нет"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Всегда ли вы стараетесь понять и по достоинству оценить людей?",
+          "type": "YesNo"
+        },
+        {
+          "group": null,
+          "id": "q28",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "а",
+              "text": "да"
+            },
+            {
+              "interpretation": null,
+              "key": "б",
+              "text": "нет"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Уважаете ли вы дисциплину?",
+          "type": "YesNo"
+        },
+        {
+          "group": null,
+          "id": "q29",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "а",
+              "text": "тот, который все решает сам"
+            },
+            {
+              "interpretation": null,
+              "key": "б",
+              "text": "тот, который всегда советуется и прислушивается к мнениям других"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Какой из следующих двух руководителей для вас предпочтительнее?",
+          "type": "YesNo"
+        },
+        {
+          "group": null,
+          "id": "q30",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "а",
+              "text": "коллегиальный"
+            },
+            {
+              "interpretation": null,
+              "key": "б",
+              "text": "авторитарный"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Какой из следующих стилей руководства, по вашему мнению, наилучший для работы учреждения того типа, в котором вы работаете?",
+          "type": "YesNo"
+        },
+        {
+          "group": null,
+          "id": "q31",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "а",
+              "text": "да"
+            },
+            {
+              "interpretation": null,
+              "key": "б",
+              "text": "нет"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Часто ли у вас создается впечатление, что другие злоупотребляют вами?",
+          "type": "YesNo"
+        },
+        {
+          "group": null,
+          "id": "q32",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "а",
+              "text": "человек с громким голосом, выразительными жестами, за словом в карман не полезет"
+            },
+            {
+              "interpretation": null,
+              "key": "б",
+              "text": "человек со спокойным, тихим голосом, сдержанный, задумчивый"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Какой из следующих портретов больше напоминает вас?",
+          "type": "YesNo"
+        },
+        {
+          "group": null,
+          "id": "q33",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "а",
+              "text": "промолчите"
+            },
+            {
+              "interpretation": null,
+              "key": "б",
+              "text": "будете отстаивать свое мнение"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Как вы поведете себя на собрании и совещании, если считаете свое мнение единственно правильным, но остальные с вами не согласны?",
+          "type": "YesNo"
+        },
+        {
+          "group": null,
+          "id": "q34",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "а",
+              "text": "да"
+            },
+            {
+              "interpretation": null,
+              "key": "б",
+              "text": "нет"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Подчиняете ли вы свои интересы и поведение других людей делу, которым занимаетесь?",
+          "type": "YesNo"
+        },
+        {
+          "group": null,
+          "id": "q35",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "а",
+              "text": "да"
+            },
+            {
+              "interpretation": null,
+              "key": "б",
+              "text": "нет"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Возникает ли у вас чувство тревоги, если на вас возложена ответственность за какое-либо важное дело?",
+          "type": "YesNo"
+        },
+        {
+          "group": null,
+          "id": "q36",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "а",
+              "text": "работать под руководством хорошего человека"
+            },
+            {
+              "interpretation": null,
+              "key": "б",
+              "text": "работать самостоятельно, без руководителей"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Что бы вы предпочли?",
+          "type": "YesNo"
+        },
+        {
+          "group": null,
+          "id": "q37",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "а",
+              "text": "согласен"
+            },
+            {
+              "interpretation": null,
+              "key": "б",
+              "text": "не согласен"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Как вы относитесь к утверждению: «Для того чтобы семейная жизнь была хорошей, необходимо, чтобы решение в семье принимал один из супругов»?",
+          "type": "YesNo"
+        },
+        {
+          "group": null,
+          "id": "q38",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "а",
+              "text": "да"
+            },
+            {
+              "interpretation": null,
+              "key": "б",
+              "text": "нет"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Случалось ли вам покупать что-либо под влиянием мнения других людей, а не исходя из собственной потребности?",
+          "type": "YesNo"
+        },
+        {
+          "group": null,
+          "id": "q39",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "а",
+              "text": "да"
+            },
+            {
+              "interpretation": null,
+              "key": "б",
+              "text": "нет"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Считаете ли вы свои организаторские способности хорошими?",
+          "type": "YesNo"
+        },
+        {
+          "group": null,
+          "id": "q40",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "а",
+              "text": "опускаете руки"
+            },
+            {
+              "interpretation": null,
+              "key": "б",
+              "text": "появляется сильное желание их преодолеть"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Как вы ведете себя, столкнувшись с трудностями?",
+          "type": "YesNo"
+        },
+        {
+          "group": null,
+          "id": "q41",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "а",
+              "text": "да"
+            },
+            {
+              "interpretation": null,
+              "key": "б",
+              "text": "нет"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Упрекаете ли вы людей, если они этого заслуживают?",
+          "type": "YesNo"
+        },
+        {
+          "group": null,
+          "id": "q42",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "а",
+              "text": "да"
+            },
+            {
+              "interpretation": null,
+              "key": "б",
+              "text": "нет"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Считаете ли вы, что ваша нервная система способна выдержать жизненные нагрузки?",
+          "type": "YesNo"
+        },
+        {
+          "group": null,
+          "id": "q43",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "а",
+              "text": "введу нужные изменения немедленно"
+            },
+            {
+              "interpretation": null,
+              "key": "б",
+              "text": "не буду торопиться и сначала все тщательно обдумаю"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Как вы поступите, если вам предложат реорганизовать ваше учреждение или организацию?",
+          "type": "YesNo"
+        },
+        {
+          "group": null,
+          "id": "q44",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "а",
+              "text": "да"
+            },
+            {
+              "interpretation": null,
+              "key": "б",
+              "text": "нет"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Сумете ли вы прервать слишком болтливого собеседника, если это необходимо?",
+          "type": "YesNo"
+        },
+        {
+          "group": null,
+          "id": "q45",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "а",
+              "text": "да"
+            },
+            {
+              "interpretation": null,
+              "key": "б",
+              "text": "нет"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Согласны ли вы с утверждением: «Для того, чтобы быть счастливым, надо жить незаметно»?",
+          "type": "YesNo"
+        },
+        {
+          "group": null,
+          "id": "q46",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "а",
+              "text": "да"
+            },
+            {
+              "interpretation": null,
+              "key": "б",
+              "text": "нет"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Считаете ли вы, что каждый человек должен сделать что-либо выдающееся?",
+          "type": "YesNo"
+        },
+        {
+          "group": null,
+          "id": "q47",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "а",
+              "text": "художником, поэтом, композитором, ученым"
+            },
+            {
+              "interpretation": null,
+              "key": "б",
+              "text": "выдающимся руководителем, политическим деятелем"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Кем бы вы предпочли стать?",
+          "type": "YesNo"
+        },
+        {
+          "group": null,
+          "id": "q48",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "а",
+              "text": "могучую и торжественную"
+            },
+            {
+              "interpretation": null,
+              "key": "б",
+              "text": "тихую и лирическую"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Какую музыку вам приятнее слушать?",
+          "type": "YesNo"
+        },
+        {
+          "group": null,
+          "id": "q49",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "а",
+              "text": "да"
+            },
+            {
+              "interpretation": null,
+              "key": "б",
+              "text": "нет"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Испытываете ли вы волнение, ожидая встречи с важными и известными людьми?",
+          "type": "YesNo"
+        },
+        {
+          "group": null,
+          "id": "q50",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "а",
+              "text": "да"
+            },
+            {
+              "interpretation": null,
+              "key": "б",
+              "text": "нет"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Часто ли вы встречали людей с более сильной волей, чем ваша?",
+          "type": "YesNo"
+        }
+      ],
+      "scoring": {
+        "keys": {
+          "q01": "a",
+          "q02": "a",
+          "q03": "b",
+          "q04": "a",
+          "q05": "a",
+          "q06": "b",
+          "q07": "a",
+          "q08": "b",
+          "q09": "b",
+          "q10": "a",
+          "q11": "a",
+          "q12": "a",
+          "q13": "b",
+          "q14": "b",
+          "q15": "a",
+          "q16": "b",
+          "q17": "a",
+          "q18": "b",
+          "q19": "b",
+          "q20": "a",
+          "q21": "a",
+          "q22": "a",
+          "q23": "a",
+          "q24": "a",
+          "q25": "b",
+          "q26": "a",
+          "q27": "b",
+          "q28": "a",
+          "q29": "b",
+          "q30": "b",
+          "q31": "a",
+          "q32": "a",
+          "q33": "b",
+          "q34": "a",
+          "q35": "b",
+          "q36": "b",
+          "q37": "a",
+          "q38": "b",
+          "q39": "a",
+          "q40": "b",
+          "q41": "a",
+          "q42": "a",
+          "q43": "a",
+          "q44": "a",
+          "q45": "b",
+          "q46": "a",
+          "q47": "b",
+          "q48": "a",
+          "q49": "b",
+          "q50": "b"
+        },
+        "maxScore": 50,
+        "resultFormat": "Score",
+        "type": "SumKey"
+      },
+      "subtitle": null,
+      "title": "Диагностика лидерских способностей"
+    },
+    {
+      "answerType": "YesNo",
+      "id": "block_02_love",
+      "instruction": "Словами «да» или «нет» выразите свое согласие или несогласие со следующими утверждениями.",
+      "interpretations": [
+        {
+          "level": "Отлично",
+          "max": 100,
+          "min": 85,
+          "text": "Отлично, окружающие вас любят."
+        },
+        {
+          "level": "Хорошо",
+          "max": 84,
+          "min": 75,
+          "text": "Хорошо."
+        },
+        {
+          "level": "Удовлетворительно",
+          "max": 74,
+          "min": 65,
+          "text": "Удовлетворительно."
+        },
+        {
+          "level": "Плохо",
+          "max": 64,
+          "text": "Плохо (менее 65 баллов)."
+        }
+      ],
+      "order": 2,
+      "questionCount": 20,
+      "questions": [
+        {
+          "group": null,
+          "id": "q01",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "yes",
+              "text": "да"
+            },
+            {
+              "interpretation": null,
+              "key": "no",
+              "text": "нет"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Почти ежеминутно в течение дня вас пристально оценивают те, с кем вы общаетесь.",
+          "type": "YesNo"
+        },
+        {
+          "group": null,
+          "id": "q02",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "yes",
+              "text": "да"
+            },
+            {
+              "interpretation": null,
+              "key": "no",
+              "text": "нет"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "У человека должно быть достаточно развито чувство независимости, чтобы обсуждать с окружающими свои увлечения. И не важно, интересует ли это собеседников.",
+          "type": "YesNo"
+        },
+        {
+          "group": null,
+          "id": "q03",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "yes",
+              "text": "да"
+            },
+            {
+              "interpretation": null,
+              "key": "no",
+              "text": "нет"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Самое мудрое – сохранять достоинство даже тогда, когда у вас имеется сильный соблазн поступить иначе.",
+          "type": "YesNo"
+        },
+        {
+          "group": null,
+          "id": "q04",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "yes",
+              "text": "да"
+            },
+            {
+              "interpretation": null,
+              "key": "no",
+              "text": "нет"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Замечая ошибки других, не забывайте их поправить.",
+          "type": "YesNo"
+        },
+        {
+          "group": null,
+          "id": "q05",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "yes",
+              "text": "да"
+            },
+            {
+              "interpretation": null,
+              "key": "no",
+              "text": "нет"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Встречаясь с незнакомыми людьми, вы должны быть достаточно остроумны, общительны и привлекательны, чтобы произвести на них впечатление.",
+          "type": "YesNo"
+        },
+        {
+          "group": null,
+          "id": "q06",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "yes",
+              "text": "да"
+            },
+            {
+              "interpretation": null,
+              "key": "no",
+              "text": "нет"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Если вас представляют кому-нибудь и вы не расслышали его имя, попросите его повторить.",
+          "type": "YesNo"
+        },
+        {
+          "group": null,
+          "id": "q07",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "yes",
+              "text": "да"
+            },
+            {
+              "interpretation": null,
+              "key": "no",
+              "text": "нет"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Вы не позволяете другим подшучивать над собой.",
+          "type": "YesNo"
+        },
+        {
+          "group": null,
+          "id": "q08",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "yes",
+              "text": "да"
+            },
+            {
+              "interpretation": null,
+              "key": "no",
+              "text": "нет"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Вы должны быть всегда настороже, не то окружающие будут выставлять вас в смешном виде.",
+          "type": "YesNo"
+        },
+        {
+          "group": null,
+          "id": "q09",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "yes",
+              "text": "да"
+            },
+            {
+              "interpretation": null,
+              "key": "no",
+              "text": "нет"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Общаясь с блестящим и остроумным человеком, отдайте ему должное и выйдите из разговора, а не устраивайте соревнования.",
+          "type": "YesNo"
+        },
+        {
+          "group": null,
+          "id": "q10",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "yes",
+              "text": "да"
+            },
+            {
+              "interpretation": null,
+              "key": "no",
+              "text": "нет"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Человек должен стараться, чтобы его поведение соответствовало настроению компании, в которой он находится.",
+          "type": "YesNo"
+        },
+        {
+          "group": null,
+          "id": "q11",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "yes",
+              "text": "да"
+            },
+            {
+              "interpretation": null,
+              "key": "no",
+              "text": "нет"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Вы должны всегда помогать друзьям, потому что может прийти время, когда вам понадобится их помощь.",
+          "type": "YesNo"
+        },
+        {
+          "group": null,
+          "id": "q12",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "yes",
+              "text": "да"
+            },
+            {
+              "interpretation": null,
+              "key": "no",
+              "text": "нет"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Не стоит оказывать слишком много услуг другим, потому что очень немногие оценивают вашу помощь по достоинству.",
+          "type": "YesNo"
+        },
+        {
+          "group": null,
+          "id": "q13",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "yes",
+              "text": "да"
+            },
+            {
+              "interpretation": null,
+              "key": "no",
+              "text": "нет"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Лучше, если другие зависят от вас, а не вы зависите от других.",
+          "type": "YesNo"
+        },
+        {
+          "group": null,
+          "id": "q14",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "yes",
+              "text": "да"
+            },
+            {
+              "interpretation": null,
+              "key": "no",
+              "text": "нет"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Настоящий друг старается помогать своим друзьям.",
+          "type": "YesNo"
+        },
+        {
+          "group": null,
+          "id": "q15",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "yes",
+              "text": "да"
+            },
+            {
+              "interpretation": null,
+              "key": "no",
+              "text": "нет"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Человек должен выставлять напоказ свои лучшие качества, чтобы его оценили по достоинству и одобрили.",
+          "type": "YesNo"
+        },
+        {
+          "group": null,
+          "id": "q16",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "yes",
+              "text": "да"
+            },
+            {
+              "interpretation": null,
+              "key": "no",
+              "text": "нет"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Если в компании рассказывают анекдот, который вы уже знаете, лучше остановить рассказчика.",
+          "type": "YesNo"
+        },
+        {
+          "group": null,
+          "id": "q17",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "yes",
+              "text": "да"
+            },
+            {
+              "interpretation": null,
+              "key": "no",
+              "text": "нет"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Если в компании рассказывают анекдот, который вы слышали, надо быть достаточно вежливым, чтобы от всего сердца посмеяться над анекдотом.",
+          "type": "YesNo"
+        },
+        {
+          "group": null,
+          "id": "q18",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "yes",
+              "text": "да"
+            },
+            {
+              "interpretation": null,
+              "key": "no",
+              "text": "нет"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Если вас пригласили к другу, а вы хотите сходить в кино, надо придумать уважительный повод для отказа, но не рисковать возможностью обидеть друга, сообщая ему действительную причину.",
+          "type": "YesNo"
+        },
+        {
+          "group": null,
+          "id": "q19",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "yes",
+              "text": "да"
+            },
+            {
+              "interpretation": null,
+              "key": "no",
+              "text": "нет"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Настоящий друг требует, чтобы его близкие поступали всегда наилучшим для него образом, даже когда они и не хотят этого.",
+          "type": "YesNo"
+        },
+        {
+          "group": null,
+          "id": "q20",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "yes",
+              "text": "да"
+            },
+            {
+              "interpretation": null,
+              "key": "no",
+              "text": "нет"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Люди не должны упрямо и настойчиво защищать свои убеждения всякий раз, когда кто-нибудь выразит противоположное мнение.",
+          "type": "YesNo"
+        }
+      ],
+      "scoring": {
+        "keys": {
+          "q01": "no",
+          "q02": "no",
+          "q03": "no",
+          "q04": "no",
+          "q05": "no",
+          "q06": "yes",
+          "q07": "no",
+          "q08": "no",
+          "q09": "no",
+          "q10": "no",
+          "q11": "no",
+          "q12": "no",
+          "q13": "yes",
+          "q14": "yes",
+          "q15": "no",
+          "q16": "no",
+          "q17": "no",
+          "q18": "no",
+          "q19": "no",
+          "q20": "yes"
+        },
+        "maxScore": 100,
+        "pointsPerCorrectAnswer": 5,
+        "resultFormat": "Score",
+        "type": "SumKeyWeighted"
+      },
+      "subtitle": null,
+      "title": "Любят ли тебя люди?"
+    },
+    {
+      "answerType": "Scale",
+      "id": "block_03_artist_thinker",
+      "instruction": "Чтобы узнать, кто Вы – художник или мыслитель, ответьте на следующие вопросы, пользуясь одиннадцатибалльной системой (от 0 до 10). Категорическому согласию – 10. Если вопрос ставит в тупик, используйте промежуточные баллы (от 1 до 9). Полное несогласие - 0.",
+      "interpretations": [
+        {
+          "condition": "oddGtBy:5",
+          "level": "Мыслитель (логический тип)",
+          "text": "Логический тип (Мыслитель). Оптимист, опирается на расчет."
+        },
+        {
+          "condition": "evenGtOdd",
+          "level": "Художник (художественный тип)",
+          "text": "Художественный тип (Художник). Склонен к пессимизму, опирается на чувства и интуицию."
+        },
+        {
+          "condition": "absDiffLt:5",
+          "level": "Гармоничный (средний тип)",
+          "text": "Средний тип (Гармоничный). Сочетает логику и образность."
+        }
+      ],
+      "order": 3,
+      "questionCount": 10,
+      "questions": [
+        {
+          "group": null,
+          "id": "q01",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 10,
+            "maxLabel": "10 — категорическое согласие",
+            "min": 0,
+            "minLabel": "0 — полное несогласие",
+            "step": 1
+          },
+          "text": "У меня преобладает хорошее настроение.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q02",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 10,
+            "maxLabel": "10 — категорическое согласие",
+            "min": 0,
+            "minLabel": "0 — полное несогласие",
+            "step": 1
+          },
+          "text": "Я помню то, чему учился несколько лет назад.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q03",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 10,
+            "maxLabel": "10 — категорическое согласие",
+            "min": 0,
+            "minLabel": "0 — полное несогласие",
+            "step": 1
+          },
+          "text": "Послушав раз-другой мелодию, я могу правильно воспроизвести ее.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q04",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 10,
+            "maxLabel": "10 — категорическое согласие",
+            "min": 0,
+            "minLabel": "0 — полное несогласие",
+            "step": 1
+          },
+          "text": "Когда я слушаю рассказ, то представляю его в образах.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q05",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 10,
+            "maxLabel": "10 — категорическое согласие",
+            "min": 0,
+            "minLabel": "0 — полное несогласие",
+            "step": 1
+          },
+          "text": "Я считаю, что эмоции в разговоре только мешают.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q06",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 10,
+            "maxLabel": "10 — категорическое согласие",
+            "min": 0,
+            "minLabel": "0 — полное несогласие",
+            "step": 1
+          },
+          "text": "Мне трудно дается алгебра.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q07",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 10,
+            "maxLabel": "10 — категорическое согласие",
+            "min": 0,
+            "minLabel": "0 — полное несогласие",
+            "step": 1
+          },
+          "text": "Я легко запоминаю незнакомые лица.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q08",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 10,
+            "maxLabel": "10 — категорическое согласие",
+            "min": 0,
+            "minLabel": "0 — полное несогласие",
+            "step": 1
+          },
+          "text": "В группе приятелей я первым начинаю разговор.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q09",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 10,
+            "maxLabel": "10 — категорическое согласие",
+            "min": 0,
+            "minLabel": "0 — полное несогласие",
+            "step": 1
+          },
+          "text": "Если обсуждают чьи-то идеи, то я требую аргументов.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q10",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 10,
+            "maxLabel": "10 — категорическое согласие",
+            "min": 0,
+            "minLabel": "0 — полное несогласие",
+            "step": 1
+          },
+          "text": "У меня преобладает плохое настроение.",
+          "type": "Scale"
+        }
+      ],
+      "scoring": {
+        "metadata": {
+          "leftScale": "Л",
+          "rightScale": "П"
+        },
+        "questionGroups": {
+          "left": [
+            "q01",
+            "q02",
+            "q05",
+            "q08",
+            "q09"
+          ],
+          "right": [
+            "q03",
+            "q04",
+            "q06",
+            "q07",
+            "q10"
+          ]
+        },
+        "resultFormat": "TwoScales",
+        "type": "HemisphereSum"
+      },
+      "subtitle": null,
+      "title": "Художник или мыслитель?"
+    },
+    {
+      "answerType": "Scale",
+      "id": "block_04_extraversion",
+      "instruction": "Чтобы узнать, кто Вы – экстраверт или интроверт, оцените высказывания в баллах от 0 до 4, а затем подсчитайте сумму.",
+      "interpretations": [
+        {
+          "level": "Интроверт",
+          "max": 12,
+          "min": 0,
+          "text": "С трудом вступает в контакт, сдержан, застенчив, ориентирован на собственные чувства."
+        },
+        {
+          "level": "Амбаверт",
+          "max": 24,
+          "min": 13,
+          "text": "Спокойные, ровные отношения с людьми, ответственность."
+        },
+        {
+          "level": "Экстраверт",
+          "max": 36,
+          "min": 25,
+          "text": "Словоохотливый, общительный оптимист, прекрасный импровизатор."
+        }
+      ],
+      "order": 4,
+      "questionCount": 9,
+      "questions": [
+        {
+          "group": null,
+          "id": "q01",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 4,
+            "maxLabel": "4 — полностью про меня",
+            "min": 0,
+            "minLabel": "0 — совсем не про меня",
+            "step": 1
+          },
+          "text": "Я легко сближаюсь с людьми.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q02",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 4,
+            "maxLabel": "4 — полностью про меня",
+            "min": 0,
+            "minLabel": "0 — совсем не про меня",
+            "step": 1
+          },
+          "text": "У меня много знакомых, с которыми я охотно встречаюсь.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q03",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 4,
+            "maxLabel": "4 — полностью про меня",
+            "min": 0,
+            "minLabel": "0 — совсем не про меня",
+            "step": 1
+          },
+          "text": "Я разговорчивый человек.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q04",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 4,
+            "maxLabel": "4 — полностью про меня",
+            "min": 0,
+            "minLabel": "0 — совсем не про меня",
+            "step": 1
+          },
+          "text": "Я непринужденно чувствую себя с незнакомыми людьми.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q05",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 4,
+            "maxLabel": "4 — полностью про меня",
+            "min": 0,
+            "minLabel": "0 — совсем не про меня",
+            "step": 1
+          },
+          "text": "Мне стало бы неприятно, если бы надолго исчезла возможность общения.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q06",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 4,
+            "maxLabel": "4 — полностью про меня",
+            "min": 0,
+            "minLabel": "0 — совсем не про меня",
+            "step": 1
+          },
+          "text": "Когда мне надо что-то узнать, я предпочитаю спросить, а не копаться в книгах.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q07",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 4,
+            "maxLabel": "4 — полностью про меня",
+            "min": 0,
+            "minLabel": "0 — совсем не про меня",
+            "step": 1
+          },
+          "text": "Мне удается оживить скучную компанию.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q08",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 4,
+            "maxLabel": "4 — полностью про меня",
+            "min": 0,
+            "minLabel": "0 — совсем не про меня",
+            "step": 1
+          },
+          "text": "Я говорю быстро.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q09",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 4,
+            "maxLabel": "4 — полностью про меня",
+            "min": 0,
+            "minLabel": "0 — совсем не про меня",
+            "step": 1
+          },
+          "text": "Когда я надолго оторван от людей, мне очень хочется поговорить с кем-нибудь.",
+          "type": "Scale"
+        }
+      ],
+      "scoring": {
+        "maxScore": 36,
+        "resultFormat": "Score",
+        "type": "SumScale"
+      },
+      "subtitle": null,
+      "title": "Экстраверт / интроверт / амбаверт"
+    },
+    {
+      "answerType": "LeftRightChoice",
+      "id": "block_05_biomarkers",
+      "instruction": "Проведем несложный экспресс-анализ биологических признаков. Выполните 4 действия и зафиксируйте, какая сторона (Левая - Л или Правая - П) оказалась ведущей.",
+      "interpretations": [
+        {
+          "level": "Комбинация ПППП",
+          "text": "консервативен, предпочитает общепринятые формы поведения.",
+          "value": "ПППП"
+        },
+        {
+          "level": "Комбинация ПППЛ",
+          "text": "темперамент слабый, преобладает нерешительность.",
+          "value": "ПППЛ"
+        },
+        {
+          "level": "Комбинация ППЛП",
+          "text": "характер сильный, энергичный, артистический.",
+          "value": "ППЛП"
+        },
+        {
+          "level": "Комбинация ППЛЛ",
+          "text": "характер близок к предыдущему типу, но более мягок, контактен.",
+          "value": "ППЛЛ"
+        },
+        {
+          "level": "Комбинация ПЛПП",
+          "text": "аналитический склад ума, мягкость, осторожность, избегает конфликтов.",
+          "value": "ПЛПП"
+        },
+        {
+          "level": "Комбинация ПЛПЛ",
+          "text": "слабый тип (чаще у женщин), подверженность влияниям, но способность к конфликту.",
+          "value": "ПЛПЛ"
+        },
+        {
+          "level": "Комбинация ПЛЛП",
+          "text": "артистизм, непостоянство, склонность к новым впечатлениям.",
+          "value": "ПЛЛП"
+        },
+        {
+          "level": "Комбинация ПЛЛЛ",
+          "text": "независимость, непостоянство, аналитический склад ума (чаще у мужчин).",
+          "value": "ПЛЛЛ"
+        },
+        {
+          "level": "Комбинация ЛППП",
+          "text": "эмоционален, легко контактирует, но недостаточно настойчив, подвержен влиянию.",
+          "value": "ЛППП"
+        },
+        {
+          "level": "Комбинация ЛППЛ",
+          "text": "менее настойчив, мягок и наивен, требует бережного отношения.",
+          "value": "ЛППЛ"
+        },
+        {
+          "level": "Комбинация ЛПЛП",
+          "text": "самый сильный тип характера. Настойчив, энергичен, консервативен.",
+          "value": "ЛПЛП"
+        },
+        {
+          "level": "Комбинация ЛПЛЛ",
+          "text": "характер сильный, но ненавязчивый. Внутренняя агрессивность прикрыта мягкостью.",
+          "value": "ЛПЛЛ"
+        },
+        {
+          "level": "Комбинация ЛЛПП",
+          "text": "дружелюбие, простота, некоторая разбросанность интересов.",
+          "value": "ЛЛПП"
+        },
+        {
+          "level": "Комбинация ЛЛПЛ",
+          "text": "простодушие, мягкость, доверчивость (очень редкий тип).",
+          "value": "ЛЛПЛ"
+        },
+        {
+          "level": "Комбинация ЛЛЛП",
+          "text": "эмоциональность с решительностью, непродуманные поступки, энергичен.",
+          "value": "ЛЛЛП"
+        },
+        {
+          "level": "Комбинация ЛЛЛЛ",
+          "text": "способность по-новому взглянуть на вещи, эмоциональность, индивидуализм, замкнутость.",
+          "value": "ЛЛЛЛ"
+        }
+      ],
+      "order": 5,
+      "questionCount": 4,
+      "questions": [
+        {
+          "group": null,
+          "id": "q01",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "l",
+              "text": "Л (левой руки)"
+            },
+            {
+              "interpretation": null,
+              "key": "r",
+              "text": "П (правой руки)"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Переплетите пальцы рук. Сверху оказался большой палец:",
+          "type": "LeftRightChoice"
+        },
+        {
+          "group": null,
+          "id": "q02",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "l",
+              "text": "Л (левый)"
+            },
+            {
+              "interpretation": null,
+              "key": "r",
+              "text": "П (правый)"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Сделайте на листе бумаги небольшое отверстие и посмотрите сквозь него двумя глазами на предмет. Поочередно закрывайте глаза. Предмет смещается, если вы закрываете ведущий глаз. Какой глаз ведущий (не смещает предмет при открытом втором)?",
+          "type": "LeftRightChoice"
+        },
+        {
+          "group": null,
+          "id": "q03",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "l",
+              "text": "Л (левая)"
+            },
+            {
+              "interpretation": null,
+              "key": "r",
+              "text": "П (правая)"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Станьте в «позу Наполеона», скрестив руки на груди. Какая рука оказалась сверху?",
+          "type": "LeftRightChoice"
+        },
+        {
+          "group": null,
+          "id": "q04",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "l",
+              "text": "Л (левая)"
+            },
+            {
+              "interpretation": null,
+              "key": "r",
+              "text": "П (правая)"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Попробуйте изобразить «бурные аплодисменты». Какая ладонь сверху?",
+          "type": "LeftRightChoice"
+        }
+      ],
+      "scoring": {
+        "resultFormat": "FourLetters",
+        "type": "SequenceCombo"
+      },
+      "subtitle": null,
+      "title": "Биологические маркеры мышления"
+    },
+    {
+      "answerType": "ImageSingleChoice",
+      "id": "block_06_palmer",
+      "instruction": "Вам предстоит ответить на шесть вопросов о трех геометрических фигурах. Выберите один из трех вариантов ответа для каждого вопроса.",
+      "interpretations": [
+        {
+          "level": "Трудный в контактах профиль",
+          "max": 16,
+          "min": 0,
+          "text": "Трудно в контактах с окружающими, видите в них конкурентов, возможны конфликты."
+        },
+        {
+          "level": "Умеющий общаться профиль",
+          "max": 27,
+          "min": 17,
+          "text": "Счастливый человек в общении, умеете разрядить обстановку, но есть границы мягкости."
+        },
+        {
+          "level": "Гибкий профиль общения",
+          "max": 42,
+          "min": 28,
+          "text": "Удивительно гибки в общении, но гибкость могут воспринимать как беспринципность."
+        }
+      ],
+      "order": 6,
+      "questionCount": 6,
+      "questions": [
+        {
+          "group": "Фигура 1",
+          "id": "q01",
+          "imageKey": "palmer_figure_1",
+          "options": [
+            {
+              "interpretation": null,
+              "key": "а",
+              "text": "оно остроконечное"
+            },
+            {
+              "interpretation": null,
+              "key": "б",
+              "text": "оно устойчиво"
+            },
+            {
+              "interpretation": null,
+              "key": "в",
+              "text": "оно находится в состоянии равновесия"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Фигура 1. Какое определение, по-Вашему, больше подходит к этому геометрическому телу:",
+          "type": "ImageSingleChoice"
+        },
+        {
+          "group": "Фигура 1",
+          "id": "q02",
+          "imageKey": "palmer_figure_1",
+          "options": [
+            {
+              "interpretation": null,
+              "key": "а",
+              "text": "на айсберг"
+            },
+            {
+              "interpretation": null,
+              "key": "б",
+              "text": "на осколок стекла"
+            },
+            {
+              "interpretation": null,
+              "key": "в",
+              "text": "на туристскую палатку"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Фигура 1. На что оно больше всего похоже:",
+          "type": "ImageSingleChoice"
+        },
+        {
+          "group": "Фигура 2",
+          "id": "q03",
+          "imageKey": "palmer_figure_2",
+          "options": [
+            {
+              "interpretation": null,
+              "key": "а",
+              "text": "вперед"
+            },
+            {
+              "interpretation": null,
+              "key": "б",
+              "text": "назад"
+            },
+            {
+              "interpretation": null,
+              "key": "в",
+              "text": "в любую из двух сторон"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Фигура 2. В каком направлении может покатиться этот шар:",
+          "type": "ImageSingleChoice"
+        },
+        {
+          "group": "Фигура 2",
+          "id": "q04",
+          "imageKey": "palmer_figure_2",
+          "options": [
+            {
+              "interpretation": null,
+              "key": "а",
+              "text": "из прозрачной пластмассы"
+            },
+            {
+              "interpretation": null,
+              "key": "б",
+              "text": "из стекла"
+            },
+            {
+              "interpretation": null,
+              "key": "в",
+              "text": "изо льда"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Фигура 2. Из чего сделан этот шар:",
+          "type": "ImageSingleChoice"
+        },
+        {
+          "group": "Фигура 3",
+          "id": "q05",
+          "imageKey": "palmer_figure_3",
+          "options": [
+            {
+              "interpretation": null,
+              "key": "а",
+              "text": "граненая"
+            },
+            {
+              "interpretation": null,
+              "key": "б",
+              "text": "неопределенная"
+            },
+            {
+              "interpretation": null,
+              "key": "в",
+              "text": "сверкающая множеством граней"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Фигура 3. Как точнее описать эту фигуру:",
+          "type": "ImageSingleChoice"
+        },
+        {
+          "group": "Фигура 3",
+          "id": "q06",
+          "imageKey": "palmer_figure_3",
+          "options": [
+            {
+              "interpretation": null,
+              "key": "а",
+              "text": "приятное"
+            },
+            {
+              "interpretation": null,
+              "key": "б",
+              "text": "неприятное"
+            },
+            {
+              "interpretation": null,
+              "key": "в",
+              "text": "никакого"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Фигура 3. Какое чувство она у Вас вызывает:",
+          "type": "ImageSingleChoice"
+        }
+      ],
+      "scoring": {
+        "keys": {
+          "q01": {
+            "a": 0,
+            "b": 4,
+            "c": 7
+          },
+          "q02": {
+            "a": 0,
+            "b": 3,
+            "c": 7
+          },
+          "q03": {
+            "a": 7,
+            "b": 0,
+            "c": 4
+          },
+          "q04": {
+            "a": 7,
+            "b": 4,
+            "c": 0
+          },
+          "q05": {
+            "a": 4,
+            "b": 0,
+            "c": 7
+          },
+          "q06": {
+            "a": 7,
+            "b": 0,
+            "c": 3
+          }
+        },
+        "maxScore": 42,
+        "resultFormat": "Score",
+        "type": "PalmerMatrix"
+      },
+      "subtitle": null,
+      "title": "Проективный тест Пальмера"
+    },
+    {
+      "answerType": "Scale",
+      "id": "block_07_leader_admin",
+      "instruction": "Прочитайте внимательно приведенные ниже высказывания и максимально откровенно ответьте на каждое из них по 11-балльной шкале (от 0 до 10). 10 баллов означает полное согласие; 5 — согласие наполовину; 0 — полное несогласие.",
+      "interpretations": [
+        {
+          "condition": "bothLow",
+          "level": "Низкая управленческая активность",
+          "text": "Низкая активность в управленческой деятельности."
+        },
+        {
+          "condition": "oddGtEven",
+          "level": "Демократ (Лидер > Администратор)",
+          "text": "Опора на коллегиальные формы руководства (демократ)."
+        },
+        {
+          "condition": "evenGtOdd",
+          "level": "Авторитар (Администратор > Лидер)",
+          "text": "Опора на административно-директивные установки (авторитар)."
+        }
+      ],
+      "order": 7,
+      "questionCount": 20,
+      "questions": [
+        {
+          "group": null,
+          "id": "q01",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 10,
+            "maxLabel": "10 — полное согласие",
+            "min": 0,
+            "minLabel": "0 — полное несогласие",
+            "step": 1
+          },
+          "text": "Я за то, чтобы члены трудовых коллективов сами выбирали себе руководителей.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q02",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 10,
+            "maxLabel": "10 — полное согласие",
+            "min": 0,
+            "minLabel": "0 — полное несогласие",
+            "step": 1
+          },
+          "text": "Считаю, что о решении своих социально-бытовых проблем люди должны заботиться сами, а не их руководители.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q03",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 10,
+            "maxLabel": "10 — полное согласие",
+            "min": 0,
+            "minLabel": "0 — полное несогласие",
+            "step": 1
+          },
+          "text": "Я доверяю людям.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q04",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 10,
+            "maxLabel": "10 — полное согласие",
+            "min": 0,
+            "minLabel": "0 — полное несогласие",
+            "step": 1
+          },
+          "text": "Когда это необходимо, я умею заставить людей «крутиться».",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q05",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 10,
+            "maxLabel": "10 — полное согласие",
+            "min": 0,
+            "minLabel": "0 — полное несогласие",
+            "step": 1
+          },
+          "text": "Люди хорошо знают, что я умею хранить доверяемые мне их личные тайны.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q06",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 10,
+            "maxLabel": "10 — полное согласие",
+            "min": 0,
+            "minLabel": "0 — полное несогласие",
+            "step": 1
+          },
+          "text": "Все люди хотят одного — власти; я — не исключение.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q07",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 10,
+            "maxLabel": "10 — полное согласие",
+            "min": 0,
+            "minLabel": "0 — полное несогласие",
+            "step": 1
+          },
+          "text": "Я готов вступиться за членов коллектива всякий раз, когда с ними обходятся несправедливо.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q08",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 10,
+            "maxLabel": "10 — полное согласие",
+            "min": 0,
+            "minLabel": "0 — полное несогласие",
+            "step": 1
+          },
+          "text": "Думаю, что в интересах дела людям выгоднее иметь руководителем человека непреклонного и жесткого.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q09",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 10,
+            "maxLabel": "10 — полное согласие",
+            "min": 0,
+            "minLabel": "0 — полное несогласие",
+            "step": 1
+          },
+          "text": "Я за полную гласность.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q10",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 10,
+            "maxLabel": "10 — полное согласие",
+            "min": 0,
+            "minLabel": "0 — полное несогласие",
+            "step": 1
+          },
+          "text": "Согласен с тем, что основное для достижения успеха в управлении — умение любыми средствами заставить людей выполнять полезную работу.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q11",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 10,
+            "maxLabel": "10 — полное согласие",
+            "min": 0,
+            "minLabel": "0 — полное несогласие",
+            "step": 1
+          },
+          "text": "Я могу ладить (срабатываться) даже с теми людьми, которые мне не по душе.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q12",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 10,
+            "maxLabel": "10 — полное согласие",
+            "min": 0,
+            "minLabel": "0 — полное несогласие",
+            "step": 1
+          },
+          "text": "Я отдаю команды, распоряжения, приказы, указания всем подчиненным в одинаковой форме.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q13",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 10,
+            "maxLabel": "10 — полное согласие",
+            "min": 0,
+            "minLabel": "0 — полное несогласие",
+            "step": 1
+          },
+          "text": "Я склонен в интересах дела использовать мнения, противоположные моей собственной точке зрения.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q14",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 10,
+            "maxLabel": "10 — полное согласие",
+            "min": 0,
+            "minLabel": "0 — полное несогласие",
+            "step": 1
+          },
+          "text": "Мое глубокое убеждение состоит в том, что преуспевающим может быть лишь тот руководитель, которого подчиненные опасаются.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q15",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 10,
+            "maxLabel": "10 — полное согласие",
+            "min": 0,
+            "minLabel": "0 — полное несогласие",
+            "step": 1
+          },
+          "text": "Мне кажется, что я хорошо знаю общие нужды и потребности своего коллектива.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q16",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 10,
+            "maxLabel": "10 — полное согласие",
+            "min": 0,
+            "minLabel": "0 — полное несогласие",
+            "step": 1
+          },
+          "text": "Мне легче руководить людьми, когда я знаю, что они не хотели бы критиковать.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q17",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 10,
+            "maxLabel": "10 — полное согласие",
+            "min": 0,
+            "minLabel": "0 — полное несогласие",
+            "step": 1
+          },
+          "text": "Я лично заинтересован в том, чтобы общие проблемы и трудности членов коллектива, в котором я работаю, разрешались.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q18",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 10,
+            "maxLabel": "10 — полное согласие",
+            "min": 0,
+            "minLabel": "0 — полное несогласие",
+            "step": 1
+          },
+          "text": "Я уверен, что боязнь наказания — более сильный стимул для любого работника, чем ожидание поощрения.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q19",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 10,
+            "maxLabel": "10 — полное согласие",
+            "min": 0,
+            "minLabel": "0 — полное несогласие",
+            "step": 1
+          },
+          "text": "Я чувствую в себе способности и готовность практически действовать для решения общих для коллектива проблем.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q20",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 10,
+            "maxLabel": "10 — полное согласие",
+            "min": 0,
+            "minLabel": "0 — полное несогласие",
+            "step": 1
+          },
+          "text": "Когда надо, я умею поставить себя так, что люди соглашаются со мной из опасения «нарваться» на неприятность.",
+          "type": "Scale"
+        }
+      ],
+      "scoring": {
+        "evenScaleName": "Администратор",
+        "maxScorePerScale": 100,
+        "oddScaleName": "Лидер",
+        "resultFormat": "TwoScales",
+        "type": "OddEvenSum"
+      },
+      "subtitle": null,
+      "title": "Лидер или администратор"
+    },
+    {
+      "answerType": "ParameterChoice",
+      "id": "block_08_graphology",
+      "instruction": "Напишите 5-6 строк произвольного текста на нелинованной бумаге. Проанализируйте свой почерк по следующим параметрам, выбрав наиболее подходящий вариант.",
+      "interpretations": [
+        {
+          "level": "Качественный профиль",
+          "text": "Баллы по шкалам не начисляются. Итогом является качественный профиль: по каждому из 9 параметров выбирается наиболее подходящий вариант, а интерпретация формируется перечислением значений, соответствующих выбранным вариантам (каждый вариант содержит своё толкование прямо в разделе «Параметры»). Сводный вывод даётся как совокупность всех выбранных характеристик почерка. ---",
+          "value": "Профиль"
+        }
+      ],
+      "order": 8,
+      "questionCount": 9,
+      "questions": [
+        {
+          "group": "Размер букв",
+          "id": "p01",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": "Сдержанность, концентрация, экономность.",
+              "key": "p01_v1",
+              "text": "Мелкий (< 3 мм)"
+            },
+            {
+              "interpretation": "Уравновешенность, адаптивность.",
+              "key": "p01_v2",
+              "text": "Средний (3–5 мм)"
+            },
+            {
+              "interpretation": "Экстраверсия, щедрость, амбициозность.",
+              "key": "p01_v3",
+              "text": "Крупный (> 5 мм)"
+            },
+            {
+              "interpretation": "Эгоцентризм, стремление к признанию.",
+              "key": "p01_v4",
+              "text": "Очень крупный"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Размер букв",
+          "type": "ParameterChoice"
+        },
+        {
+          "group": "Наклон",
+          "id": "p02",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": "Эмоциональность, зависимость от чувств.",
+              "key": "p02_v1",
+              "text": "Сильный вправо (> 45°)"
+            },
+            {
+              "interpretation": "Дружелюбие, социабельность.",
+              "key": "p02_v2",
+              "text": "Лёгкий вправо"
+            },
+            {
+              "interpretation": "Независимость, рациональность, контроль эмоций.",
+              "key": "p02_v3",
+              "text": "Вертикальный"
+            },
+            {
+              "interpretation": "Скрытность, недоверие, интроверсия.",
+              "key": "p02_v4",
+              "text": "Влево"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Наклон",
+          "type": "ParameterChoice"
+        },
+        {
+          "group": "Нажим",
+          "id": "p03",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": "Энергичность, чувственность, напряженность.",
+              "key": "p03_v1",
+              "text": "Сильный (продавливает бумагу)"
+            },
+            {
+              "interpretation": "Баланс энергии и рациональности.",
+              "key": "p03_v2",
+              "text": "Средний"
+            },
+            {
+              "interpretation": "Чувствительность, утонченность, идеализм.",
+              "key": "p03_v3",
+              "text": "Слабый (едва заметный)"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Нажим",
+          "type": "ParameterChoice"
+        },
+        {
+          "group": "Связность букв",
+          "id": "p04",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": "Логичность, последовательность, практичность.",
+              "key": "p04_v1",
+              "text": "Полностью слитный"
+            },
+            {
+              "interpretation": "Гибкость мышления, интуиция + логика.",
+              "key": "p04_v2",
+              "text": "Смешанный"
+            },
+            {
+              "interpretation": "Творческое мышление, оригинальность.",
+              "key": "p04_v3",
+              "text": "Полностью раздельный"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Связность букв",
+          "type": "ParameterChoice"
+        },
+        {
+          "group": "Направление строк",
+          "id": "p05",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": "Спокойствие, организованность.",
+              "key": "p05_v1",
+              "text": "Идут ровно"
+            },
+            {
+              "interpretation": "Оптимизм, амбиции.",
+              "key": "p05_v2",
+              "text": "Поднимаются вверх"
+            },
+            {
+              "interpretation": "Пессимизм, усталость.",
+              "key": "p05_v3",
+              "text": "Опускаются вниз"
+            },
+            {
+              "interpretation": "Эмоциональная нестабильность.",
+              "key": "p05_v4",
+              "text": "Волнистые"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Направление строк",
+          "type": "ParameterChoice"
+        },
+        {
+          "group": "Поля (левое поле)",
+          "id": "p06",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": "Экономность, бережливость, замкнутость.",
+              "key": "p06_v1",
+              "text": "Узкие"
+            },
+            {
+              "interpretation": "Щедрость, экстраверсия.",
+              "key": "p06_v2",
+              "text": "Широкие"
+            },
+            {
+              "interpretation": "Общительность, открытость.",
+              "key": "p06_v3",
+              "text": "Расширяющиеся к концу строки"
+            },
+            {
+              "interpretation": "Осторожность, скрытность.",
+              "key": "p06_v4",
+              "text": "Сужающиеся к концу строки"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Поля (левое поле)",
+          "type": "ParameterChoice"
+        },
+        {
+          "group": "Форма букв",
+          "id": "p07",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": "Агрессивность, напористость, критичность.",
+              "key": "p07_v1",
+              "text": "Острые углы"
+            },
+            {
+              "interpretation": "Мягкость, доброта, уступчивость.",
+              "key": "p07_v2",
+              "text": "Округлые, мягкие формы"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Форма букв",
+          "type": "ParameterChoice"
+        },
+        {
+          "group": "Петли на буквах (о, у, д, ю)",
+          "id": "p08",
+          "imageKey": "handwriting_sample",
+          "options": [
+            {
+              "interpretation": "Материальные интересы, чувственность.",
+              "key": "p08_v1",
+              "text": "Большие петли"
+            },
+            {
+              "interpretation": "Аскетизм, сосредоточенность на идеях.",
+              "key": "p08_v2",
+              "text": "Отсутствие/маленькие"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Петли на буквах (о, у, д, ю)",
+          "type": "ParameterChoice"
+        },
+        {
+          "group": "Дополнительные признаки",
+          "id": "p09",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": "Стремление к признанию, уверенность.",
+              "key": "p09_v1",
+              "text": "Подчёркивания, росчерки"
+            },
+            {
+              "interpretation": "Самокритичность, неуверенность.",
+              "key": "p09_v2",
+              "text": "Зачёркивания, исправления"
+            },
+            {
+              "interpretation": "Педантичность, тревожность.",
+              "key": "p09_v3",
+              "text": "Точки после букв (не в конце)"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Дополнительные признаки",
+          "type": "ParameterChoice"
+        }
+      ],
+      "scoring": {
+        "metadata": {
+          "profileNote": "Баллы по шкалам не начисляются. Итогом является качественный профиль: по каждому из 9 параметров выбирается наиболее подходящий вариант, а интерпретация формируется перечислением значений, соответствующих выбранным вариантам (каждый вариант содержит своё толкование прямо в разделе «Параметры»). Сводный вывод даётся как совокупность всех выбранных характеристик почерка. ---"
+        },
+        "resultFormat": "Text",
+        "type": "QualitativeProfile"
+      },
+      "subtitle": null,
+      "title": "Графологический анализ почерка"
+    },
+    {
+      "answerType": "ParameterChoice",
+      "id": "block_09_signature",
+      "instruction": "Поставьте свою обычную подпись несколько раз. Проанализируйте её по следующим параметрам. Подпись отражает вашу «социальную маску».",
+      "interpretations": [
+        {
+          "level": "Качественный профиль",
+          "text": "Баллы по шкалам не начисляются. Итогом является качественный профиль: по каждому из 8 параметров выбирается наиболее подходящий вариант, а интерпретация формируется перечислением значений, соответствующих выбранным вариантам (каждый вариант содержит своё толкование прямо в разделе «Параметры»). Сводный вывод даётся как совокупность всех выбранных характеристик подписи («социальной маски»). ---",
+          "value": "Профиль"
+        }
+      ],
+      "order": 9,
+      "questionCount": 8,
+      "questions": [
+        {
+          "group": "Тип подписи",
+          "id": "p01",
+          "imageKey": "signature_sample",
+          "options": [
+            {
+              "interpretation": "Прямолинейность, честность, практичность.",
+              "key": "p01_v1",
+              "text": "Простая (инициалы/короткая)"
+            },
+            {
+              "interpretation": "Демонстративность, артистизм, желание выделиться.",
+              "key": "p01_v2",
+              "text": "Сложная, витиеватая"
+            },
+            {
+              "interpretation": "Оригинальность, независимость, скрытность.",
+              "key": "p01_v3",
+              "text": "Неразборчивая (каракули)"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Тип подписи",
+          "type": "ParameterChoice"
+        },
+        {
+          "group": "Наличие и направление росчерка",
+          "id": "p02",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": "Оптимизм, амбиции, уверенность в будущем.",
+              "key": "p02_v1",
+              "text": "Росчерк вправо (вверх)"
+            },
+            {
+              "interpretation": "Пессимизм, осторожность, защита.",
+              "key": "p02_v2",
+              "text": "Росчерк влево (вниз)"
+            },
+            {
+              "interpretation": "Сдержанность, отсутствие потребности в саморекламе.",
+              "key": "p02_v3",
+              "text": "Без росчерка"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Наличие и направление росчерка",
+          "type": "ParameterChoice"
+        },
+        {
+          "group": "Подчёркивание",
+          "id": "p03",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": "Уверенность, стремление к стабильности, основательность.",
+              "key": "p03_v1",
+              "text": "Линия под подписью"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Подчёркивание",
+          "type": "ParameterChoice"
+        },
+        {
+          "group": "Обводка",
+          "id": "p04",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": "Замкнутость, защита от внешнего мира, интроверсия.",
+              "key": "p04_v1",
+              "text": "Обведено в круг (овал)"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Обводка",
+          "type": "ParameterChoice"
+        },
+        {
+          "group": "Точка в конце",
+          "id": "p05",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": "Педантичность, дисциплина, обязательность.",
+              "key": "p05_v1",
+              "text": "Точка после подписи"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Точка в конце",
+          "type": "ParameterChoice"
+        },
+        {
+          "group": "Соотношение с фамилией",
+          "id": "p06",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": "Привязанность к роду, консерватизм.",
+              "key": "p06_v1",
+              "text": "Полностью повторяет фамилию"
+            },
+            {
+              "interpretation": "Самостоятельность, желание отделиться от семьи.",
+              "key": "p06_v2",
+              "text": "Сильно сокращена/изменена"
+            },
+            {
+              "interpretation": "Баланс индивидуальности и принадлежности к группе.",
+              "key": "p06_v3",
+              "text": "Инициалы + фамилия"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Соотношение с фамилией",
+          "type": "ParameterChoice"
+        },
+        {
+          "group": "Размер первой буквы",
+          "id": "p07",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": "Лидерские качества, эгоцентризм.",
+              "key": "p07_v1",
+              "text": "Первая буква большая, остальные мелкие"
+            },
+            {
+              "interpretation": "Справедливость, демократичность.",
+              "key": "p07_v2",
+              "text": "Все буквы одинакового размера"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Размер первой буквы",
+          "type": "ParameterChoice"
+        },
+        {
+          "group": "Повторяемость",
+          "id": "p08",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": "Непостоянство, изменчивость натуры.",
+              "key": "p08_v1",
+              "text": "Несколько подписей сильно отличаются"
+            },
+            {
+              "interpretation": "Стабильность, предсказуемость.",
+              "key": "p08_v2",
+              "text": "Подписи идентичны"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Повторяемость",
+          "type": "ParameterChoice"
+        }
+      ],
+      "scoring": {
+        "metadata": {
+          "profileNote": "Баллы по шкалам не начисляются. Итогом является качественный профиль: по каждому из 8 параметров выбирается наиболее подходящий вариант, а интерпретация формируется перечислением значений, соответствующих выбранным вариантам (каждый вариант содержит своё толкование прямо в разделе «Параметры»). Сводный вывод даётся как совокупность всех выбранных характеристик подписи («социальной маски»). ---"
+        },
+        "resultFormat": "Text",
+        "type": "QualitativeProfile"
+      },
+      "subtitle": null,
+      "title": "Анализ подписи"
+    },
+    {
+      "answerType": "LeftRightChoice",
+      "id": "block_10_left_hand",
+      "instruction": "Выполните 10 простых действий (или вспомните, как вы их обычно делаете) и зафиксируйте, какой рукой вам естественнее их выполнять.",
+      "interpretations": [
+        {
+          "level": "Выраженный правша",
+          "max": 2,
+          "min": 0,
+          "text": "Выраженный правша."
+        },
+        {
+          "level": "Амбидекстр или скрытый левша",
+          "max": 5,
+          "min": 3,
+          "text": "Амбидекстр или скрытый левша."
+        },
+        {
+          "level": "Выраженный левша",
+          "max": 8,
+          "min": 6,
+          "text": "Выраженный левша."
+        },
+        {
+          "level": "Чистый левша",
+          "max": 10,
+          "min": 9,
+          "text": "Чистый левша."
+        }
+      ],
+      "order": 10,
+      "questionCount": 10,
+      "questions": [
+        {
+          "group": null,
+          "id": "q01",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "r",
+              "text": "правая"
+            },
+            {
+              "interpretation": null,
+              "key": "l",
+              "text": "левая"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Какой рукой вы держите ложку?",
+          "type": "LeftRightChoice"
+        },
+        {
+          "group": null,
+          "id": "q02",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "r",
+              "text": "правая"
+            },
+            {
+              "interpretation": null,
+              "key": "l",
+              "text": "левая"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Какой рукой вы держите зубную щётку?",
+          "type": "LeftRightChoice"
+        },
+        {
+          "group": null,
+          "id": "q03",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "r",
+              "text": "правая"
+            },
+            {
+              "interpretation": null,
+              "key": "l",
+              "text": "левая"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Какой рукой вы бросаете мяч/камень?",
+          "type": "LeftRightChoice"
+        },
+        {
+          "group": null,
+          "id": "q04",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "r",
+              "text": "правая"
+            },
+            {
+              "interpretation": null,
+              "key": "l",
+              "text": "левая"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Какой рукой вы пишете?",
+          "type": "LeftRightChoice"
+        },
+        {
+          "group": null,
+          "id": "q05",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "r",
+              "text": "правая"
+            },
+            {
+              "interpretation": null,
+              "key": "l",
+              "text": "левая"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Какой рукой вы держите нож при резке хлеба?",
+          "type": "LeftRightChoice"
+        },
+        {
+          "group": null,
+          "id": "q06",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "r",
+              "text": "правая"
+            },
+            {
+              "interpretation": null,
+              "key": "l",
+              "text": "левая"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Какой рукой вы чешете нос/голову (привычно)?",
+          "type": "LeftRightChoice"
+        },
+        {
+          "group": null,
+          "id": "q07",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "r",
+              "text": "правая"
+            },
+            {
+              "interpretation": null,
+              "key": "l",
+              "text": "левая"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Какой рукой вы держите телефон у уха?",
+          "type": "LeftRightChoice"
+        },
+        {
+          "group": null,
+          "id": "q08",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "r",
+              "text": "правая"
+            },
+            {
+              "interpretation": null,
+              "key": "l",
+              "text": "левая"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Переплетите пальцы рук. Какой большой палец сверху?",
+          "type": "LeftRightChoice"
+        },
+        {
+          "group": null,
+          "id": "q09",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "r",
+              "text": "правая"
+            },
+            {
+              "interpretation": null,
+              "key": "l",
+              "text": "левая"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Сложите руки на груди (поза Наполеона). Какая рука сверху?",
+          "type": "LeftRightChoice"
+        },
+        {
+          "group": null,
+          "id": "q10",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "r",
+              "text": "правая"
+            },
+            {
+              "interpretation": null,
+              "key": "l",
+              "text": "левая"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Аплодисменты. Какая ладонь сверху/активнее?",
+          "type": "LeftRightChoice"
+        }
+      ],
+      "scoring": {
+        "maxScore": 10,
+        "resultFormat": "Score",
+        "type": "CountLeft"
+      },
+      "subtitle": null,
+      "title": "Экспресс-тест на леворукость"
+    },
+    {
+      "answerType": "SingleChoice",
+      "id": "block_11_creative_age",
+      "instruction": "Чтобы определить творческий возраст, вам предлагается десять ситуаций. В каждой из них выберите наиболее подходящую для вас реакцию (от «а» до «д»).",
+      "interpretations": [
+        {
+          "level": "Норма",
+          "text": "Творческий возраст совпадает с паспортным: все в порядке.",
+          "value": "Совпадает с паспортным"
+        },
+        {
+          "level": "Хорошая форма",
+          "text": "Творческий возраст ниже паспортного: вы в хорошей форме, свободны от стереотипов, возможности не исчерпаны.",
+          "value": "Ниже паспортного"
+        },
+        {
+          "level": "Стандартная форма",
+          "text": "Творческий возраст выше паспортного: вы успешно справляетесь со стандартными действиями, требующими четкости, но для творческой деятельности желательно, чтобы психологический возраст не опережал паспортный.",
+          "value": "Выше паспортного"
+        }
+      ],
+      "order": 11,
+      "questionCount": 10,
+      "questions": [
+        {
+          "group": null,
+          "id": "q01",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "a",
+              "text": "побегу, чтобы успеть"
+            },
+            {
+              "interpretation": null,
+              "key": "b",
+              "text": "буду идти как можно быстрее"
+            },
+            {
+              "interpretation": null,
+              "key": "c",
+              "text": "буду идти немного быстрее, чем обычно"
+            },
+            {
+              "interpretation": null,
+              "key": "d",
+              "text": "буду идти, как и шел"
+            },
+            {
+              "interpretation": null,
+              "key": "e",
+              "text": "посмотрю, не идет ли следующий автобус, а потом решу, что делать"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Вы опаздываете и находитесь неподалеку от автобусной остановки. Подходит Ваш автобус. Что Вы сделаете?",
+          "type": "SingleChoice"
+        },
+        {
+          "group": null,
+          "id": "q02",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "a",
+              "text": "признаю и действую, чтобы соответствовать ей"
+            },
+            {
+              "interpretation": null,
+              "key": "b",
+              "text": "признаю то, что мне подходит"
+            },
+            {
+              "interpretation": null,
+              "key": "c",
+              "text": "не признаю современные экстравагантные модели"
+            },
+            {
+              "interpretation": null,
+              "key": "d",
+              "text": "не признаю современную моду вообще"
+            },
+            {
+              "interpretation": null,
+              "key": "e",
+              "text": "признаю и отвергаю, смотря по настроению"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Ваше отношение к моде:",
+          "type": "SingleChoice"
+        },
+        {
+          "group": null,
+          "id": "q03",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "a",
+              "text": "проводите время с приятелями"
+            },
+            {
+              "interpretation": null,
+              "key": "b",
+              "text": "смотрите телевизор"
+            },
+            {
+              "interpretation": null,
+              "key": "c",
+              "text": "читаете художественную литературу"
+            },
+            {
+              "interpretation": null,
+              "key": "d",
+              "text": "разгадываете кроссворды"
+            },
+            {
+              "interpretation": null,
+              "key": "e",
+              "text": "занимаетесь чем угодно"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "В свободное время Вы охотнее всего...",
+          "type": "SingleChoice"
+        },
+        {
+          "group": null,
+          "id": "q04",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "a",
+              "text": "сразу постараюсь восстановить справедливость всеми доступными средствами"
+            },
+            {
+              "interpretation": null,
+              "key": "b",
+              "text": "встану на сторону пострадавшего и постараюсь ему помочь"
+            },
+            {
+              "interpretation": null,
+              "key": "c",
+              "text": "постараюсь восстановить справедливость в рамках закона"
+            },
+            {
+              "interpretation": null,
+              "key": "d",
+              "text": "а что можно сделать? Осудить про себя очередную несправедливость и продолжить свои дела"
+            },
+            {
+              "interpretation": null,
+              "key": "e",
+              "text": "вмешаюсь в обсуждение, не высказывая своего мнения"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "На Ваших глазах совершается явная несправедливость. Ваши действия?",
+          "type": "SingleChoice"
+        },
+        {
+          "group": null,
+          "id": "q05",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "a",
+              "text": "приходите в восторг"
+            },
+            {
+              "interpretation": null,
+              "key": "b",
+              "text": "испытываете удовольствие"
+            },
+            {
+              "interpretation": null,
+              "key": "c",
+              "text": "думаете, что и этим должны «переболеть»"
+            },
+            {
+              "interpretation": null,
+              "key": "d",
+              "text": "не признаете этот шум и грохот"
+            },
+            {
+              "interpretation": null,
+              "key": "e",
+              "text": "считаете, что на вкус и цвет товарищей нет"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Когда Вы слушаете современную молодежную музыку, то...",
+          "type": "SingleChoice"
+        },
+        {
+          "group": null,
+          "id": "q06",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "a",
+              "text": "возможность продемонстрировать свои способности"
+            },
+            {
+              "interpretation": null,
+              "key": "b",
+              "text": "сделать так, чтобы люди не забыли, с кем имели дело"
+            },
+            {
+              "interpretation": null,
+              "key": "c",
+              "text": "соблюсти приличия"
+            },
+            {
+              "interpretation": null,
+              "key": "d",
+              "text": "не выделяться"
+            },
+            {
+              "interpretation": null,
+              "key": "e",
+              "text": "вести себя в соответствии с нормами этой компании"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Вы находитесь в дружеской компании. Что для Вас важно?",
+          "type": "SingleChoice"
+        },
+        {
+          "group": null,
+          "id": "q07",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "a",
+              "text": "содержащая элементы неожиданности и риска"
+            },
+            {
+              "interpretation": null,
+              "key": "b",
+              "text": "разная, но не монотонная"
+            },
+            {
+              "interpretation": null,
+              "key": "c",
+              "text": "такая, где можно использовать свой опыт и знания"
+            },
+            {
+              "interpretation": null,
+              "key": "d",
+              "text": "нетрудная"
+            },
+            {
+              "interpretation": null,
+              "key": "e",
+              "text": "смотря по настроению"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Какая работа Вам нравится?",
+          "type": "SingleChoice"
+        },
+        {
+          "group": null,
+          "id": "q08",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "a",
+              "text": "склонен приниматься за дела не раздумывая"
+            },
+            {
+              "interpretation": null,
+              "key": "b",
+              "text": "предпочитаю сначала действовать, а уже потом рассуждать"
+            },
+            {
+              "interpretation": null,
+              "key": "c",
+              "text": "предпочитаю не участвовать в делах, пока не выяснены хотя бы основные их последствия"
+            },
+            {
+              "interpretation": null,
+              "key": "d",
+              "text": "предпочитаю участвовать только в таких делах, где успех гарантирован"
+            },
+            {
+              "interpretation": null,
+              "key": "e",
+              "text": "отношусь к делам в зависимости от ситуации"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Насколько Вы предусмотрительны?",
+          "type": "SingleChoice"
+        },
+        {
+          "group": null,
+          "id": "q09",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "a",
+              "text": "доверяю некоторым людям"
+            },
+            {
+              "interpretation": null,
+              "key": "b",
+              "text": "доверяю многим людям"
+            },
+            {
+              "interpretation": null,
+              "key": "c",
+              "text": "не доверяю многим"
+            },
+            {
+              "interpretation": null,
+              "key": "d",
+              "text": "не доверяю никому"
+            },
+            {
+              "interpretation": null,
+              "key": "e",
+              "text": "все зависит от того, с кем я имею дело"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Доверчивы ли Вы?",
+          "type": "SingleChoice"
+        },
+        {
+          "group": null,
+          "id": "q10",
+          "imageKey": null,
+          "options": [
+            {
+              "interpretation": null,
+              "key": "a",
+              "text": "преобладает оптимистическое"
+            },
+            {
+              "interpretation": null,
+              "key": "b",
+              "text": "часто оптимистическое"
+            },
+            {
+              "interpretation": null,
+              "key": "c",
+              "text": "часто пессимистическое"
+            },
+            {
+              "interpretation": null,
+              "key": "d",
+              "text": "преобладает пессимистическое"
+            },
+            {
+              "interpretation": null,
+              "key": "e",
+              "text": "в зависимости от обстоятельств"
+            }
+          ],
+          "required": true,
+          "scale": null,
+          "text": "Ваше настроение?",
+          "type": "SingleChoice"
+        }
+      ],
+      "scoring": {
+        "formula": "sum * 2",
+        "metadata": {
+          "comparison": "Результат сравнивается с паспортным возрастом пользователя."
+        },
+        "resultFormat": "Score",
+        "resultUnit": "years",
+        "type": "FormulaMultiplier",
+        "weights": {
+          "a": 0,
+          "b": 1,
+          "c": 3,
+          "d": 4,
+          "e": 2
+        }
+      },
+      "subtitle": null,
+      "title": "Творческий возраст"
+    },
+    {
+      "answerType": "Scale",
+      "id": "block_12_creative_potential",
+      "instruction": "Дайте свою оценку утверждениям. Оцените степень проявления у вас качеств: при несогласии следует ставить 0; постоянное проявление качества обозначается 4 баллами; частое проявление — 3 баллами, среднее — 2 баллами, редкое — 1 баллом. Работайте быстро и искренне.",
+      "interpretations": [
+        {
+          "condition": "equal",
+          "level": "Гармоничная личность",
+          "text": "Гармоничная личность. Потенциал полностью обеспечивается мотивацией и реализуется в поведении."
+        },
+        {
+          "condition": "bothLow",
+          "level": "Спад активности",
+          "text": "Снижение активности, усталость, отсутствие интереса к саморазвитию."
+        },
+        {
+          "condition": "oddGtEven",
+          "level": "Непризнанный гений (Т > П)",
+          "text": "Есть творческие проявления, но может не хватать мотивации, амбиций или веры в себя."
+        },
+        {
+          "condition": "evenGtOdd",
+          "level": "Трудоголик/Карьерист (П > Т)",
+          "text": "Высокая мотивация, амбиции, жажда успеха, но может не хватать гибкости, оригинальности и креативности."
+        }
+      ],
+      "order": 12,
+      "questionCount": 50,
+      "questions": [
+        {
+          "group": null,
+          "id": "q01",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 4,
+            "maxLabel": "4 — постоянное проявление качества",
+            "min": 0,
+            "minLabel": "0 — не согласен",
+            "step": 1
+          },
+          "text": "Бывает, что я вижу проблему там, где для других все ясно.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q02",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 4,
+            "maxLabel": "4 — постоянное проявление качества",
+            "min": 0,
+            "minLabel": "0 — не согласен",
+            "step": 1
+          },
+          "text": "Меня побуждает к работе потребность материального обеспечения.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q03",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 4,
+            "maxLabel": "4 — постоянное проявление качества",
+            "min": 0,
+            "minLabel": "0 — не согласен",
+            "step": 1
+          },
+          "text": "Я предпочел бы работать под руководством человека, который не вмешивается в то, как я работаю.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q04",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 4,
+            "maxLabel": "4 — постоянное проявление качества",
+            "min": 0,
+            "minLabel": "0 — не согласен",
+            "step": 1
+          },
+          "text": "Я работаю ради желания повысить уровень материального комфорта.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q05",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 4,
+            "maxLabel": "4 — постоянное проявление качества",
+            "min": 0,
+            "minLabel": "0 — не согласен",
+            "step": 1
+          },
+          "text": "Я не боюсь высказываться о том, в чем не силен.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q06",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 4,
+            "maxLabel": "4 — постоянное проявление качества",
+            "min": 0,
+            "minLabel": "0 — не согласен",
+            "step": 1
+          },
+          "text": "Я хотел бы прославиться.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q07",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 4,
+            "maxLabel": "4 — постоянное проявление качества",
+            "min": 0,
+            "minLabel": "0 — не согласен",
+            "step": 1
+          },
+          "text": "То, о чем я думаю, представляю в образных картинах.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q08",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 4,
+            "maxLabel": "4 — постоянное проявление качества",
+            "min": 0,
+            "minLabel": "0 — не согласен",
+            "step": 1
+          },
+          "text": "Моя работа для меня — средство самоутверждения (доказательства, что я не хуже, а, может быть, и лучше других).",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q09",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 4,
+            "maxLabel": "4 — постоянное проявление качества",
+            "min": 0,
+            "minLabel": "0 — не согласен",
+            "step": 1
+          },
+          "text": "Мне удается делать верные заключения при недостатке информации об объектах.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q10",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 4,
+            "maxLabel": "4 — постоянное проявление качества",
+            "min": 0,
+            "minLabel": "0 — не согласен",
+            "step": 1
+          },
+          "text": "Меня побуждает к работе понимание нужности или интересности людям результатов моего труда.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q11",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 4,
+            "maxLabel": "4 — постоянное проявление качества",
+            "min": 0,
+            "minLabel": "0 — не согласен",
+            "step": 1
+          },
+          "text": "По-моему, я додумываюсь до решения проблем быстрее многих своих сверстников.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q12",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 4,
+            "maxLabel": "4 — постоянное проявление качества",
+            "min": 0,
+            "minLabel": "0 — не согласен",
+            "step": 1
+          },
+          "text": "Моя активность в работе связана со стремлением сделать карьеру.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q13",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 4,
+            "maxLabel": "4 — постоянное проявление качества",
+            "min": 0,
+            "minLabel": "0 — не согласен",
+            "step": 1
+          },
+          "text": "Мне удается получать более простые решения, чем получают по той же проблеме другие люди.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q14",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 4,
+            "maxLabel": "4 — постоянное проявление качества",
+            "min": 0,
+            "minLabel": "0 — не согласен",
+            "step": 1
+          },
+          "text": "Я работаю потому, что мне интересно.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q15",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 4,
+            "maxLabel": "4 — постоянное проявление качества",
+            "min": 0,
+            "minLabel": "0 — не согласен",
+            "step": 1
+          },
+          "text": "Решая какую-либо задачу, я использую постороннюю информацию (из других сфер знания или научных областей).",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q16",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 4,
+            "maxLabel": "4 — постоянное проявление качества",
+            "min": 0,
+            "minLabel": "0 — не согласен",
+            "step": 1
+          },
+          "text": "Я работаю из-за желания оправдать надежды, которые на меня возлагают люди.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q17",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 4,
+            "maxLabel": "4 — постоянное проявление качества",
+            "min": 0,
+            "minLabel": "0 — не согласен",
+            "step": 1
+          },
+          "text": "Я бывал недоволен тем материалом, который преподносили преподаватели.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q18",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 4,
+            "maxLabel": "4 — постоянное проявление качества",
+            "min": 0,
+            "minLabel": "0 — не согласен",
+            "step": 1
+          },
+          "text": "Я работаю ради одобрения (похвалы).",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q19",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 4,
+            "maxLabel": "4 — постоянное проявление качества",
+            "min": 0,
+            "minLabel": "0 — не согласен",
+            "step": 1
+          },
+          "text": "Мне удается увидеть новое в давно известном (привычном).",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q20",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 4,
+            "maxLabel": "4 — постоянное проявление качества",
+            "min": 0,
+            "minLabel": "0 — не согласен",
+            "step": 1
+          },
+          "text": "Я активно работаю из-за любознательности.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q21",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 4,
+            "maxLabel": "4 — постоянное проявление качества",
+            "min": 0,
+            "minLabel": "0 — не согласен",
+            "step": 1
+          },
+          "text": "Я легко (без борьбы с собой) обсуждаю свои ошибки.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q22",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 4,
+            "maxLabel": "4 — постоянное проявление качества",
+            "min": 0,
+            "minLabel": "0 — не согласен",
+            "step": 1
+          },
+          "text": "Меня побуждает к работе стремление стать признанным специалистом.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q23",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 4,
+            "maxLabel": "4 — постоянное проявление качества",
+            "min": 0,
+            "minLabel": "0 — не согласен",
+            "step": 1
+          },
+          "text": "Мне удается быстро отбирать пригодные для решения варианты из большого числа предложенных.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q24",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 4,
+            "maxLabel": "4 — постоянное проявление качества",
+            "min": 0,
+            "minLabel": "0 — не согласен",
+            "step": 1
+          },
+          "text": "Я испытываю острое чувство удовольствия от того, что начинаю понимать какие-либо сложные вопросы.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q25",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 4,
+            "maxLabel": "4 — постоянное проявление качества",
+            "min": 0,
+            "minLabel": "0 — не согласен",
+            "step": 1
+          },
+          "text": "Я предлагаю много идей (иногда шуточных, забавных).",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q26",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 4,
+            "maxLabel": "4 — постоянное проявление качества",
+            "min": 0,
+            "minLabel": "0 — не согласен",
+            "step": 1
+          },
+          "text": "Я много делаю ради достижения успеха в жизни.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q27",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 4,
+            "maxLabel": "4 — постоянное проявление качества",
+            "min": 0,
+            "minLabel": "0 — не согласен",
+            "step": 1
+          },
+          "text": "Какую бы работу, связанную с моей специальностью, я ни читал, меня так и тянет поразмышлять над темой в направлении, не предусмотренном автором.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q28",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 4,
+            "maxLabel": "4 — постоянное проявление качества",
+            "min": 0,
+            "minLabel": "0 — не согласен",
+            "step": 1
+          },
+          "text": "Я был бы не прочь обессмертить свое имя.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q29",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 4,
+            "maxLabel": "4 — постоянное проявление качества",
+            "min": 0,
+            "minLabel": "0 — не согласен",
+            "step": 1
+          },
+          "text": "Если бы вся работа выполнялась строго по плану, жить было бы скучно.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q30",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 4,
+            "maxLabel": "4 — постоянное проявление качества",
+            "min": 0,
+            "minLabel": "0 — не согласен",
+            "step": 1
+          },
+          "text": "Я работаю ради увеличения своего превосходства над людьми.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q31",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 4,
+            "maxLabel": "4 — постоянное проявление качества",
+            "min": 0,
+            "minLabel": "0 — не согласен",
+            "step": 1
+          },
+          "text": "Я без особого труда переключаюсь с одной проблемы на другую.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q32",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 4,
+            "maxLabel": "4 — постоянное проявление качества",
+            "min": 0,
+            "minLabel": "0 — не согласен",
+            "step": 1
+          },
+          "text": "Я стремлюсь работать так, чтобы стать похожим на человека, которого считаю образцом для подражания.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q33",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 4,
+            "maxLabel": "4 — постоянное проявление качества",
+            "min": 0,
+            "minLabel": "0 — не согласен",
+            "step": 1
+          },
+          "text": "Я доверяю своей интуиции (чутью).",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q34",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 4,
+            "maxLabel": "4 — постоянное проявление качества",
+            "min": 0,
+            "minLabel": "0 — не согласен",
+            "step": 1
+          },
+          "text": "К работе меня побуждает потребность заслужить уважение коллег.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q35",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 4,
+            "maxLabel": "4 — постоянное проявление качества",
+            "min": 0,
+            "minLabel": "0 — не согласен",
+            "step": 1
+          },
+          "text": "Я склонен к поиску непривычного (оригинального, нестандартного).",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q36",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 4,
+            "maxLabel": "4 — постоянное проявление качества",
+            "min": 0,
+            "minLabel": "0 — не согласен",
+            "step": 1
+          },
+          "text": "Я работаю ради приобретения широкой известности.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q37",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 4,
+            "maxLabel": "4 — постоянное проявление качества",
+            "min": 0,
+            "minLabel": "0 — не согласен",
+            "step": 1
+          },
+          "text": "Меня привлекают парадоксы (парадоксальные ситуации, проблемы, поставленные в парадоксальной форме, идеи).",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q38",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 4,
+            "maxLabel": "4 — постоянное проявление качества",
+            "min": 0,
+            "minLabel": "0 — не согласен",
+            "step": 1
+          },
+          "text": "К работе меня стимулирует желание заслужить признание со стороны близкого мне человека.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q39",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 4,
+            "maxLabel": "4 — постоянное проявление качества",
+            "min": 0,
+            "minLabel": "0 — не согласен",
+            "step": 1
+          },
+          "text": "Во время чтения я ловлю себя на том, что мне не удается продвинуться, так как меня начинают «донимать» собственные мысли по поставленной автором проблеме.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q40",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 4,
+            "maxLabel": "4 — постоянное проявление качества",
+            "min": 0,
+            "minLabel": "0 — не согласен",
+            "step": 1
+          },
+          "text": "Я работаю в своей отрасли потому, что она престижна.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q41",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 4,
+            "maxLabel": "4 — постоянное проявление качества",
+            "min": 0,
+            "minLabel": "0 — не согласен",
+            "step": 1
+          },
+          "text": "Я вношу в дело (решение проблемы) что-то свое, личное, не предусмотренное заранее.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q42",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 4,
+            "maxLabel": "4 — постоянное проявление качества",
+            "min": 0,
+            "minLabel": "0 — не согласен",
+            "step": 1
+          },
+          "text": "Моя деятельность стимулируется чувством, что я способен достичь успеха в области, мною избранной («я могу!»).",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q43",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 4,
+            "maxLabel": "4 — постоянное проявление качества",
+            "min": 0,
+            "minLabel": "0 — не согласен",
+            "step": 1
+          },
+          "text": "Если мне приходится переписывать какой-либо текст, меня так и тянет изменить его вопреки принятым стандартам.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q44",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 4,
+            "maxLabel": "4 — постоянное проявление качества",
+            "min": 0,
+            "minLabel": "0 — не согласен",
+            "step": 1
+          },
+          "text": "В работе мною движет стремление «прийти к финишу первым» (или, по крайней мере, не последним).",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q45",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 4,
+            "maxLabel": "4 — постоянное проявление качества",
+            "min": 0,
+            "minLabel": "0 — не согласен",
+            "step": 1
+          },
+          "text": "Я предпочитаю находить решения сам, а не следовать указаниям других.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q46",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 4,
+            "maxLabel": "4 — постоянное проявление качества",
+            "min": 0,
+            "minLabel": "0 — не согласен",
+            "step": 1
+          },
+          "text": "Меня побуждает к работе желание поражать людей своими достижениями.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q47",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 4,
+            "maxLabel": "4 — постоянное проявление качества",
+            "min": 0,
+            "minLabel": "0 — не согласен",
+            "step": 1
+          },
+          "text": "Я склонен браться за дела, не обязательно гарантирующие успех.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q48",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 4,
+            "maxLabel": "4 — постоянное проявление качества",
+            "min": 0,
+            "minLabel": "0 — не согласен",
+            "step": 1
+          },
+          "text": "К работе меня стимулирует потребность в самовыражении (желание проявить свои способности).",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q49",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 4,
+            "maxLabel": "4 — постоянное проявление качества",
+            "min": 0,
+            "minLabel": "0 — не согласен",
+            "step": 1
+          },
+          "text": "Я предпочел бы работать в коллективе, где не запрещается сомневаться в общепризнанном.",
+          "type": "Scale"
+        },
+        {
+          "group": null,
+          "id": "q50",
+          "imageKey": null,
+          "options": [],
+          "required": true,
+          "scale": {
+            "max": 4,
+            "maxLabel": "4 — постоянное проявление качества",
+            "min": 0,
+            "minLabel": "0 — не согласен",
+            "step": 1
+          },
+          "text": "К работе меня побуждает желание войти в круг людей, окруженных ореолом исключительности.",
+          "type": "Scale"
+        }
+      ],
+      "scoring": {
+        "evenScaleName": "П",
+        "maxScorePerScale": 100,
+        "oddScaleName": "Т",
+        "resultFormat": "TwoScales",
+        "type": "OddEvenSum"
+      },
+      "subtitle": null,
+      "title": "Творческий потенциал"
+    }
+  ]
+}
