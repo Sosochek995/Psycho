@@ -25,6 +25,7 @@ COSMETIC_FIELDS = {"displayLabel", "letter", "displayText", "uiHint"}
 
 PROTECTED_CODE_FILES = [
     "Services/ScoringService.cs",
+    "Services/Interfaces/IScoringService.cs",
     "Models/ScoringConfig.cs",
     "Models/Enums.cs",
     "Models/Question.cs",
