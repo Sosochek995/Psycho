@@ -45,8 +45,13 @@ def norm_level(v):
     s = str(v).strip()
     s = re.sub(r'\s*[（(].*?[)）]\s*', '', s)
     s = s.replace('"', '').replace("'", '')
-    return s.lower()
-
+    s = s.lower().strip()
+    # Косметический префикс эталона: "Комбинация ПППП" и "ПППП" — одно значение.
+    # Сама комбинация букв продолжает сравниваться точно.
+    if s.startswith('комбинация '):
+        s = s[len('комбинация '):].strip()
+    return s
+    
 def eq_level(a, b):
     return norm_level(a) == norm_level(b)
 
