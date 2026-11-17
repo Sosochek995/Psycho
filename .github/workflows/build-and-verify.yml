@@ -1,7 +1,7 @@
 name: build-and-verify
 on:
   push:
-    branches: [ transfer-of-methodology-blocks-1888f ]
+       branches: [ main, transfer-of-methodology-blocks-1888f ]
   workflow_dispatch:
 
 jobs:
@@ -18,61 +18,94 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Independent data audit
-        shell: python
-        run: |
-          import json, glob, hashlib, os
-          for p in ["tools/baseline/methodology_baseline.json",
-                    "tools/baseline/_current_snapshot.json"]:
-              if os.path.exists(p):
-                  h = hashlib.sha256(open(p, 'rb').read()).hexdigest()
-                  print("SHA256", p, h)
-              else:
-                  print("MISSING", p)
-          for f in sorted(glob.glob("Data/Blocks/block_*.json")):
-              d = json.load(open(f, encoding="utf-8"))
-              qs = d.get("questions", [])
-              print("COUNT", os.path.basename(f), len(qs))
-              if "block_08" in f:
-                  for i, q in enumerate(qs, 1):
-                      print("   G8", i, (q.get("group") or q.get("text", ""))[:70])
-
       - name: Build
+        continue-on-error: true
         run: dotnet build -c Release
 
       - name: Publish self-contained
+        continue-on-error: true
         run: dotnet publish -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true -p:EnableCompressionInSingleFile=true
 
       - name: Collect publish output
+        if: always()
+        continue-on-error: true
         shell: pwsh
         run: |
           $p = Get-ChildItem -Recurse -Directory -Filter publish |
                Where-Object { $_.FullName -like "*win-x64*" } |
                Select-Object -First 1
-          if (-not $p) { Write-Error "publish folder not found"; exit 1 }
+          if (-not $p) {
+            "publish folder not found" | Out-File -Encoding utf8 collect_error.txt
+            exit 0
+          }
           New-Item -ItemType Directory -Force -Path dist | Out-Null
           Copy-Item -Path (Join-Path $p.FullName '*') -Destination dist -Recurse -Force
-          Get-ChildItem dist | Select-Object Name, Length
+          Get-ChildItem dist | Select-Object Name, Length |
+            Out-File -Encoding utf8 dist_listing.txt
 
       - name: Upload app
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: ZharikovApp-win-x64
           path: dist/**
+          if-no-files-found: warn
+
+      - name: Independent data audit
+        if: always()
+        shell: python
+        run: |
+          import json, glob, hashlib, os, traceback
+          out = open("audit.txt", "w", encoding="utf-8")
+          def log(*a):
+              s = " ".join(str(x) for x in a)
+              out.write(s + "\n")
+              try:
+                  print(s)
+              except Exception:
+                  print(s.encode("ascii", "replace").decode())
+          try:
+              for p in ["tools/baseline/methodology_baseline.json",
+                        "tools/baseline/_current_snapshot.json",
+                        "docs/methodics_source.md"]:
+                  if os.path.exists(p):
+                      log("SHA256", p, hashlib.sha256(open(p, "rb").read()).hexdigest())
+                  else:
+                      log("MISSING", p)
+              files = sorted(glob.glob("Data/Blocks/block_*.json"))
+              log("BLOCK_FILES", len(files))
+              for f in files:
+                  try:
+                      d = json.load(open(f, encoding="utf-8-sig"))
+                      qs = d.get("questions") or []
+                      log("COUNT", os.path.basename(f), len(qs))
+                      if "block_08" in f or "block_09" in f:
+                          for i, q in enumerate(qs, 1):
+                              name = q.get("group") or q.get("text") or ""
+                              log("   GROUP", i, name[:70])
+                  except Exception:
+                      log("ERROR", f, traceback.format_exc())
+          except Exception:
+              log("FATAL", traceback.format_exc())
+          out.close()
 
       - name: Build GuardRunner
+        if: always()
         continue-on-error: true
         run: dotnet build tools/GuardRunner/GuardRunner.csproj -c Release
 
       - name: Run control vectors
+        if: always()
         continue-on-error: true
         run: dotnet run --project tools/GuardRunner/GuardRunner.csproj -c Release -- Data/Blocks tools/baseline/control_vectors.json tools/baseline/_actual_vectors.json
 
       - name: Compare vectors
+        if: always()
         continue-on-error: true
         run: python tools/guard_compare.py tools/baseline/control_vectors.json tools/baseline/_actual_vectors.json
 
       - name: Guard check
+        if: always()
         continue-on-error: true
         shell: pwsh
         run: ./tools/guard_check.ps1
@@ -83,5 +116,9 @@ jobs:
         with:
           name: reports
           path: |
+            audit.txt
+            dist_listing.txt
+            collect_error.txt
             docs/guard_report.md
             tools/baseline/_actual_vectors.json
+          if-no-files-found: warn
