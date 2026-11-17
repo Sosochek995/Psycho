@@ -1,55 +1,35 @@
 name: build-and-verify
 on:
   push:
-    branches: [ main, transfer-of-methodology-blocks-1888f ]
+    branches: [ main ]
   workflow_dispatch:
-
 jobs:
   build:
     runs-on: windows-latest
-    # Кириллица в выводе Python иначе ломается: на Windows-раннере cp1252
     env:
       PYTHONIOENCODING: utf-8
       PYTHONUTF8: '1'
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '8.0.x'
-
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-
-      # Сборка и выкладка exe защищены от падения:
-      # приложение нужно получить даже если проверка упадёт
       - name: Build
         continue-on-error: true
         run: dotnet build -c Release
-
-      - name: Publish self-contained
+      - name: Publish
         continue-on-error: true
         run: dotnet publish -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true -p:EnableCompressionInSingleFile=true
-
-      - name: Collect publish output
+      - name: Collect
         if: always()
         continue-on-error: true
         shell: pwsh
         run: |
-          $ErrorActionPreference = 'Continue'
-          $p = Get-ChildItem -Recurse -Directory -Filter publish |
-               Where-Object { $_.FullName -like "*win-x64*" } |
-               Select-Object -First 1
-          if (-not $p) {
-            "publish folder not found" | Out-File -Encoding utf8 collect_error.txt
-            exit 0
-          }
-          New-Item -ItemType Directory -Force -Path dist | Out-Null
-          Copy-Item -Path (Join-Path $p.FullName '*') -Destination dist -Recurse -Force
-          Get-ChildItem dist | Select-Object Name, Length |
-            Out-File -Encoding utf8 dist_listing.txt
-
+          $p = Get-ChildItem -Recurse -Directory -Filter publish | Where-Object { $_.FullName -like "*win-x64*" } | Select-Object -First 1
+          if ($p) { New-Item -ItemType Directory -Force -Path dist | Out-Null; Copy-Item (Join-Path $p.FullName '*') dist -Recurse -Force }
       - name: Upload app
         if: always()
         uses: actions/upload-artifact@v4
@@ -57,11 +37,30 @@ jobs:
           name: ZharikovApp-win-x64
           path: dist/**
           if-no-files-found: warn
-
-      # Независимый аудит: хэши всех защищённых файлов + счётчики вопросов
-      - name: Independent data audit
+      - name: Build GuardRunner
+        run: dotnet build tools/GuardRunner/GuardRunner.csproj -c Release
+      - name: Run vectors
+        run: dotnet run --project tools/GuardRunner/GuardRunner.csproj -c Release -- Data/Blocks tools/baseline/control_vectors.json tools/baseline/_actual_vectors.json
+      - name: Compare vectors
         if: always()
-        continue-on-error: true
-        shell: python
+        shell: pwsh
         run: |
-          import json, glob, hashlib, os
+          $PSNativeCommandUseErrorActionPreference = $false
+          python tools/guard_compare.py tools/baseline/control_vectors.json tools/baseline/_actual_vectors.json 2>&1 | Out-File -Encoding utf8 vector_compare.txt
+          $c = $LASTEXITCODE
+          Get-Content vector_compare.txt
+          exit $c
+      - name: Guard check
+        if: always()
+        shell: pwsh
+        run: ./tools/guard_check.ps1
+      - name: Upload reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: reports
+          path: |
+            vector_compare.txt
+            docs/guard_report.md
+            tools/baseline/_actual_vectors.json
+          if-no-files-found: warn
