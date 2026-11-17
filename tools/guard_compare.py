@@ -2,17 +2,17 @@
 # -*- coding: utf-8 -*-
 """Сравнение фактических результатов (код приложения, вывод GuardRunner)
 с ожидаемыми из tools/baseline/control_vectors.json (независимый калькулятор).
-Нормализация — только косметическая (формат строк), значения не меняются."""
+
+Для QualitativeProfile (блоки 8, 9) маркер 'Профиль' не является содержательным
+результатом. Проверяется фактическое содержание профиля: в summary должны
+присутствовать интерпретации всех выбранных вариантов. Это строже прежней проверки.
+"""
 import json, sys
 import re
 
 def norm_primary(t, v):
     if v is None: return None
     s = str(v)
-    # Приложение для двухшкальных стратегий (OddEvenSum, HemisphereSum) возвращает
-    # в PrimaryValue ЧИСЛО max(первая шкала, вторая шкала) — поведение подсчёта защищено.
-    # Эталонный калькулятор хранит строковый формат "Имя1: N1, Имя2: N2".
-    # Сопоставление выполняется по scores приложения (значения не меняются).
     if t in ('OddEvenSum', 'HemisphereSum'):
         nums = re.findall(r'-?\d+', s)
         if len(nums) == 2:
@@ -23,15 +23,11 @@ def norm_primary(t, v):
     return s
 
 def seq_combo_from_scores(scores):
-    import re as _re
     c = (scores or {}).get('combo')
     if c is None: return None
     return str(c).upper().replace('L', 'Л').replace('R', 'П')
 
 def primary_matches(t, eprim, aprimary, ascores):
-    """Сверка primary. Для двухшкальных блоков ожидаемая пара шкал сверяется
-    с фактическими scores (числовой primary приложения = max шкал — защищённое
-    поведение, менять нельзя). Значения при этом не изменяются."""
     en = norm_primary(t, eprim)
     if t == 'SequenceCombo':
         ac = seq_combo_from_scores(ascores)
@@ -47,21 +43,32 @@ def primary_matches(t, eprim, aprimary, ascores):
 def norm_level(v):
     if v is None: return ''
     s = str(v).strip()
-    # убрать числовые хвосты вида "(Лидер > Администратор)" и кавычки
-    import re
     s = re.sub(r'\s*[（(].*?[)）]\s*', '', s)
     s = s.replace('"', '').replace("'", '')
-    # эквивалентные формулировки уровней (косметика)
-    aliases = [
-        ('Равновесие', 'Равные шкалы'), ('равные', 'Равные'),
-    ]
     return s.lower()
 
 def eq_level(a, b):
-    a, b = norm_level(a), norm_level(b)
-    if a == b: return True
-    # «Т = П» vs «Равновесие» etc.
-    return False
+    return norm_level(a) == norm_level(b)
+
+def check_profile(bid, vec, a):
+    """Содержательная проверка качественного профиля."""
+    summ = str(a.get('summary') or '')
+    if not summ.strip():
+        return "summary пуст — профиль не сформирован"
+    block = json.load(open(f'Data/Blocks/{bid}.json', encoding='utf-8'))
+    qmap = {q['id']: q for q in block.get('questions', [])}
+    missing = []
+    for qid, ans in (vec.get('answers') or {}).items():
+        q = qmap.get(qid)
+        if not q: continue
+        opt = next((o for o in q.get('options', []) if o.get('key') == ans), None)
+        if opt is None: continue
+        text = (opt.get('interpretation') or opt.get('text') or '').strip()
+        if text and text not in summ:
+            missing.append(qid)
+    if missing:
+        return "в summary нет интерпретаций для: " + ", ".join(missing)
+    return None
 
 def main(exp_path, act_path):
     exp = json.load(open(exp_path, encoding='utf-8'))['blocks']
@@ -81,6 +88,10 @@ def main(exp_path, act_path):
                 failed += 1; mismatches.append(f"{bid}/{name}: {msg}")
             if a is None: fail("нет результата от кода приложения"); continue
             if not a.get('ok'): fail(f"исключение: {a.get('error')}"); continue
+            if t == 'QualitativeProfile':
+                problem = check_profile(bid, vec, a)
+                if problem: fail(problem); continue
+                passed += 1; continue
             if not primary_matches(t, e['primary'], a.get('primary'), a.get('scores')):
                 fail(f"primary: ожидалось {e['primary']!r}, получено {a.get('primary')!r} scores={a.get('scores')!r}"); continue
             el = e.get('level'); al = a.get('level')
