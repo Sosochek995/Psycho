@@ -29,7 +29,12 @@ jobs:
         shell: pwsh
         run: |
           $p = Get-ChildItem -Recurse -Directory -Filter publish | Where-Object { $_.FullName -like "*win-x64*" } | Select-Object -First 1
-          if ($p) { New-Item -ItemType Directory -Force -Path dist | Out-Null; Copy-Item (Join-Path $p.FullName '*') dist -Recurse -Force }
+          if ($p) {
+            New-Item -ItemType Directory -Force -Path dist | Out-Null
+            Copy-Item (Join-Path $p.FullName '*') dist -Recurse -Force
+            Remove-Item dist\*.zip -Force -ErrorAction SilentlyContinue
+            Remove-Item dist\*.pdb -Force -ErrorAction SilentlyContinue
+          }
       - name: Upload app
         if: always()
         uses: actions/upload-artifact@v4
