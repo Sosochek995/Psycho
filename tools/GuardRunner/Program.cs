@@ -1,6 +1,6 @@
 // GuardVectorRunner: прогон контрольных векторов кодом приложения (ScoringService).
 // Аргументы: <путь к Data/Blocks> <путь к control_vectors.json> [выходной json]
-// Формат вывода: { "blockId": { "vectorName": { primary, scores, level } , ... }, ... }
+// Только экспорт результатов. Логика подсчёта не затрагивается.
 using System.Text.Json;
 using ZharikovApp.Models;
 using ZharikovApp.Services;
@@ -46,12 +46,21 @@ foreach (var blockProp in vecBlocks.EnumerateObject())
         try
         {
             var result = scoring.CalculateBlock(block, answers);
+
+            // Числовые шкалы выгружаем как есть.
+            // Для SequenceCombo добавляем combo — этого ждёт guard_compare.
+            var scores = new Dictionary<string, object?>();
+            foreach (var kv in result.Scores) scores[kv.Key] = kv.Value;
+            if (block.Scoring.Type == ScoringType.SequenceCombo && result.Level is not null)
+                scores["combo"] = result.Level;
+
             perVector[name] = new Dictionary<string, object?>
             {
                 ["ok"] = true,
                 ["primary"] = result.PrimaryValue,
-                ["scores"] = result.Scores,
+                ["scores"] = scores,
                 ["level"] = result.Level,
+                ["summary"] = result.Summary,
             };
         }
         catch (Exception ex)
