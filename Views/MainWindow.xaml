@@ -6,7 +6,9 @@
         Height="780" Width="1240" MinHeight="600" MinWidth="1000"
         WindowStartupLocation="CenterScreen"
         TextOptions.TextFormattingMode="Ideal"
-        FontFamily="Segoe UI">
+        FontFamily="Segoe UI"
+        TextElement.Foreground="#EDEFFA"
+        TextElement.FontSize="15">
 
     <Window.DataContext>
         <vm:MainViewModel/>
@@ -26,7 +28,7 @@
         <SolidColorBrush x:Key="Surface" Color="#171C46"/>
         <SolidColorBrush x:Key="Line" Color="#2E3676"/>
         <SolidColorBrush x:Key="Ink" Color="#EDEFFA"/>
-        <SolidColorBrush x:Key="Muted" Color="#9AA2CE"/>
+        <SolidColorBrush x:Key="Muted" Color="#A7AED6"/>
         <SolidColorBrush x:Key="Cyan" Color="#22D3EE"/>
         <SolidColorBrush x:Key="Amber" Color="#F5A524"/>
         <SolidColorBrush x:Key="Success" Color="#2FBF71"/>
@@ -43,10 +45,24 @@
             <GradientStop Color="#2B1A55" Offset="1"/>
         </LinearGradientBrush>
 
+        <!-- Только перенос. Цвет и размер наследуются от окна и кнопок. -->
         <Style TargetType="TextBlock">
-            <Setter Property="Foreground" Value="{StaticResource Ink}"/>
-            <Setter Property="FontSize" Value="15"/>
             <Setter Property="TextWrapping" Value="Wrap"/>
+        </Style>
+
+        <Style TargetType="ToolTip">
+            <Setter Property="Foreground" Value="#EDEFFA"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ToolTip">
+                        <Border Background="#171C46" BorderBrush="#3D6BFF" BorderThickness="1"
+                                CornerRadius="10" Padding="12,8">
+                            <TextBlock Text="{TemplateBinding Content}" FontSize="14"
+                                       Foreground="#EDEFFA" TextWrapping="Wrap" MaxWidth="320"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
         </Style>
 
         <Style TargetType="ScrollBar">
@@ -117,7 +133,9 @@
                     <ControlTemplate TargetType="Button">
                         <Border x:Name="B" CornerRadius="12" Background="#232A63"
                                 BorderBrush="#3A4490" BorderThickness="1" Padding="{TemplateBinding Padding}">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"
+                                              TextElement.Foreground="{TemplateBinding Foreground}"
+                                              TextElement.FontSize="{TemplateBinding FontSize}"/>
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
@@ -128,7 +146,7 @@
                                 <Setter TargetName="B" Property="Background" Value="#1A2050"/>
                             </Trigger>
                             <Trigger Property="IsEnabled" Value="False">
-                                <Setter TargetName="B" Property="Opacity" Value="0.38"/>
+                                <Setter TargetName="B" Property="Opacity" Value="0.45"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
@@ -158,19 +176,22 @@
 
         <Style x:Key="PrimaryBtn" TargetType="Button" BasedOn="{StaticResource Btn}">
             <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Foreground" Value="White"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
                         <Border x:Name="B" CornerRadius="12" Padding="{TemplateBinding Padding}"
                                 Background="{StaticResource AccentFlow}">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"
+                                              TextElement.Foreground="White"
+                                              TextElement.FontSize="{TemplateBinding FontSize}"/>
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
                                 <Setter TargetName="B" Property="Opacity" Value="0.92"/>
                             </Trigger>
                             <Trigger Property="IsEnabled" Value="False">
-                                <Setter TargetName="B" Property="Opacity" Value="0.32"/>
+                                <Setter TargetName="B" Property="Opacity" Value="0.45"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
@@ -183,13 +204,15 @@
             <Setter Property="Margin" Value="0,6"/>
             <Setter Property="MinHeight" Value="58"/>
             <Setter Property="Foreground" Value="{StaticResource Ink}"/>
+            <Setter Property="FontSize" Value="17"/>
             <Setter Property="HorizontalContentAlignment" Value="Left"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
                         <Border x:Name="B" CornerRadius="14" Padding="16,12"
                                 Background="#1B2150" BorderBrush="#333C82" BorderThickness="1">
-                            <ContentPresenter VerticalAlignment="Center"/>
+                            <ContentPresenter VerticalAlignment="Center"
+                                              TextElement.Foreground="{TemplateBinding Foreground}"/>
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
@@ -200,19 +223,20 @@
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
-        </Style>
-
-        <Style x:Key="OptionBtnSelected" TargetType="Button" BasedOn="{StaticResource OptionBtn}">
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Border CornerRadius="14" Padding="16,12"
-                                Background="#2A3690" BorderBrush="#22D3EE" BorderThickness="2">
-                            <ContentPresenter VerticalAlignment="Center"/>
-                        </Border>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding IsSelected}" Value="True">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border CornerRadius="14" Padding="16,12"
+                                        Background="#2A3690" BorderBrush="#22D3EE" BorderThickness="2">
+                                    <ContentPresenter VerticalAlignment="Center" TextElement.Foreground="White"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </DataTrigger>
+            </Style.Triggers>
         </Style>
 
         <Style x:Key="ScaleBtn" TargetType="Button">
@@ -220,7 +244,7 @@
             <Setter Property="Width" Value="58"/>
             <Setter Property="Height" Value="58"/>
             <Setter Property="Margin" Value="4"/>
-            <Setter Property="FontSize" Value="21"/>
+            <Setter Property="FontSize" Value="22"/>
             <Setter Property="FontWeight" Value="SemiBold"/>
             <Setter Property="Foreground" Value="{StaticResource Ink}"/>
             <Setter Property="Template">
@@ -228,7 +252,11 @@
                     <ControlTemplate TargetType="Button">
                         <Border x:Name="B" CornerRadius="14" Background="#1B2150"
                                 BorderBrush="#333C82" BorderThickness="1">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock Text="{TemplateBinding Content}"
+                                       FontSize="{TemplateBinding FontSize}"
+                                       FontWeight="{TemplateBinding FontWeight}"
+                                       Foreground="{TemplateBinding Foreground}"
+                                       HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
@@ -239,20 +267,22 @@
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
-        </Style>
-
-        <Style x:Key="ScaleBtnSelected" TargetType="Button" BasedOn="{StaticResource ScaleBtn}">
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="FontWeight" Value="Bold"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Border CornerRadius="14" Background="{StaticResource AccentFlow}">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Border>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding IsSelected}" Value="True">
+                    <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="FontWeight" Value="Bold"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border CornerRadius="14" Background="{StaticResource AccentFlow}">
+                                    <TextBlock Text="{TemplateBinding Content}" FontSize="22" FontWeight="Bold"
+                                               Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </DataTrigger>
+            </Style.Triggers>
         </Style>
 
         <Style x:Key="Card" TargetType="Border">
@@ -298,12 +328,13 @@
         <Style x:Key="BlockCard" TargetType="ListBoxItem">
             <Setter Property="Cursor" Value="Hand"/>
             <Setter Property="Margin" Value="10,5"/>
+            <Setter Property="Foreground" Value="{StaticResource Ink}"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="ListBoxItem">
                         <Border x:Name="B" CornerRadius="14" Padding="14,12"
                                 Background="#161B45" BorderBrush="#2A3170" BorderThickness="1">
-                            <ContentPresenter/>
+                            <ContentPresenter TextElement.Foreground="{StaticResource Ink}"/>
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
@@ -329,7 +360,7 @@
                     <ControlTemplate TargetType="ListBoxItem">
                         <Border x:Name="B" CornerRadius="11" Padding="16,8"
                                 Background="#1A2050" BorderBrush="#333C82" BorderThickness="1">
-                            <ContentPresenter/>
+                            <ContentPresenter TextElement.Foreground="{StaticResource Ink}"/>
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsSelected" Value="True">
@@ -361,7 +392,7 @@
                 </Grid.ColumnDefinitions>
 
                 <StackPanel Grid.Column="0">
-                    <TextBlock Text="{Binding Title}" FontSize="23" FontWeight="Bold"/>
+                    <TextBlock Text="{Binding Title}" FontSize="23" FontWeight="Bold" Foreground="{StaticResource Ink}"/>
                     <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
                         <ListBox ItemsSource="{Binding Packs}" SelectedItem="{Binding SelectedPack, Mode=TwoWay}"
                                  Background="Transparent" BorderThickness="0"
@@ -375,7 +406,8 @@
                             </ListBox.ItemContainerStyle>
                             <ListBox.ItemTemplate>
                                 <DataTemplate>
-                                    <TextBlock Text="{Binding Header}" FontSize="14" FontWeight="SemiBold"/>
+                                    <TextBlock Text="{Binding Header}" FontSize="14" FontWeight="SemiBold"
+                                               Foreground="#EDEFFA"/>
                                 </DataTemplate>
                             </ListBox.ItemTemplate>
                         </ListBox>
@@ -417,15 +449,14 @@
                                         <ColumnDefinition Width="Auto"/>
                                     </Grid.ColumnDefinitions>
                                     <TextBlock Grid.Column="0" Text="{Binding DisplayTitle}" FontSize="15"
-                                               VerticalAlignment="Center"/>
+                                               TextWrapping="Wrap" Foreground="#EDEFFA" VerticalAlignment="Center"/>
                                     <Border Grid.Column="1" CornerRadius="9" Padding="9,4" Margin="10,0,0,0"
                                             Background="#0C1030" BorderBrush="#333C82" BorderThickness="1"
                                             VerticalAlignment="Center">
                                         <StackPanel Orientation="Horizontal">
                                             <TextBlock Text="{Binding StatusGlyph}" FontSize="13"
-                                                       Foreground="{StaticResource Cyan}" Margin="0,0,5,0"/>
-                                            <TextBlock Text="{Binding StatusText}" FontSize="12"
-                                                       Foreground="{StaticResource Muted}"/>
+                                                       Foreground="#22D3EE" Margin="0,0,5,0"/>
+                                            <TextBlock Text="{Binding StatusText}" FontSize="12" Foreground="#A7AED6"/>
                                         </StackPanel>
                                     </Border>
                                 </Grid>
@@ -456,7 +487,7 @@
                     </Border.Triggers>
                     <StackPanel>
                         <Border Height="5" CornerRadius="3" Background="{StaticResource AccentFlow}" Margin="0,0,0,20"/>
-                        <TextBlock Text="Двенадцать методик диагностики" FontSize="27" FontWeight="Bold"/>
+                        <TextBlock Text="Двенадцать методик диагностики" FontSize="27" FontWeight="Bold" Foreground="{StaticResource Ink}"/>
                         <TextBlock Margin="0,12,0,0" Foreground="{StaticResource Muted}" FontSize="16" LineHeight="25"
                                    Text="Выберите методику слева. Ответы сохраняются автоматически, промежуточные баллы скрыты — подробный разбор откроется в итоговом отчёте после всех двенадцати."/>
                         <Button Style="{StaticResource PrimaryBtn}" Margin="0,22,0,0" HorizontalAlignment="Left"
@@ -482,10 +513,11 @@
                             </EventTrigger>
                         </Border.Triggers>
                         <StackPanel>
-                            <TextBlock Text="{Binding CurrentBlockTitle}" FontSize="24" FontWeight="Bold"/>
+                            <TextBlock Text="{Binding CurrentBlockTitle}" FontSize="24" FontWeight="Bold" Foreground="{StaticResource Ink}"/>
                             <Border Height="4" CornerRadius="2" Background="{StaticResource AccentFlow}" Margin="0,14,0,18"/>
                             <TextBlock Text="ИНСТРУКЦИЯ" FontSize="12" FontWeight="Bold" Foreground="{StaticResource Amber}"/>
-                            <TextBlock Text="{Binding BlockInstruction}" Margin="0,10,0,0" FontSize="17" LineHeight="28"/>
+                            <TextBlock Text="{Binding BlockInstruction}" Margin="0,10,0,0" FontSize="17" LineHeight="28"
+                                       Foreground="{StaticResource Ink}"/>
                             <Button Style="{StaticResource PrimaryBtn}" Margin="0,24,0,0" HorizontalAlignment="Left"
                                     Content="Перейти к вопросам" Command="{Binding GoNextCommand}"/>
                         </StackPanel>
@@ -508,22 +540,24 @@
                                     </MultiBinding>
                                 </TextBlock.Text>
                             </TextBlock>
-                            <TextBlock HorizontalAlignment="Right" FontSize="12" Foreground="#6F79AE"
+                            <TextBlock HorizontalAlignment="Right" FontSize="12" Foreground="#8B94C6"
                                        Text="цифры — ответ · стрелки — выбор · Enter — далее · Ctrl+Enter — завершить"/>
                         </Grid>
                         <ProgressBar Margin="0,8,0,0" Height="6" Minimum="0"
                                      Value="{Binding CurrentQuestionIndex}" Maximum="{Binding TotalQuestions}"/>
                     </StackPanel>
 
-                    <ContentControl Grid.Row="1" Content="{Binding CurrentQuestion}">
+                    <ContentControl Grid.Row="1" Content="{Binding CurrentQuestion}"
+                                    Foreground="{StaticResource Ink}"
+                                    TextElement.Foreground="{StaticResource Ink}">
                         <ContentControl.ContentTemplate>
                             <DataTemplate>
                                 <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
                                     <Border Style="{StaticResource Card}" Margin="0,0,4,0">
-                                        <StackPanel>
-                                            <TextBlock FontSize="21" LineHeight="30" Margin="0,0,0,18">
+                                        <StackPanel TextElement.Foreground="#EDEFFA">
+                                            <TextBlock FontSize="21" LineHeight="30" Margin="0,0,0,18" Foreground="#EDEFFA">
                                                 <Run Text="{Binding Number, Mode=OneWay, StringFormat='{}{0}. '}"
-                                                     Foreground="#22D3EE" FontWeight="Bold"/><Run Text="{Binding Text, Mode=OneWay}"/>
+                                                     Foreground="#22D3EE" FontWeight="Bold"/><Run Text="{Binding Text, Mode=OneWay}" Foreground="#EDEFFA"/>
                                             </TextBlock>
 
                                             <Grid Margin="0,0,0,18"
@@ -536,39 +570,22 @@
                                                     <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
                                                         <TextBlock Text="◧" FontSize="40" Foreground="#3D6BFF" HorizontalAlignment="Center"/>
                                                         <TextBlock Text="{Binding ImageCaption}" FontSize="17" FontWeight="SemiBold"
-                                                                   HorizontalAlignment="Center" Margin="0,10,0,0"/>
-                                                        <TextBlock FontSize="13" Foreground="#7C86BE" Margin="0,8,0,0"
+                                                                   Foreground="#EDEFFA" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                                                        <TextBlock FontSize="13" Foreground="#9AA2CE" Margin="0,8,0,0"
                                                                    HorizontalAlignment="Center" TextAlignment="Center"
                                                                    Text="Место для иллюстрации. Положите файл в Assets/Images рядом с программой."/>
-                                                        <TextBlock Text="{Binding ImageFileName}" FontSize="13" Foreground="{StaticResource Amber}"
+                                                        <TextBlock Text="{Binding ImageFileName}" FontSize="13" Foreground="#F5A524"
                                                                    HorizontalAlignment="Center" Margin="0,6,0,0"/>
                                                     </StackPanel>
                                                 </Border>
                                             </Grid>
 
                                             <ItemsControl ItemsSource="{Binding Options}"
+                                                          Foreground="#EDEFFA"
                                                           Visibility="{Binding IsChoice, Converter={StaticResource BoolToVis}}">
                                                 <ItemsControl.ItemTemplate>
                                                     <DataTemplate>
-                                                        <Button Command="{Binding SelectCommand}">
-                                                            <Button.Style>
-                                                                <Style TargetType="Button" BasedOn="{StaticResource OptionBtn}">
-                                                                    <Style.Triggers>
-                                                                        <DataTrigger Binding="{Binding IsSelected}" Value="True">
-                                                                            <Setter Property="Template">
-                                                                                <Setter.Value>
-                                                                                    <ControlTemplate TargetType="Button">
-                                                                                        <Border CornerRadius="14" Padding="16,12"
-                                                                                                Background="#2A3690" BorderBrush="#22D3EE" BorderThickness="2">
-                                                                                            <ContentPresenter VerticalAlignment="Center"/>
-                                                                                        </Border>
-                                                                                    </ControlTemplate>
-                                                                                </Setter.Value>
-                                                                            </Setter>
-                                                                        </DataTrigger>
-                                                                    </Style.Triggers>
-                                                                </Style>
-                                                            </Button.Style>
+                                                        <Button Style="{StaticResource OptionBtn}" Command="{Binding SelectCommand}">
                                                             <StackPanel Orientation="Horizontal">
                                                                 <Border Width="34" Height="34" CornerRadius="10" Background="#0D1132"
                                                                         BorderBrush="#3D6BFF" BorderThickness="1" Margin="0,0,14,0">
@@ -576,8 +593,8 @@
                                                                                Foreground="#22D3EE" HorizontalAlignment="Center"
                                                                                VerticalAlignment="Center"/>
                                                                 </Border>
-                                                                <TextBlock Text="{Binding Text}" FontSize="17" VerticalAlignment="Center"
-                                                                           MaxWidth="620"/>
+                                                                <TextBlock Text="{Binding Text}" FontSize="17" Foreground="#EDEFFA"
+                                                                           VerticalAlignment="Center" MaxWidth="620"/>
                                                             </StackPanel>
                                                         </Button>
                                                     </DataTemplate>
@@ -591,33 +608,14 @@
                                                     <TextBlock HorizontalAlignment="Right" FontSize="13" Foreground="{StaticResource Muted}"
                                                                Text="{Binding ScaleMax, StringFormat='максимум {0}'}"/>
                                                 </Grid>
-                                                <ItemsControl ItemsSource="{Binding ScaleChoices}">
+                                                <ItemsControl ItemsSource="{Binding ScaleChoices}" Foreground="#EDEFFA">
                                                     <ItemsControl.ItemsPanel>
                                                         <ItemsPanelTemplate><WrapPanel/></ItemsPanelTemplate>
                                                     </ItemsControl.ItemsPanel>
                                                     <ItemsControl.ItemTemplate>
                                                         <DataTemplate>
-                                                            <Button Content="{Binding Value}" Command="{Binding SelectCommand}">
-                                                                <Button.Style>
-                                                                    <Style TargetType="Button" BasedOn="{StaticResource ScaleBtn}">
-                                                                        <Style.Triggers>
-                                                                            <DataTrigger Binding="{Binding IsSelected}" Value="True">
-                                                                                <Setter Property="Foreground" Value="White"/>
-                                                                                <Setter Property="FontWeight" Value="Bold"/>
-                                                                                <Setter Property="Template">
-                                                                                    <Setter.Value>
-                                                                                        <ControlTemplate TargetType="Button">
-                                                                                            <Border CornerRadius="14" Background="{StaticResource AccentFlow}">
-                                                                                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                                                                            </Border>
-                                                                                        </ControlTemplate>
-                                                                                    </Setter.Value>
-                                                                                </Setter>
-                                                                            </DataTrigger>
-                                                                        </Style.Triggers>
-                                                                    </Style>
-                                                                </Button.Style>
-                                                            </Button>
+                                                            <Button Style="{StaticResource ScaleBtn}"
+                                                                    Content="{Binding Value}" Command="{Binding SelectCommand}"/>
                                                         </DataTemplate>
                                                     </ItemsControl.ItemTemplate>
                                                 </ItemsControl>
@@ -646,7 +644,8 @@
                                     <TextBlock Text="✓" FontSize="32" Foreground="{StaticResource Success}"
                                                HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                 </Border>
-                                <TextBlock Text="Ответы сохранены" FontSize="26" FontWeight="Bold" Margin="0,18,0,0"/>
+                                <TextBlock Text="Ответы сохранены" FontSize="26" FontWeight="Bold"
+                                           Foreground="{StaticResource Ink}" Margin="0,18,0,0"/>
                                 <TextBlock Text="{Binding SavedTitle}" FontSize="17" Foreground="{StaticResource Cyan}" Margin="0,6,0,0"/>
                                 <TextBlock Text="{Binding SavedNote}" FontSize="16" Foreground="{StaticResource Muted}"
                                            LineHeight="25" Margin="0,14,0,0"/>
@@ -657,17 +656,18 @@
                                     <Button Style="{StaticResource Btn}" Content="Пройти этот блок заново"
                                             Command="{Binding RestartBlockCommand}" Margin="12,0,0,0"/>
                                 </StackPanel>
-                                <TextBlock Text="{Binding NextBlockTitle}" FontSize="14" Foreground="#6F79AE" Margin="0,12,0,0"/>
+                                <TextBlock Text="{Binding NextBlockTitle}" FontSize="14" Foreground="#8B94C6" Margin="0,12,0,0"/>
                             </StackPanel>
                         </Border>
 
                         <Border Style="{StaticResource ReportCard}">
                             <StackPanel>
-                                <TextBlock Text="Итоговый отчёт" FontSize="26" FontWeight="Bold"/>
+                                <TextBlock Text="Итоговый отчёт" FontSize="26" FontWeight="Bold" Foreground="{StaticResource Ink}"/>
                                 <Border Height="4" CornerRadius="2" Background="{StaticResource AccentFlow}" Margin="0,14,0,18"/>
                                 <TextBox Text="{Binding ReportText, Mode=OneWay}" IsReadOnly="True"
                                          FontFamily="Consolas" FontSize="14"
-                                         Background="#0C1030" Foreground="{StaticResource Ink}"
+                                         Background="#0C1030" Foreground="#EDEFFA" CaretBrush="#22D3EE"
+                                         SelectionBrush="#3D6BFF"
                                          BorderBrush="#333C82" BorderThickness="1" Padding="16"
                                          TextWrapping="Wrap" AcceptsReturn="True" MinHeight="360"
                                          VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled"/>
@@ -696,15 +696,19 @@
                             MinWidth="120" Margin="10,0,0,0"/>
                 </StackPanel>
 
-                <TextBlock Grid.Column="1" Text="{Binding StatusMessage}" FontSize="14"
-                           Foreground="{StaticResource Muted}" VerticalAlignment="Center"
-                           TextTrimming="CharacterEllipsis" Margin="18,0"/>
+                <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="18,0">
+                    <TextBlock Text="{Binding StatusMessage}" FontSize="14" Foreground="{StaticResource Muted}"
+                               TextTrimming="CharacterEllipsis"/>
+                    <TextBlock Text="{Binding FinalReportGateText}" FontSize="12" Foreground="#8B94C6"
+                               TextTrimming="CharacterEllipsis" Margin="0,3,0,0"/>
+                </StackPanel>
 
                 <StackPanel Grid.Column="2" Orientation="Horizontal">
                     <Button Style="{StaticResource PrimaryBtn}" Content="Завершить блок"
                             Command="{Binding CompleteBlockCommand}" MinWidth="170"/>
                     <Button Style="{StaticResource Btn}" Content="Итоговый отчёт"
-                            Command="{Binding OpenFinalReportCommand}" MinWidth="160" Margin="10,0,0,0"/>
+                            Command="{Binding OpenFinalReportCommand}" MinWidth="160" Margin="10,0,0,0"
+                            ToolTip="{Binding FinalReportGateText}"/>
                 </StackPanel>
             </Grid>
         </Border>
