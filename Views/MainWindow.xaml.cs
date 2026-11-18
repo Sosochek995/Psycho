@@ -7,7 +7,7 @@ using ZharikovApp.ViewModels;
 namespace ZharikovApp.Views;
 
 /// <summary>
-/// Главное окно. Клавиатурная навигация по вопросам:
+/// Главное окно. Загрузка блоков через LoadedCommand и клавиатурная навигация:
 /// цифры — вариант или значение шкалы, стрелки — перемещение,
 /// Enter — следующий вопрос, Ctrl+Enter — завершить блок.
 /// Логика подсчёта не затрагивается: вызываются те же команды, что и кнопки.
@@ -16,15 +16,30 @@ public partial class MainWindow : Window
 {
     private int _pendingScale = -1;
     private DateTime _pendingAt = DateTime.MinValue;
+    private bool _loaded;
 
     public MainWindow()
     {
         InitializeComponent();
+        Loaded += OnLoaded;
         PreviewKeyDown += OnPreviewKeyDown;
     }
 
     /// <summary>ViewModel окна. DataContext задаётся в XAML.</summary>
     public MainViewModel? ViewModel => DataContext as MainViewModel;
+
+    /// <summary>
+    /// Загрузка 12 блоков и восстановление сессии.
+    /// Без этого вызова список методик остаётся пустым.
+    /// </summary>
+    private async void OnLoaded(object sender, RoutedEventArgs e)
+    {
+        if (_loaded) return;
+        _loaded = true;
+
+        if (DataContext is MainViewModel vm)
+            await vm.LoadedCommand.ExecuteAsync(null);
+    }
 
     private void OnPreviewKeyDown(object sender, KeyEventArgs e)
     {
@@ -76,6 +91,8 @@ public partial class MainWindow : Window
                     _pendingScale = -1;
                     if (vm.GoNextCommand.CanExecute(null))
                         vm.GoNextCommand.Execute(null);
+                    else
+                        vm.StatusMessage = "Это последний вопрос блока — нажмите Ctrl+Enter или «Завершить блок».";
                     e.Handled = true;
                 }
                 break;
