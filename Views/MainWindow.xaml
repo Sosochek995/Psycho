@@ -145,42 +145,90 @@
                             <DataTemplate>
                                 <ScrollViewer VerticalScrollBarVisibility="Auto">
                                     <StackPanel>
-                                        <TextBlock FontSize="17" TextWrapping="Wrap"
-                                                   LineHeight="24" Margin="0,0,0,14">
+                                        <TextBlock FontSize="20" TextWrapping="Wrap"
+                                                   LineHeight="28" Margin="0,0,0,16">
                                             <Run Text="{Binding Number, Mode=OneWay, StringFormat='{}{0}. '}"/><Run Text="{Binding Text, Mode=OneWay}"/>
                                         </TextBlock>
 
-                                        <!-- Варианты ответа (все типы, кроме шкалы) -->
+                                        <!-- Варианты ответа: крупные кнопки, кириллические литеры -->
                                         <ItemsControl ItemsSource="{Binding Options}"
                                                       Visibility="{Binding IsChoice, Converter={StaticResource BoolToVis}}">
                                             <ItemsControl.ItemTemplate>
                                                 <DataTemplate>
-                                                    <RadioButton Margin="0,4"
-                                                                 GroupName="CurrentQuestionOptions"
-                                                                 IsChecked="{Binding IsSelected, Mode=OneWay}"
-                                                                 Command="{Binding SelectCommand}">
-                                                        <TextBlock TextWrapping="Wrap">
-                                                            <Run Text="{Binding Option.Key, Mode=OneWay, StringFormat='{}{0}) '}"/><Run Text="{Binding Option.Text, Mode=OneWay}"/>
-                                                        </TextBlock>
-                                                    </RadioButton>
+                                                    <Button Command="{Binding SelectCommand}"
+                                                            HorizontalContentAlignment="Left"
+                                                            Margin="0,5" Padding="14,12"
+                                                            MinHeight="52" FontSize="16" Cursor="Hand">
+                                                        <Button.Style>
+                                                            <Style TargetType="Button">
+                                                                <Setter Property="Background" Value="White"/>
+                                                                <Setter Property="BorderBrush" Value="#C8D1DA"/>
+                                                                <Setter Property="BorderThickness" Value="1"/>
+                                                                <Style.Triggers>
+                                                                    <DataTrigger Binding="{Binding IsSelected}" Value="True">
+                                                                        <Setter Property="Background" Value="#DCEBFB"/>
+                                                                        <Setter Property="BorderBrush" Value="#2F6FEB"/>
+                                                                        <Setter Property="BorderThickness" Value="2"/>
+                                                                        <Setter Property="FontWeight" Value="SemiBold"/>
+                                                                    </DataTrigger>
+                                                                </Style.Triggers>
+                                                            </Style>
+                                                        </Button.Style>
+                                                        <StackPanel Orientation="Horizontal">
+                                                            <TextBlock Text="{Binding Letter}" FontWeight="Bold"
+                                                                       MinWidth="26" Foreground="#2F6FEB"/>
+                                                            <TextBlock Text="{Binding Text}" TextWrapping="Wrap"/>
+                                                        </StackPanel>
+                                                    </Button>
                                                 </DataTemplate>
                                             </ItemsControl.ItemTemplate>
                                         </ItemsControl>
 
-                                        <!-- Шкала (Scale) -->
+                                        <!-- Шкала: ряд кнопок, ноль выбирается как обычное значение -->
                                         <StackPanel Visibility="{Binding IsScale, Converter={StaticResource BoolToVis}}">
-                                            <Grid>
-                                                <TextBlock HorizontalAlignment="Left" Foreground="Gray" FontSize="12"
+                                            <Grid Margin="0,0,0,8">
+                                                <TextBlock HorizontalAlignment="Left" Foreground="Gray" FontSize="13"
                                                            Text="{Binding ScaleMin, StringFormat='мин. {0}'}"/>
-                                                <TextBlock HorizontalAlignment="Right" Foreground="Gray" FontSize="12"
+                                                <TextBlock HorizontalAlignment="Right" Foreground="Gray" FontSize="13"
                                                            Text="{Binding ScaleMax, StringFormat='макс. {0}'}"/>
                                             </Grid>
-                                            <Slider Minimum="{Binding ScaleMin}" Maximum="{Binding ScaleMax}"
-                                                    TickFrequency="1" IsSnapToTickEnabled="True"
-                                                    Value="{Binding ScaleValue, Mode=TwoWay}"
-                                                    Margin="0,8"/>
-                                            <TextBlock HorizontalAlignment="Center" FontSize="24" FontWeight="Bold"
-                                                       Text="{Binding ScaleValue}"/>
+                                            <ItemsControl ItemsSource="{Binding ScaleChoices}">
+                                                <ItemsControl.ItemsPanel>
+                                                    <ItemsPanelTemplate>
+                                                        <WrapPanel/>
+                                                    </ItemsPanelTemplate>
+                                                </ItemsControl.ItemsPanel>
+                                                <ItemsControl.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <Button Content="{Binding Value}"
+                                                                Command="{Binding SelectCommand}"
+                                                                Width="56" Height="56" Margin="3"
+                                                                FontSize="20" Cursor="Hand">
+                                                            <Button.Style>
+                                                                <Style TargetType="Button">
+                                                                    <Setter Property="Background" Value="White"/>
+                                                                    <Setter Property="BorderBrush" Value="#C8D1DA"/>
+                                                                    <Setter Property="BorderThickness" Value="1"/>
+                                                                    <Style.Triggers>
+                                                                        <DataTrigger Binding="{Binding IsSelected}" Value="True">
+                                                                            <Setter Property="Background" Value="#2F6FEB"/>
+                                                                            <Setter Property="Foreground" Value="White"/>
+                                                                            <Setter Property="FontWeight" Value="Bold"/>
+                                                                            <Setter Property="BorderBrush" Value="#1B4FB0"/>
+                                                                        </DataTrigger>
+                                                                    </Style.Triggers>
+                                                                </Style>
+                                                            </Button.Style>
+                                                        </Button>
+                                                    </DataTemplate>
+                                                </ItemsControl.ItemTemplate>
+                                            </ItemsControl>
+                                            <StackPanel Orientation="Horizontal" Margin="0,14,0,0">
+                                                <TextBlock Text="Ваш ответ: " FontSize="15" Foreground="Gray"
+                                                           VerticalAlignment="Center"/>
+                                                <TextBlock Text="{Binding ScaleAnswerText}"
+                                                           FontSize="22" FontWeight="Bold"/>
+                                            </StackPanel>
                                         </StackPanel>
                                     </StackPanel>
                                 </ScrollViewer>
