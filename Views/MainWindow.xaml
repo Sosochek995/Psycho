@@ -673,7 +673,7 @@
                                          VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled"/>
                                 <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
                                     <Button Style="{StaticResource PrimaryBtn}" Content="Сохранить в .txt"
-                                            Command="{Binding SaveReportToFileCommand}"/>
+                                            Command="{Binding ExportReportCommand}"/>
                                 </StackPanel>
                             </StackPanel>
                         </Border>
