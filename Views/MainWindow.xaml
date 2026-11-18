@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="clr-namespace:ZharikovApp.ViewModels"
         Title="{Binding Title}"
-        Height="780" Width="1240" MinHeight="600" MinWidth="1000"
+        Height="800" Width="1280" MinHeight="620" MinWidth="1040"
         WindowStartupLocation="CenterScreen"
         TextOptions.TextFormattingMode="Ideal"
         FontFamily="Segoe UI"
@@ -29,6 +29,7 @@
         <SolidColorBrush x:Key="Line" Color="#2E3676"/>
         <SolidColorBrush x:Key="Ink" Color="#EDEFFA"/>
         <SolidColorBrush x:Key="Muted" Color="#A7AED6"/>
+        <SolidColorBrush x:Key="Dim" Color="#8B94C6"/>
         <SolidColorBrush x:Key="Cyan" Color="#22D3EE"/>
         <SolidColorBrush x:Key="Amber" Color="#F5A524"/>
         <SolidColorBrush x:Key="Success" Color="#2FBF71"/>
@@ -45,9 +46,9 @@
             <GradientStop Color="#2B1A55" Offset="1"/>
         </LinearGradientBrush>
 
-        <!-- Только перенос. Цвет и размер наследуются от окна и кнопок. -->
         <Style TargetType="TextBlock">
             <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="Foreground" Value="#EDEFFA"/>
         </Style>
 
         <Style TargetType="ToolTip">
@@ -58,7 +59,7 @@
                         <Border Background="#171C46" BorderBrush="#3D6BFF" BorderThickness="1"
                                 CornerRadius="10" Padding="12,8">
                             <TextBlock Text="{TemplateBinding Content}" FontSize="14"
-                                       Foreground="#EDEFFA" TextWrapping="Wrap" MaxWidth="320"/>
+                                       Foreground="#EDEFFA" TextWrapping="Wrap" MaxWidth="300"/>
                         </Border>
                     </ControlTemplate>
                 </Setter.Value>
@@ -66,12 +67,12 @@
         </Style>
 
         <Style TargetType="ScrollBar">
-            <Setter Property="Width" Value="12"/>
+            <Setter Property="Width" Value="10"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="ScrollBar">
                         <Grid>
-                            <Border Background="#10143A" CornerRadius="6" Margin="2,0"/>
+                            <Border Background="#0D1132" CornerRadius="5" Margin="2,0"/>
                             <Track x:Name="PART_Track" IsDirectionReversed="True">
                                 <Track.DecreaseRepeatButton>
                                     <RepeatButton Command="ScrollBar.PageUpCommand" Opacity="0" Focusable="False"/>
@@ -83,7 +84,7 @@
                                     <Thumb>
                                         <Thumb.Template>
                                             <ControlTemplate TargetType="Thumb">
-                                                <Border x:Name="T" Background="#3D6BFF" CornerRadius="6" Margin="2,1"/>
+                                                <Border x:Name="T" Background="#39428C" CornerRadius="5" Margin="2,1"/>
                                                 <ControlTemplate.Triggers>
                                                     <Trigger Property="IsMouseOver" Value="True">
                                                         <Setter TargetName="T" Property="Background" Value="#22D3EE"/>
@@ -119,7 +120,7 @@
         </Style>
 
         <Style x:Key="Btn" TargetType="Button">
-            <Setter Property="Foreground" Value="{StaticResource Ink}"/>
+            <Setter Property="Foreground" Value="#EDEFFA"/>
             <Setter Property="FontSize" Value="16"/>
             <Setter Property="MinHeight" Value="48"/>
             <Setter Property="Padding" Value="20,10"/>
@@ -134,7 +135,7 @@
                         <Border x:Name="B" CornerRadius="12" Background="#232A63"
                                 BorderBrush="#3A4490" BorderThickness="1" Padding="{TemplateBinding Padding}">
                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"
-                                              TextElement.Foreground="{TemplateBinding Foreground}"
+                                              TextElement.Foreground="#EDEFFA"
                                               TextElement.FontSize="{TemplateBinding FontSize}"/>
                         </Border>
                         <ControlTemplate.Triggers>
@@ -176,7 +177,6 @@
 
         <Style x:Key="PrimaryBtn" TargetType="Button" BasedOn="{StaticResource Btn}">
             <Setter Property="FontWeight" Value="SemiBold"/>
-            <Setter Property="Foreground" Value="White"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
@@ -203,7 +203,6 @@
             <Setter Property="Cursor" Value="Hand"/>
             <Setter Property="Margin" Value="0,6"/>
             <Setter Property="MinHeight" Value="58"/>
-            <Setter Property="Foreground" Value="{StaticResource Ink}"/>
             <Setter Property="FontSize" Value="17"/>
             <Setter Property="HorizontalContentAlignment" Value="Left"/>
             <Setter Property="Template">
@@ -211,8 +210,7 @@
                     <ControlTemplate TargetType="Button">
                         <Border x:Name="B" CornerRadius="14" Padding="16,12"
                                 Background="#1B2150" BorderBrush="#333C82" BorderThickness="1">
-                            <ContentPresenter VerticalAlignment="Center"
-                                              TextElement.Foreground="{TemplateBinding Foreground}"/>
+                            <ContentPresenter VerticalAlignment="Center" TextElement.Foreground="#EDEFFA"/>
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
@@ -244,19 +242,13 @@
             <Setter Property="Width" Value="58"/>
             <Setter Property="Height" Value="58"/>
             <Setter Property="Margin" Value="4"/>
-            <Setter Property="FontSize" Value="22"/>
-            <Setter Property="FontWeight" Value="SemiBold"/>
-            <Setter Property="Foreground" Value="{StaticResource Ink}"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
                         <Border x:Name="B" CornerRadius="14" Background="#1B2150"
                                 BorderBrush="#333C82" BorderThickness="1">
-                            <TextBlock Text="{TemplateBinding Content}"
-                                       FontSize="{TemplateBinding FontSize}"
-                                       FontWeight="{TemplateBinding FontWeight}"
-                                       Foreground="{TemplateBinding Foreground}"
-                                       HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock Text="{TemplateBinding Content}" FontSize="22" FontWeight="SemiBold"
+                                       Foreground="#EDEFFA" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
@@ -269,8 +261,6 @@
             </Setter>
             <Style.Triggers>
                 <DataTrigger Binding="{Binding IsSelected}" Value="True">
-                    <Setter Property="Foreground" Value="White"/>
-                    <Setter Property="FontWeight" Value="Bold"/>
                     <Setter Property="Template">
                         <Setter.Value>
                             <ControlTemplate TargetType="Button">
@@ -328,13 +318,12 @@
         <Style x:Key="BlockCard" TargetType="ListBoxItem">
             <Setter Property="Cursor" Value="Hand"/>
             <Setter Property="Margin" Value="10,5"/>
-            <Setter Property="Foreground" Value="{StaticResource Ink}"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="ListBoxItem">
-                        <Border x:Name="B" CornerRadius="14" Padding="14,12"
+                        <Border x:Name="B" CornerRadius="14" Padding="14,11"
                                 Background="#161B45" BorderBrush="#2A3170" BorderThickness="1">
-                            <ContentPresenter TextElement.Foreground="{StaticResource Ink}"/>
+                            <ContentPresenter TextElement.Foreground="#EDEFFA"/>
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
@@ -360,7 +349,7 @@
                     <ControlTemplate TargetType="ListBoxItem">
                         <Border x:Name="B" CornerRadius="11" Padding="16,8"
                                 Background="#1A2050" BorderBrush="#333C82" BorderThickness="1">
-                            <ContentPresenter TextElement.Foreground="{StaticResource Ink}"/>
+                            <ContentPresenter TextElement.Foreground="#EDEFFA"/>
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsSelected" Value="True">
@@ -392,7 +381,7 @@
                 </Grid.ColumnDefinitions>
 
                 <StackPanel Grid.Column="0">
-                    <TextBlock Text="{Binding Title}" FontSize="23" FontWeight="Bold" Foreground="{StaticResource Ink}"/>
+                    <TextBlock Text="{Binding Title}" FontSize="23" FontWeight="Bold" Foreground="#EDEFFA"/>
                     <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
                         <ListBox ItemsSource="{Binding Packs}" SelectedItem="{Binding SelectedPack, Mode=TwoWay}"
                                  Background="Transparent" BorderThickness="0"
@@ -406,21 +395,20 @@
                             </ListBox.ItemContainerStyle>
                             <ListBox.ItemTemplate>
                                 <DataTemplate>
-                                    <TextBlock Text="{Binding Header}" FontSize="14" FontWeight="SemiBold"
-                                               Foreground="#EDEFFA"/>
+                                    <TextBlock Text="{Binding Header}" FontSize="14" FontWeight="SemiBold" Foreground="#EDEFFA"/>
                                 </DataTemplate>
                             </ListBox.ItemTemplate>
                         </ListBox>
-                        <TextBlock Text="{Binding CurrentBlockTitle}" FontSize="14" Foreground="{StaticResource Muted}"
-                                   VerticalAlignment="Center" Margin="6,0,0,0"/>
+                        <TextBlock Text="{Binding CurrentBlockTitle}" FontSize="14" Foreground="#A7AED6"
+                                   VerticalAlignment="Center" Margin="6,0,0,0" TextTrimming="CharacterEllipsis" MaxWidth="420"/>
                     </StackPanel>
                 </StackPanel>
 
                 <StackPanel Grid.Column="1" VerticalAlignment="Center">
                     <Grid>
-                        <TextBlock Text="{Binding OverallProgressText}" FontSize="13" Foreground="{StaticResource Muted}"/>
+                        <TextBlock Text="{Binding OverallProgressText}" FontSize="13" Foreground="#A7AED6"/>
                         <TextBlock Text="{Binding ProgressShort}" FontSize="19" FontWeight="Bold"
-                                   HorizontalAlignment="Right" Foreground="{StaticResource Cyan}"/>
+                                   HorizontalAlignment="Right" Foreground="#22D3EE"/>
                     </Grid>
                     <ProgressBar Value="{Binding OverallProgressPercent}" Minimum="0" Maximum="100" Margin="0,8,0,0"/>
                 </StackPanel>
@@ -429,37 +417,31 @@
 
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="330"/>
+                <ColumnDefinition Width="360"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
             <Border Grid.Column="0" Background="#0F1338" BorderBrush="#242B66" BorderThickness="0,0,1,0">
                 <DockPanel>
                     <TextBlock DockPanel.Dock="Top" Text="МЕТОДИКИ" FontSize="12" FontWeight="Bold"
-                               Foreground="{StaticResource Muted}" Margin="20,18,20,8"/>
+                               Foreground="#A7AED6" Margin="20,18,20,8"/>
                     <ListBox ItemsSource="{Binding Blocks}" SelectedItem="{Binding SelectedBlock, Mode=TwoWay}"
                              ItemContainerStyle="{StaticResource BlockCard}"
                              Background="Transparent" BorderThickness="0"
                              ScrollViewer.HorizontalScrollBarVisibility="Disabled">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="Auto"/>
-                                    </Grid.ColumnDefinitions>
-                                    <TextBlock Grid.Column="0" Text="{Binding DisplayTitle}" FontSize="15"
-                                               TextWrapping="Wrap" Foreground="#EDEFFA" VerticalAlignment="Center"/>
-                                    <Border Grid.Column="1" CornerRadius="9" Padding="9,4" Margin="10,0,0,0"
-                                            Background="#0C1030" BorderBrush="#333C82" BorderThickness="1"
-                                            VerticalAlignment="Center">
+                                <StackPanel TextElement.Foreground="#EDEFFA">
+                                    <TextBlock Text="{Binding DisplayTitle}" FontSize="15" FontWeight="SemiBold"
+                                               Foreground="#EDEFFA" TextWrapping="Wrap" LineHeight="21"/>
+                                    <Border CornerRadius="9" Padding="9,3" Margin="0,8,0,0" HorizontalAlignment="Left"
+                                            Background="#0C1030" BorderBrush="#333C82" BorderThickness="1">
                                         <StackPanel Orientation="Horizontal">
-                                            <TextBlock Text="{Binding StatusGlyph}" FontSize="13"
-                                                       Foreground="#22D3EE" Margin="0,0,5,0"/>
+                                            <TextBlock Text="{Binding StatusGlyph}" FontSize="12" Foreground="#22D3EE" Margin="0,0,5,0"/>
                                             <TextBlock Text="{Binding StatusText}" FontSize="12" Foreground="#A7AED6"/>
                                         </StackPanel>
                                     </Border>
-                                </Grid>
+                                </StackPanel>
                             </DataTemplate>
                         </ListBox.ItemTemplate>
                     </ListBox>
@@ -468,7 +450,7 @@
 
             <Grid Grid.Column="1" Margin="28,24">
 
-                <Border Style="{StaticResource Card}" MaxWidth="640"
+                <Border Style="{StaticResource Card}" MaxWidth="660"
                         VerticalAlignment="Center" HorizontalAlignment="Center"
                         Visibility="{Binding IsWelcomeVisible, Converter={StaticResource BoolToVis}}">
                     <Border.RenderTransform><TranslateTransform/></Border.RenderTransform>
@@ -485,10 +467,10 @@
                             </BeginStoryboard>
                         </EventTrigger>
                     </Border.Triggers>
-                    <StackPanel>
+                    <StackPanel TextElement.Foreground="#EDEFFA">
                         <Border Height="5" CornerRadius="3" Background="{StaticResource AccentFlow}" Margin="0,0,0,20"/>
-                        <TextBlock Text="Двенадцать методик диагностики" FontSize="27" FontWeight="Bold" Foreground="{StaticResource Ink}"/>
-                        <TextBlock Margin="0,12,0,0" Foreground="{StaticResource Muted}" FontSize="16" LineHeight="25"
+                        <TextBlock Text="Двенадцать методик диагностики" FontSize="27" FontWeight="Bold" Foreground="#EDEFFA"/>
+                        <TextBlock Margin="0,12,0,0" Foreground="#A7AED6" FontSize="16" LineHeight="25"
                                    Text="Выберите методику слева. Ответы сохраняются автоматически, промежуточные баллы скрыты — подробный разбор откроется в итоговом отчёте после всех двенадцати."/>
                         <Button Style="{StaticResource PrimaryBtn}" Margin="0,22,0,0" HorizontalAlignment="Left"
                                 Content="Начать с первой методики" Command="{Binding GoNextBlockCommand}"/>
@@ -512,12 +494,11 @@
                                 </BeginStoryboard>
                             </EventTrigger>
                         </Border.Triggers>
-                        <StackPanel>
-                            <TextBlock Text="{Binding CurrentBlockTitle}" FontSize="24" FontWeight="Bold" Foreground="{StaticResource Ink}"/>
+                        <StackPanel TextElement.Foreground="#EDEFFA">
+                            <TextBlock Text="{Binding CurrentBlockTitle}" FontSize="24" FontWeight="Bold" Foreground="#EDEFFA"/>
                             <Border Height="4" CornerRadius="2" Background="{StaticResource AccentFlow}" Margin="0,14,0,18"/>
-                            <TextBlock Text="ИНСТРУКЦИЯ" FontSize="12" FontWeight="Bold" Foreground="{StaticResource Amber}"/>
-                            <TextBlock Text="{Binding BlockInstruction}" Margin="0,10,0,0" FontSize="17" LineHeight="28"
-                                       Foreground="{StaticResource Ink}"/>
+                            <TextBlock Text="ИНСТРУКЦИЯ" FontSize="12" FontWeight="Bold" Foreground="#F5A524"/>
+                            <TextBlock Text="{Binding BlockInstruction}" Margin="0,10,0,0" FontSize="17" LineHeight="28" Foreground="#EDEFFA"/>
                             <Button Style="{StaticResource PrimaryBtn}" Margin="0,24,0,0" HorizontalAlignment="Left"
                                     Content="Перейти к вопросам" Command="{Binding GoNextCommand}"/>
                         </StackPanel>
@@ -531,34 +512,31 @@
                     </Grid.RowDefinitions>
 
                     <StackPanel Grid.Row="0" Margin="0,0,0,14">
-                        <Grid>
-                            <TextBlock FontSize="13" Foreground="{StaticResource Muted}">
-                                <TextBlock.Text>
-                                    <MultiBinding StringFormat="Вопрос {0} из {1}">
-                                        <Binding Path="CurrentQuestionIndex"/>
-                                        <Binding Path="TotalQuestions"/>
-                                    </MultiBinding>
-                                </TextBlock.Text>
-                            </TextBlock>
-                            <TextBlock HorizontalAlignment="Right" FontSize="12" Foreground="#8B94C6"
-                                       Text="цифры — ответ · стрелки — выбор · Enter — далее · Ctrl+Enter — завершить"/>
-                        </Grid>
+                        <TextBlock FontSize="13" Foreground="#A7AED6">
+                            <TextBlock.Text>
+                                <MultiBinding StringFormat="Вопрос {0} из {1}">
+                                    <Binding Path="CurrentQuestionIndex"/>
+                                    <Binding Path="TotalQuestions"/>
+                                </MultiBinding>
+                            </TextBlock.Text>
+                        </TextBlock>
                         <ProgressBar Margin="0,8,0,0" Height="6" Minimum="0"
                                      Value="{Binding CurrentQuestionIndex}" Maximum="{Binding TotalQuestions}"/>
                     </StackPanel>
 
                     <ContentControl Grid.Row="1" Content="{Binding CurrentQuestion}"
-                                    Foreground="{StaticResource Ink}"
-                                    TextElement.Foreground="{StaticResource Ink}">
+                                    Foreground="#EDEFFA" TextElement.Foreground="#EDEFFA">
                         <ContentControl.ContentTemplate>
                             <DataTemplate>
                                 <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
                                     <Border Style="{StaticResource Card}" Margin="0,0,4,0">
                                         <StackPanel TextElement.Foreground="#EDEFFA">
-                                            <TextBlock FontSize="21" LineHeight="30" Margin="0,0,0,18" Foreground="#EDEFFA">
+                                            <TextBlock FontSize="21" LineHeight="30" Foreground="#EDEFFA">
                                                 <Run Text="{Binding Number, Mode=OneWay, StringFormat='{}{0}. '}"
                                                      Foreground="#22D3EE" FontWeight="Bold"/><Run Text="{Binding Text, Mode=OneWay}" Foreground="#EDEFFA"/>
                                             </TextBlock>
+                                            <TextBlock Margin="0,8,0,18" FontSize="12" Foreground="#8B94C6"
+                                                       Text="цифры — ответ · стрелки — выбор · Enter — далее · Ctrl+Enter — завершить блок"/>
 
                                             <Grid Margin="0,0,0,18"
                                                   Visibility="{Binding HasImage, Converter={StaticResource BoolToVis}}">
@@ -580,8 +558,7 @@
                                                 </Border>
                                             </Grid>
 
-                                            <ItemsControl ItemsSource="{Binding Options}"
-                                                          Foreground="#EDEFFA"
+                                            <ItemsControl ItemsSource="{Binding Options}" Foreground="#EDEFFA"
                                                           Visibility="{Binding IsChoice, Converter={StaticResource BoolToVis}}">
                                                 <ItemsControl.ItemTemplate>
                                                     <DataTemplate>
@@ -594,7 +571,7 @@
                                                                                VerticalAlignment="Center"/>
                                                                 </Border>
                                                                 <TextBlock Text="{Binding Text}" FontSize="17" Foreground="#EDEFFA"
-                                                                           VerticalAlignment="Center" MaxWidth="620"/>
+                                                                           VerticalAlignment="Center" MaxWidth="600"/>
                                                             </StackPanel>
                                                         </Button>
                                                     </DataTemplate>
@@ -603,9 +580,9 @@
 
                                             <StackPanel Visibility="{Binding IsScale, Converter={StaticResource BoolToVis}}">
                                                 <Grid Margin="0,0,0,10">
-                                                    <TextBlock HorizontalAlignment="Left" FontSize="13" Foreground="{StaticResource Muted}"
+                                                    <TextBlock HorizontalAlignment="Left" FontSize="13" Foreground="#A7AED6"
                                                                Text="{Binding ScaleMin, StringFormat='минимум {0}'}"/>
-                                                    <TextBlock HorizontalAlignment="Right" FontSize="13" Foreground="{StaticResource Muted}"
+                                                    <TextBlock HorizontalAlignment="Right" FontSize="13" Foreground="#A7AED6"
                                                                Text="{Binding ScaleMax, StringFormat='максимум {0}'}"/>
                                                 </Grid>
                                                 <ItemsControl ItemsSource="{Binding ScaleChoices}" Foreground="#EDEFFA">
@@ -620,10 +597,9 @@
                                                     </ItemsControl.ItemTemplate>
                                                 </ItemsControl>
                                                 <StackPanel Orientation="Horizontal" Margin="0,18,0,0">
-                                                    <TextBlock Text="Ваш ответ:" FontSize="15" Foreground="{StaticResource Muted}"
+                                                    <TextBlock Text="Ваш ответ:" FontSize="15" Foreground="#A7AED6"
                                                                VerticalAlignment="Center" Margin="0,0,10,0"/>
-                                                    <TextBlock Text="{Binding ScaleAnswerText}" FontSize="24" FontWeight="Bold"
-                                                               Foreground="{StaticResource Cyan}"/>
+                                                    <TextBlock Text="{Binding ScaleAnswerText}" FontSize="24" FontWeight="Bold" Foreground="#22D3EE"/>
                                                 </StackPanel>
                                             </StackPanel>
                                         </StackPanel>
@@ -638,17 +614,52 @@
                               Visibility="{Binding IsResultVisible, Converter={StaticResource BoolToVis}}">
                     <Grid>
                         <Border Style="{StaticResource SavedCard}">
-                            <StackPanel>
-                                <Border Width="66" Height="66" CornerRadius="33" Background="#12331F"
-                                        BorderBrush="{StaticResource Success}" BorderThickness="2" HorizontalAlignment="Left">
-                                    <TextBlock Text="✓" FontSize="32" Foreground="{StaticResource Success}"
-                                               HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                </Border>
-                                <TextBlock Text="Ответы сохранены" FontSize="26" FontWeight="Bold"
-                                           Foreground="{StaticResource Ink}" Margin="0,18,0,0"/>
-                                <TextBlock Text="{Binding SavedTitle}" FontSize="17" Foreground="{StaticResource Cyan}" Margin="0,6,0,0"/>
-                                <TextBlock Text="{Binding SavedNote}" FontSize="16" Foreground="{StaticResource Muted}"
-                                           LineHeight="25" Margin="0,14,0,0"/>
+                            <StackPanel TextElement.Foreground="#EDEFFA">
+                                <StackPanel Orientation="Horizontal">
+                                    <Border Width="62" Height="62" CornerRadius="31" Background="#12331F"
+                                            BorderBrush="#2FBF71" BorderThickness="2">
+                                        <TextBlock Text="✓" FontSize="30" Foreground="#2FBF71"
+                                                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                    <StackPanel Margin="18,0,0,0" VerticalAlignment="Center">
+                                        <TextBlock Text="Ответы сохранены" FontSize="26" FontWeight="Bold" Foreground="#EDEFFA"/>
+                                        <TextBlock Text="{Binding SavedTitle}" FontSize="16" Foreground="#22D3EE" Margin="0,4,0,0"/>
+                                    </StackPanel>
+                                </StackPanel>
+
+                                <TextBlock Text="{Binding SavedNote}" FontSize="16" Foreground="#A7AED6"
+                                           LineHeight="25" Margin="0,18,0,0"/>
+
+                                <Border Height="1" Background="#2E3676" Margin="0,22,0,18"/>
+
+                                <TextBlock Text="КАРТА ПРОХОЖДЕНИЯ" FontSize="12" FontWeight="Bold" Foreground="#F5A524"/>
+                                <ItemsControl ItemsSource="{Binding Blocks}" Margin="0,12,0,0">
+                                    <ItemsControl.ItemsPanel>
+                                        <ItemsPanelTemplate><WrapPanel/></ItemsPanelTemplate>
+                                    </ItemsControl.ItemsPanel>
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <Border Width="42" Height="42" CornerRadius="12" Margin="4"
+                                                    BorderThickness="1" ToolTip="{Binding DisplayTitle}">
+                                                <Border.Style>
+                                                    <Style TargetType="Border">
+                                                        <Setter Property="Background" Value="#141A44"/>
+                                                        <Setter Property="BorderBrush" Value="#2E3676"/>
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding Status}" Value="Completed">
+                                                                <Setter Property="Background" Value="#12331F"/>
+                                                                <Setter Property="BorderBrush" Value="#2FBF71"/>
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </Border.Style>
+                                                <TextBlock Text="{Binding Block.Order}" FontSize="16" FontWeight="Bold"
+                                                           Foreground="#EDEFFA" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                            </Border>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+
                                 <StackPanel Orientation="Horizontal" Margin="0,24,0,0">
                                     <Button Style="{StaticResource PrimaryBtn}" Content="Следующая методика"
                                             Command="{Binding GoNextBlockCommand}"
@@ -661,15 +672,15 @@
                         </Border>
 
                         <Border Style="{StaticResource ReportCard}">
-                            <StackPanel>
-                                <TextBlock Text="Итоговый отчёт" FontSize="26" FontWeight="Bold" Foreground="{StaticResource Ink}"/>
+                            <StackPanel TextElement.Foreground="#EDEFFA">
+                                <TextBlock Text="Итоговый отчёт" FontSize="26" FontWeight="Bold" Foreground="#EDEFFA"/>
                                 <Border Height="4" CornerRadius="2" Background="{StaticResource AccentFlow}" Margin="0,14,0,18"/>
                                 <TextBox Text="{Binding ReportText, Mode=OneWay}" IsReadOnly="True"
                                          FontFamily="Consolas" FontSize="14"
                                          Background="#0C1030" Foreground="#EDEFFA" CaretBrush="#22D3EE"
                                          SelectionBrush="#3D6BFF"
                                          BorderBrush="#333C82" BorderThickness="1" Padding="16"
-                                         TextWrapping="Wrap" AcceptsReturn="True" MinHeight="360"
+                                         TextWrapping="Wrap" AcceptsReturn="True" MinHeight="380"
                                          VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled"/>
                                 <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
                                     <Button Style="{StaticResource PrimaryBtn}" Content="Сохранить в .txt"
@@ -697,8 +708,7 @@
                 </StackPanel>
 
                 <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="18,0">
-                    <TextBlock Text="{Binding StatusMessage}" FontSize="14" Foreground="{StaticResource Muted}"
-                               TextTrimming="CharacterEllipsis"/>
+                    <TextBlock Text="{Binding StatusMessage}" FontSize="14" Foreground="#A7AED6" TextTrimming="CharacterEllipsis"/>
                     <TextBlock Text="{Binding FinalReportGateText}" FontSize="12" Foreground="#8B94C6"
                                TextTrimming="CharacterEllipsis" Margin="0,3,0,0"/>
                 </StackPanel>
