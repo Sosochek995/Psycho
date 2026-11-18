@@ -1,62 +1,45 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Снимок смыслового слепка методик из Data/Blocks/*.json.
-Формат полностью совместим с tools/baseline/methodology_baseline.json.
-Косметические поля (displayLabel, letter и т.п.) в слепок НЕ входят."""
-import json, sys, os
+"""Снимок смыслового слепка методик.
 
-COSMETIC = {"displayLabel", "letter"}  # не защищены
+ВАЖНО: использует ТЕ ЖЕ функции, что и generate_baseline.py.
+Только так сравнение "текущее vs эталон" вообще возможно:
+одинаковые косметические поля, одинаковая структура, одинаковая сериализация.
+Собственной копии логики слепка здесь быть не должно.
+"""
+import json
+import sys
+from pathlib import Path
 
-def strip_cosmetic(obj):
-    if isinstance(obj, dict):
-        return {k: strip_cosmetic(v) for k, v in obj.items() if k not in COSMETIC}
-    if isinstance(obj, list):
-        return [strip_cosmetic(x) for x in obj]
-    return obj
+ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT / "tools"))
 
-def snapshot(blocks_dir="Data/Blocks"):
-    files = sorted(f for f in os.listdir(blocks_dir) if f.startswith("block_") and f.endswith(".json"))
+# Единственный источник истины о том, что входит в слепок.
+from generate_baseline import block_digest, COSMETIC_FIELDS  # noqa: E402
+
+
+def snapshot(blocks_dir: Path) -> dict:
+    """Собирает слепок из Data/Blocks/*.json в формате эталона."""
     blocks = []
-    for f in files:
-        d = json.load(open(os.path.join(blocks_dir, f), encoding="utf-8"))
-        scoring = d.get("scoring", {}) or {}
-        interps = scoring.get("interpretations", d.get("interpretations", [])) or []
-        questions = []
-        for q in d.get("questions", []):
-            questions.append({
-                "id": q.get("id"),
-                "text": q.get("text"),
-                "type": q.get("type"),
-                "required": q.get("required", True),
-                "group": q.get("group"),
-                "imageKey": q.get("imageKey"),
-                "scale": strip_cosmetic(q.get("scale")),
-                "options": [
-                    {"key": o.get("key"), "text": o.get("text"),
-                     "interpretation": o.get("interpretation")}
-                    for o in (q.get("options") or [])
-                ],
-            })
-        prot_scoring = {k: strip_cosmetic(v) for k, v in scoring.items() if k != "interpretations"}
-        blocks.append({
-            "id": d.get("id"),
-            "order": d.get("order"),
-            "title": d.get("title"),
-            "subtitle": d.get("subtitle"),
-            "instruction": d.get("instruction"),
-            "answerType": d.get("answerType"),
-            "questionCount": len(d.get("questions", [])),
-            "questions": questions,
-            "scoring": prot_scoring,
-            "interpretations": strip_cosmetic(interps),
-        })
-    return {"blocks": blocks}
+    for f in sorted(blocks_dir.glob("block_*.json")):
+        raw = json.loads(f.read_text(encoding="utf-8-sig"))
+        blocks.append(block_digest(raw))
+    blocks.sort(key=lambda b: b["order"])
+    return {
+        "generatedBy": "tools/guard_snapshot.py",
+        "note": ("Смысловой слепок защищённых данных. Косметические поля "
+                 f"{sorted(COSMETIC_FIELDS)} исключены и не защищены."),
+        "blockCount": len(blocks),
+        "blocks": blocks,
+    }
+
 
 if __name__ == "__main__":
     out = sys.argv[1] if len(sys.argv) > 1 else "-"
-    data = snapshot(sys.argv[2] if len(sys.argv) > 2 else "Data/Blocks")
-    txt = json.dumps(data, ensure_ascii=False, indent=2, sort_keys=True)
+    src = Path(sys.argv[2]) if len(sys.argv) > 2 else ROOT / "Data" / "Blocks"
+    data = snapshot(src)
+    text = json.dumps(data, ensure_ascii=False, indent=2) + "\n"
     if out == "-":
-        print(txt)
+        print(text)
     else:
-        open(out, "w", encoding="utf-8").write(txt)
+        Path(out).write_text(text, encoding="utf-8")
