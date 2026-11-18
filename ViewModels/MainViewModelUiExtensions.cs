@@ -1,3 +1,4 @@
+#nullable enable
 using System;
 using System.Collections.ObjectModel;
 using System.IO;
@@ -33,7 +34,7 @@ public partial class MainViewModel
     /// <summary>Вкладки пакетов методик. Пакет собирается из загруженных блоков.</summary>
     public ObservableCollection<PackTab> Packs { get; } = new();
 
-    /// <summary>Подпись прогресса для шапки: «7 / 12».</summary>
+    /// <summary>Короткая подпись прогресса для шапки: «7 / 12».</summary>
     public string ProgressShort => $"{CompletedCount} / {(_blocks.Count > 0 ? _blocks.Count : BlockProgressService.TotalBlocks)}";
 
     private void EnsurePacks()
@@ -77,7 +78,7 @@ public partial class MainViewModel
             ? $"Блок пройден и сохранён. Осталось методик: {RemainingCount}. Баллы, уровни и подробные интерпретации откроются в итоговом отчёте после всех 12."
             : "Все 12 методик пройдены. Итоговый отчёт с баллами и подробными интерпретациями готов.";
 
-        ExportReportCommand.NotifyCanExecuteChanged();
+        SaveReportToFileCommand.NotifyCanExecuteChanged();
     }
 
     partial void OnOverallProgressTextChanged(string value)
@@ -88,12 +89,12 @@ public partial class MainViewModel
         RemainingCount = Math.Max(0, _blocks.Count - CompletedCount);
         OnPropertyChanged(nameof(ProgressShort));
         OpenFinalReportCommand.NotifyCanExecuteChanged();
-        ExportReportCommand.NotifyCanExecuteChanged();
+        SaveReportToFileCommand.NotifyCanExecuteChanged();
     }
 
-    partial void OnIsFinalReportChanged(bool value) => ExportReportCommand.NotifyCanExecuteChanged();
+    partial void OnIsFinalReportChanged(bool value) => SaveReportToFileCommand.NotifyCanExecuteChanged();
 
-    partial void OnReportTextChanged(string value) => ExportReportCommand.NotifyCanExecuteChanged();
+    partial void OnReportTextChanged(string value) => SaveReportToFileCommand.NotifyCanExecuteChanged();
 
     /// <summary>Открыть следующую непройденную методику.</summary>
     [RelayCommand]
@@ -112,14 +113,17 @@ public partial class MainViewModel
         ShowFinalReport();
         ReportText = ResultSummary;
         StatusMessage = "Итоговый отчёт сформирован. Его можно сохранить в текстовый файл.";
-        ExportReportCommand.NotifyCanExecuteChanged();
+        SaveReportToFileCommand.NotifyCanExecuteChanged();
     }
 
     private bool CanOpenFinalReport() => AllCompleted;
 
-    /// <summary>Сохранение итогового отчёта в .txt с BOM — корректно открывается в Блокноте.</summary>
-    [RelayCommand(CanExecute = nameof(CanExportReport))]
-    private void ExportReport()
+    /// <summary>
+    /// Сохранение итогового отчёта в .txt с BOM — корректно открывается в Блокноте.
+    /// Имя команды уникально, чтобы не пересекаться с уже существующими командами.
+    /// </summary>
+    [RelayCommand(CanExecute = nameof(CanSaveReportToFile))]
+    private void SaveReportToFile()
     {
         var dialog = new SaveFileDialog
         {
@@ -143,7 +147,7 @@ public partial class MainViewModel
         }
     }
 
-    private bool CanExportReport() => IsFinalReport && !string.IsNullOrWhiteSpace(ReportText);
+    private bool CanSaveReportToFile() => IsFinalReport && !string.IsNullOrWhiteSpace(ReportText);
 }
 
 /// <summary>Вкладка пакета методик.</summary>
