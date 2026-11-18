@@ -24,16 +24,12 @@
         <BooleanToVisibilityConverter x:Key="BoolToVis"/>
 
         <SolidColorBrush x:Key="Surface" Color="#171C46"/>
-        <SolidColorBrush x:Key="SurfaceHigh" Color="#1F2657"/>
         <SolidColorBrush x:Key="Line" Color="#2E3676"/>
         <SolidColorBrush x:Key="Ink" Color="#EDEFFA"/>
         <SolidColorBrush x:Key="Muted" Color="#9AA2CE"/>
-        <SolidColorBrush x:Key="Electric" Color="#3D6BFF"/>
         <SolidColorBrush x:Key="Cyan" Color="#22D3EE"/>
         <SolidColorBrush x:Key="Amber" Color="#F5A524"/>
-        <SolidColorBrush x:Key="Magenta" Color="#E8467C"/>
         <SolidColorBrush x:Key="Success" Color="#2FBF71"/>
-        <SolidColorBrush x:Key="Danger" Color="#E5484D"/>
 
         <LinearGradientBrush x:Key="AccentFlow" StartPoint="0,0" EndPoint="1,0">
             <GradientStop Color="#3D6BFF" Offset="0"/>
@@ -53,7 +49,6 @@
             <Setter Property="TextWrapping" Value="Wrap"/>
         </Style>
 
-        <!-- Полоса прокрутки в палитре приложения -->
         <Style TargetType="ScrollBar">
             <Setter Property="Width" Value="12"/>
             <Setter Property="Template">
@@ -98,8 +93,7 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="ProgressBar">
                         <Grid>
-                            <Border Background="#0D1132" CornerRadius="5"/>
-                            <Border x:Name="PART_Track" CornerRadius="5"/>
+                            <Border x:Name="PART_Track" Background="#0D1132" CornerRadius="5"/>
                             <Border x:Name="PART_Indicator" CornerRadius="5" HorizontalAlignment="Left"
                                     Background="{StaticResource AccentFlow}"/>
                         </Grid>
@@ -108,7 +102,6 @@
             </Setter>
         </Style>
 
-        <!-- Базовая кнопка -->
         <Style x:Key="Btn" TargetType="Button">
             <Setter Property="Foreground" Value="{StaticResource Ink}"/>
             <Setter Property="FontSize" Value="16"/>
@@ -185,11 +178,11 @@
             </Setter>
         </Style>
 
-        <!-- Крупная кнопка варианта ответа -->
         <Style x:Key="OptionBtn" TargetType="Button">
             <Setter Property="Cursor" Value="Hand"/>
             <Setter Property="Margin" Value="0,6"/>
             <Setter Property="MinHeight" Value="58"/>
+            <Setter Property="Foreground" Value="{StaticResource Ink}"/>
             <Setter Property="HorizontalContentAlignment" Value="Left"/>
             <Setter Property="Template">
                 <Setter.Value>
@@ -209,7 +202,19 @@
             </Setter>
         </Style>
 
-        <!-- Кнопка значения шкалы -->
+        <Style x:Key="OptionBtnSelected" TargetType="Button" BasedOn="{StaticResource OptionBtn}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="14" Padding="16,12"
+                                Background="#2A3690" BorderBrush="#22D3EE" BorderThickness="2">
+                            <ContentPresenter VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
         <Style x:Key="ScaleBtn" TargetType="Button">
             <Setter Property="Cursor" Value="Hand"/>
             <Setter Property="Width" Value="58"/>
@@ -236,12 +241,58 @@
             </Setter>
         </Style>
 
+        <Style x:Key="ScaleBtnSelected" TargetType="Button" BasedOn="{StaticResource ScaleBtn}">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="14" Background="{StaticResource AccentFlow}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
         <Style x:Key="Card" TargetType="Border">
             <Setter Property="CornerRadius" Value="18"/>
             <Setter Property="Background" Value="{StaticResource Surface}"/>
             <Setter Property="BorderBrush" Value="{StaticResource Line}"/>
             <Setter Property="BorderThickness" Value="1"/>
             <Setter Property="Padding" Value="26"/>
+        </Style>
+
+        <Style x:Key="SavedCard" TargetType="Border" BasedOn="{StaticResource Card}">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding IsFinalReport}" Value="True">
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="ReportCard" TargetType="Border" BasedOn="{StaticResource Card}">
+            <Setter Property="Visibility" Value="Collapsed"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding IsFinalReport}" Value="True">
+                    <Setter Property="Visibility" Value="Visible"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="PlaceholderCard" TargetType="Border">
+            <Setter Property="Visibility" Value="Collapsed"/>
+            <Setter Property="CornerRadius" Value="14"/>
+            <Setter Property="BorderBrush" Value="#3D6BFF"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="Background" Value="#0A0D26"/>
+            <Setter Property="MinHeight" Value="190"/>
+            <Setter Property="Padding" Value="24"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding ShowImagePlaceholder}" Value="True">
+                    <Setter Property="Visibility" Value="Visible"/>
+                </DataTrigger>
+            </Style.Triggers>
         </Style>
 
         <Style x:Key="BlockCard" TargetType="ListBoxItem">
@@ -293,12 +344,6 @@
                 </Setter.Value>
             </Setter>
         </Style>
-
-        <Style x:Key="PhasePanel" TargetType="FrameworkElement">
-            <Setter Property="RenderTransform">
-                <Setter.Value><TranslateTransform Y="0"/></Setter.Value>
-            </Setter>
-        </Style>
     </Window.Resources>
 
     <Grid>
@@ -308,7 +353,6 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <!-- ══════════ Шапка ══════════ -->
         <Border Grid.Row="0" Background="{StaticResource HeaderFlow}" Padding="24,16">
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -351,7 +395,6 @@
             </Grid>
         </Border>
 
-        <!-- ══════════ Центр ══════════ -->
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="330"/>
@@ -394,7 +437,6 @@
 
             <Grid Grid.Column="1" Margin="28,24">
 
-                <!-- Приветственный экран -->
                 <Border Style="{StaticResource Card}" MaxWidth="640"
                         VerticalAlignment="Center" HorizontalAlignment="Center"
                         Visibility="{Binding IsWelcomeVisible, Converter={StaticResource BoolToVis}}">
@@ -422,7 +464,6 @@
                     </StackPanel>
                 </Border>
 
-                <!-- Инструкция -->
                 <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled"
                               Visibility="{Binding IsInstructionVisible, Converter={StaticResource BoolToVis}}">
                     <Border Style="{StaticResource Card}">
@@ -451,7 +492,6 @@
                     </Border>
                 </ScrollViewer>
 
-                <!-- Вопросы -->
                 <Grid Visibility="{Binding IsQuestionsVisible, Converter={StaticResource BoolToVis}}">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
@@ -471,8 +511,8 @@
                             <TextBlock HorizontalAlignment="Right" FontSize="12" Foreground="#6F79AE"
                                        Text="цифры — ответ · стрелки — выбор · Enter — далее · Ctrl+Enter — завершить"/>
                         </Grid>
-                        <ProgressBar Margin="0,8,0,0" Height="6"
-                                     Value="{Binding CurrentQuestionIndex}" Maximum="{Binding TotalQuestions}" Minimum="0"/>
+                        <ProgressBar Margin="0,8,0,0" Height="6" Minimum="0"
+                                     Value="{Binding CurrentQuestionIndex}" Maximum="{Binding TotalQuestions}"/>
                     </StackPanel>
 
                     <ContentControl Grid.Row="1" Content="{Binding CurrentQuestion}">
@@ -486,25 +526,13 @@
                                                      Foreground="#22D3EE" FontWeight="Bold"/><Run Text="{Binding Text, Mode=OneWay}"/>
                                             </TextBlock>
 
-                                            <!-- Иллюстрация -->
                                             <Grid Margin="0,0,0,18"
                                                   Visibility="{Binding HasImage, Converter={StaticResource BoolToVis}}">
                                                 <Border CornerRadius="14" BorderBrush="#333C82" BorderThickness="1"
                                                         Background="#0A0D26" Padding="4">
                                                     <Image Source="{Binding ImagePicture}" MaxHeight="280" Stretch="Uniform"/>
                                                 </Border>
-                                                <Border CornerRadius="14" BorderBrush="#3D6BFF" BorderThickness="2"
-                                                        Background="#0A0D26" MinHeight="190" Padding="24">
-                                                    <Border.Style>
-                                                        <Style TargetType="Border">
-                                                            <Setter Property="Visibility" Value="Collapsed"/>
-                                                            <Style.Triggers>
-                                                                <DataTrigger Binding="{Binding ShowImagePlaceholder}" Value="True">
-                                                                    <Setter Property="Visibility" Value="Visible"/>
-                                                                </DataTrigger>
-                                                            </Style.Triggers>
-                                                        </Style>
-                                                    </Border.Style>
+                                                <Border Style="{StaticResource PlaceholderCard}">
                                                     <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
                                                         <TextBlock Text="◧" FontSize="40" Foreground="#3D6BFF" HorizontalAlignment="Center"/>
                                                         <TextBlock Text="{Binding ImageCaption}" FontSize="17" FontWeight="SemiBold"
@@ -518,7 +546,6 @@
                                                 </Border>
                                             </Grid>
 
-                                            <!-- Варианты ответа -->
                                             <ItemsControl ItemsSource="{Binding Options}"
                                                           Visibility="{Binding IsChoice, Converter={StaticResource BoolToVis}}">
                                                 <ItemsControl.ItemTemplate>
@@ -557,7 +584,6 @@
                                                 </ItemsControl.ItemTemplate>
                                             </ItemsControl>
 
-                                            <!-- Шкала кнопками -->
                                             <StackPanel Visibility="{Binding IsScale, Converter={StaticResource BoolToVis}}">
                                                 <Grid Margin="0,0,0,10">
                                                     <TextBlock HorizontalAlignment="Left" FontSize="13" Foreground="{StaticResource Muted}"
@@ -576,6 +602,8 @@
                                                                     <Style TargetType="Button" BasedOn="{StaticResource ScaleBtn}">
                                                                         <Style.Triggers>
                                                                             <DataTrigger Binding="{Binding IsSelected}" Value="True">
+                                                                                <Setter Property="Foreground" Value="White"/>
+                                                                                <Setter Property="FontWeight" Value="Bold"/>
                                                                                 <Setter Property="Template">
                                                                                     <Setter.Value>
                                                                                         <ControlTemplate TargetType="Button">
@@ -585,8 +613,6 @@
                                                                                         </ControlTemplate>
                                                                                     </Setter.Value>
                                                                                 </Setter>
-                                                                                <Setter Property="Foreground" Value="White"/>
-                                                                                <Setter Property="FontWeight" Value="Bold"/>
                                                                             </DataTrigger>
                                                                         </Style.Triggers>
                                                                     </Style>
@@ -610,21 +636,10 @@
                     </ContentControl>
                 </Grid>
 
-                <!-- Результат: подтверждение сохранения либо итоговый отчёт -->
                 <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled"
                               Visibility="{Binding IsResultVisible, Converter={StaticResource BoolToVis}}">
                     <Grid>
-                        <!-- Промежуточный итог: баллы скрыты -->
-                        <Border>
-                            <Border.Style>
-                                <Style TargetType="Border" BasedOn="{StaticResource Card}">
-                                    <Style.Triggers>
-                                        <DataTrigger Binding="{Binding IsFinalReport}" Value="True">
-                                            <Setter Property="Visibility" Value="Collapsed"/>
-                                        </DataTrigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </Border.Style>
+                        <Border Style="{StaticResource SavedCard}">
                             <StackPanel>
                                 <Border Width="66" Height="66" CornerRadius="33" Background="#12331F"
                                         BorderBrush="{StaticResource Success}" BorderThickness="2" HorizontalAlignment="Left">
@@ -646,23 +661,12 @@
                             </StackPanel>
                         </Border>
 
-                        <!-- Итоговый отчёт -->
-                        <Border>
-                            <Border.Style>
-                                <Style TargetType="Border" BasedOn="{StaticResource Card}">
-                                    <Setter Property="Visibility" Value="Collapsed"/>
-                                    <Style.Triggers>
-                                        <DataTrigger Binding="{Binding IsFinalReport}" Value="True">
-                                            <Setter Property="Visibility" Value="Visible"/>
-                                        </DataTrigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </Border.Style>
+                        <Border Style="{StaticResource ReportCard}">
                             <StackPanel>
                                 <TextBlock Text="Итоговый отчёт" FontSize="26" FontWeight="Bold"/>
                                 <Border Height="4" CornerRadius="2" Background="{StaticResource AccentFlow}" Margin="0,14,0,18"/>
                                 <TextBox Text="{Binding ReportText, Mode=OneWay}" IsReadOnly="True"
-                                         FontFamily="Consolas" FontSize="14" LineHeight="22"
+                                         FontFamily="Consolas" FontSize="14"
                                          Background="#0C1030" Foreground="{StaticResource Ink}"
                                          BorderBrush="#333C82" BorderThickness="1" Padding="16"
                                          TextWrapping="Wrap" AcceptsReturn="True" MinHeight="360"
@@ -678,7 +682,6 @@
             </Grid>
         </Grid>
 
-        <!-- ══════════ Нижняя панель ══════════ -->
         <Border Grid.Row="2" Background="#0F1338" BorderBrush="#242B66" BorderThickness="0,1,0,0" Padding="24,14">
             <Grid>
                 <Grid.ColumnDefinitions>
