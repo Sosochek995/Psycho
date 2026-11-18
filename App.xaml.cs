@@ -15,8 +15,14 @@ namespace ZharikovApp;
 public partial class App : Application
 {
     protected override void OnStartup(StartupEventArgs e)
-            ZharikovApp.Diagnostics.Install();
     {
+        ZharikovApp.StartupGuard.Install();
+
+        // КРИТИЧНО: пока открыто только приветственное окно, его закрытие при
+        // ShutdownMode=OnLastWindowClose завершает приложение — главного окна
+        // в этот момент ещё нет. На время приветствия переходим на явное завершение.
+        ShutdownMode = ShutdownMode.OnExplicitShutdown;
+
         base.OnStartup(e);
 
         // Single-file публикация: внешние данные (Data/Blocks, docs) не извлекаются
@@ -70,7 +76,11 @@ public partial class App : Application
         }
 
         var mainWindow = new MainWindow();
+        MainWindow = mainWindow;
         mainWindow.Show();
+
+        // Главное окно открыто — возвращаем штатный режим завершения.
+        ShutdownMode = ShutdownMode.OnMainWindowClose;
     }
 
     /// <summary>Есть ли у сессии черновые (незавершённые) ответы.</summary>
