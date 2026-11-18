@@ -1,6 +1,5 @@
 {
-  "generatedAt": "2026-11-16",
-  "note": "SHA-256 защищённых файлов. Любое расхождение = нарушение защиты.",
+  "generatedBy": "tools/generate_baseline.py",
   "files": [
     {
       "path": "docs/methodics_source.md",
@@ -9,6 +8,10 @@
     {
       "path": "Services/ScoringService.cs",
       "sha256": "9be39c3bcbdd23f78b0b9fb0a5934e876eb427ac24637dd22775d87175081eef"
+    },
+    {
+      "path": "Services/Interfaces/IScoringService.cs",
+      "sha256": "e66c68e78950045630444105f6efdd56df047a9c475d65a9aae3d1d933750051"
     },
     {
       "path": "Models/ScoringConfig.cs",
@@ -35,56 +38,52 @@
       "sha256": "8c6e8aad53857e924ac9f8b2f21d8e491e8e2697ed6daa6b7bb4887a8b731c12"
     },
     {
-      "path": "Data/Blocks/block_01_leadership.json",
+      "path": "Data\\Blocks\\block_01_leadership.json",
       "sha256": "4743646e1c7125712196d9b9a660c9b19358e452314bf706fe9c092ffddec927"
     },
     {
-      "path": "Data/Blocks/block_02_love.json",
+      "path": "Data\\Blocks\\block_02_love.json",
       "sha256": "52735ee0fbdcb142167aaeb4f5ca6940bcf498fe00c78cd36b29b3c48ecd2d7a"
     },
     {
-      "path": "Data/Blocks/block_03_artist_thinker.json",
+      "path": "Data\\Blocks\\block_03_artist_thinker.json",
       "sha256": "98e60f8b6d21c4e8a0a28a499b2d147045457394aaac9b862b2386bee1d1f1e7"
     },
     {
-      "path": "Data/Blocks/block_04_extraversion.json",
+      "path": "Data\\Blocks\\block_04_extraversion.json",
       "sha256": "6b4a912ed8e68ba2ee73a2697f9ce96d0b6ce0ba4427b5cd0df5b46bb30edcde"
     },
     {
-      "path": "Data/Blocks/block_05_biomarkers.json",
+      "path": "Data\\Blocks\\block_05_biomarkers.json",
       "sha256": "2b35452dcd925b92aa69738d5e632f4966c03d0170f1dab80d51358ddfba7fb8"
     },
     {
-      "path": "Data/Blocks/block_06_palmer.json",
+      "path": "Data\\Blocks\\block_06_palmer.json",
       "sha256": "fe6e336cf89b469e68386b7932e5e0b6c131134a9427296d4368543694cb5d0d"
     },
     {
-      "path": "Data/Blocks/block_07_leader_admin.json",
-      "sha256": "a398da2bfdc622658c7c03a484081e965c9248dba5ae0eada3cd8ef4846d7cfb"
+      "path": "Data\\Blocks\\block_07_leader_admin.json",
+      "sha256": "5d720459ab7c304942e5ceffb5727002a5f4c749a9c515d10861b342f74b19e8"
     },
     {
-      "path": "Data/Blocks/block_08_graphology.json",
+      "path": "Data\\Blocks\\block_08_graphology.json",
       "sha256": "403d0c95f17cf4e4e6c1b4754b93936ad3797ff2fe8e6bd48ee7570d1ed01fe9"
     },
     {
-      "path": "Data/Blocks/block_09_signature.json",
+      "path": "Data\\Blocks\\block_09_signature.json",
       "sha256": "485b5e97146b69a5b4eb597dac459e49c3794190157bdebc79962f38f1f7d3df"
     },
     {
-      "path": "Data/Blocks/block_10_left_hand.json",
+      "path": "Data\\Blocks\\block_10_left_hand.json",
       "sha256": "5365e04e869d93897927d8adaf7b77cf7c32e830af8e3ffd5b3be9f623068ffc"
     },
     {
-      "path": "Data/Blocks/block_11_creative_age.json",
+      "path": "Data\\Blocks\\block_11_creative_age.json",
       "sha256": "a3f8ab55e80b2bcc40789ec467701b2e3c45590f949b5e34ac0c73d9a9234b4f"
     },
     {
-      "path": "Data/Blocks/block_12_creative_potential.json",
+      "path": "Data\\Blocks\\block_12_creative_potential.json",
       "sha256": "8e4d100992a97a2095689475fd697bb23488e0c7d69d58269e5aa38fcb48fdd7"
-    },
-    {
-      "path": "Services/Interfaces/IScoringService.cs",
-      "sha256": "e66c68e78950045630444105f6efdd56df047a9c475d65a9aae3d1d933750051"
     }
   ]
 }
