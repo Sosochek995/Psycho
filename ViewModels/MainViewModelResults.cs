@@ -6,6 +6,7 @@ using System.Text;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using ZharikovApp.Models;
+using ZharikovApp.Services;
 
 namespace ZharikovApp.ViewModels;
 
