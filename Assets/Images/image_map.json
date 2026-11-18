@@ -1,0 +1,7 @@
+{
+  "handwriting_sample": { "file": "handwriting_sample.png", "caption": "Образец почерка" },
+  "signature_sample":   { "file": "signature_sample.png",   "caption": "Образец подписи" },
+  "left_hand_sample":   { "file": "left_hand_sample.png",   "caption": "Схема ведущей руки" },
+  "palm_sample":        { "file": "palm_sample.png",        "caption": "Схема ладони" },
+  "biomarkers_sample":  { "file": "biomarkers_sample.png",  "caption": "Схема биомаркеров" }
+}
