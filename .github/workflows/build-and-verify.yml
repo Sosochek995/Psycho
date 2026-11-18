@@ -17,11 +17,13 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      - name: Clean stale build output
+        shell: pwsh
+        run: |
+          Remove-Item -Recurse -Force bin,obj -ErrorAction SilentlyContinue
       - name: Build
-        continue-on-error: true
         run: dotnet build -c Release
       - name: Publish
-        continue-on-error: true
         run: dotnet publish -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true -p:EnableCompressionInSingleFile=true
       - name: Collect
         if: always()
