@@ -615,7 +615,7 @@
                               Visibility="{Binding IsResultVisible, Converter={StaticResource BoolToVis}}">
                     <Grid>
                         <!-- Промежуточный итог: баллы скрыты -->
-                        <Border Style="{StaticResource Card}">
+                        <Border>
                             <Border.Style>
                                 <Style TargetType="Border" BasedOn="{StaticResource Card}">
                                     <Style.Triggers>
