@@ -52,7 +52,9 @@ def strip_cosmetic(obj):
 
 def build_protected_files(calc: Calculator) -> dict:
     paths = ["docs/methodics_source.md"] + PROTECTED_CODE_FILES
-    paths += sorted(str(p.relative_to(ROOT)) for p in (ROOT / "Data" / "Blocks").glob("*.json"))
+    # as_posix() даёт прямые слэши на любой ОС. str(Path) на Windows даёт обратные,
+    # из-за чего эталон становится непортируемым: на Linux такой путь не найдётся.
+    paths += sorted(p.relative_to(ROOT).as_posix() for p in (ROOT / "Data" / "Blocks").glob("*.json"))
     entries = []
     for rel in paths:
         p = ROOT / rel
