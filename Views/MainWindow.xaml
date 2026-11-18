@@ -139,6 +139,8 @@
                             </MultiBinding>
                         </TextBlock.Text>
                     </TextBlock>
+                    <TextBlock Grid.Row="0" Margin="0,26,0,10" FontSize="12" Foreground="#6A737D"
+                               Text="Клавиши: цифры — ответ · стрелки — перемещение · Enter — далее · Ctrl+Enter — завершить блок"/>
 
                     <ContentControl Grid.Row="1" Content="{Binding CurrentQuestion}">
                         <ContentControl.ContentTemplate>
